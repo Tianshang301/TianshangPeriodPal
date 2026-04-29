@@ -1,47 +1,60 @@
+<p align="center">
+  <strong>🌐 Languages / 语言</strong><br>
+  <a href="README.md">English</a> ·
+  <a href="readme/README.zh_CN.md">简体中文</a> ·
+  <a href="readme/README.ja.md">日本語</a> ·
+  <a href="readme/README.ko.md">한국어</a> ·
+  <a href="readme/README.fr.md">Français</a> ·
+  <a href="readme/README.es.md">Español</a> ·
+  <a href="readme/README.ar.md">العربية</a>
+</p>
+
+---
+
 # TianshangPeriodPal (天殇·月记)
 
-## 项目概述
+## Overview
 
-一款完全离线、本地加密、开源免费的月经记录与管理工具。通过不可绕过的技术架构（零网络、强加密），确保数据永远只在用户手中。
+A fully offline, locally encrypted, open-source menstrual cycle tracking and management app. Through a non-bypassable technical architecture (zero network, strong encryption), your data stays in your hands — always.
 
-## 技术栈
+## Tech Stack
 
-- **语言/框架**: Kotlin, Jetpack Compose (Material 3)
-- **数据库**: Room (本地 SQLite，SQLCipher 加密)
-- **架构**: MVVM + Repository
-- **最低SDK**: 28 (Android 9)，目标 34
+- **Language/Framework**: Kotlin, Jetpack Compose (Material 3)
+- **Database**: Room (local SQLite, SQLCipher encryption)
+- **Architecture**: MVVM + Repository
+- **Min SDK**: 28 (Android 9), Target 34
 
-## 核心功能
+## Core Features
 
-- 月经周期记录与预测
-- 排卵期与易孕期预测
-- 痛经与症状分析
-- 本地加密数据存储
-- 生物识别应用锁
-- 多语言支持（7种语言）
-- 数据备份与导出
-- 回收站功能
+- Menstrual cycle recording & prediction
+- Ovulation & fertile window prediction
+- Dysmenorrhea & symptom analysis
+- Local encrypted data storage
+- Biometric app lock
+- Multi-language support (7 languages)
+- Data backup & export
+- Recycle bin
 
-## 隐私特性
+## Privacy Features
 
-- 完全离线，无任何网络请求
-- 数据库使用 SQLCipher 加密
-- 应用锁支持指纹/密码
-- 数据仅存储在设备本地
+- Fully offline — zero network requests
+- Database encrypted with SQLCipher
+- App lock with fingerprint / password
+- All data stored locally on device only
 
-## 开发路线图
+## Roadmap
 
-1. ✅ 项目初始化
-2. ✅ 数据库与加密
-3. ✅ 用户协议与应用锁
-4. ✅ 记录功能
-5. ✅ 预测引擎
-6. ✅ 数据分析
-7. ✅ 提醒系统
-8. ✅ 多语言与主题
-9. ✅ 回收站、备份与导出
-10. ✅ 测试
+1. ✅ Project initialization
+2. ✅ Database & encryption
+3. ✅ Terms of service & app lock
+4. ✅ Recording features
+5. ✅ Prediction engine
+6. ✅ Data analysis
+7. ✅ Reminder system
+8. ✅ Multi-language & themes
+9. ✅ Recycle bin, backup & export
+10. ✅ Testing
 
-## 许可证
+## License
 
-本项目基于 [MIT License](LICENSE) 开源发布。
+This project is licensed under the [MIT License](LICENSE).
