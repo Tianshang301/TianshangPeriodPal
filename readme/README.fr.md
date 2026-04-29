@@ -15,12 +15,12 @@
 
 ## Présentation
 
-Une application de suivi et de gestion du cycle menstruel, entièrement hors ligne, chiffrée localement et open source. Grâce à une architecture technique inviolable (zéro réseau, chiffrement fort), vos données restent toujours entre vos mains.
+Une application de suivi et de gestion du cycle menstruel, entièrement hors ligne et open source. Grâce à une architecture zéro réseau, vos données restent toujours entre vos mains.
 
 ## Stack technique
 
 - **Langage/Framework** : Kotlin, Jetpack Compose (Material 3)
-- **Base de données** : Room (SQLite local, chiffrement SQLCipher)
+- **Base de données** : Room (SQLite local)
 - **Architecture** : MVVM + Repository
 - **SDK minimum** : 28 (Android 9), cible 34
 
@@ -29,7 +29,7 @@ Une application de suivi et de gestion du cycle menstruel, entièrement hors lig
 - Enregistrement et prédiction du cycle menstruel
 - Prédiction de l'ovulation et de la période fertile
 - Analyse des douleurs menstruelles et des symptômes
-- Stockage de données chiffré en local
+- Stockage de données en local
 - Verrouillage biométrique de l'application
 - Support multilingue (7 langues)
 - Sauvegarde et exportation des données
@@ -38,14 +38,14 @@ Une application de suivi et de gestion du cycle menstruel, entièrement hors lig
 ## Fonctionnalités de confidentialité
 
 - Entièrement hors ligne — aucune requête réseau
-- Base de données chiffrée avec SQLCipher
 - Verrouillage par empreinte digitale / mot de passe
 - Toutes les données stockées uniquement sur l'appareil
+- Note : le chiffrement SQLCipher a été envisagé à l'origine mais ultimatement abandonné ; les données sont stockées en SQLite local en clair.
 
 ## Feuille de route
 
 1. ✅ Initialisation du projet
-2. ✅ Base de données et chiffrement
+2. ✅ Mise en place de la base de données
 3. ✅ Conditions d'utilisation et verrouillage
 4. ✅ Fonctionnalités d'enregistrement
 5. ✅ Moteur de prédiction

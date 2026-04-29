@@ -15,12 +15,12 @@
 
 ## Descripción
 
-Una aplicación de seguimiento y gestión del ciclo menstrual completamente offline, con cifrado local y de código abierto. A través de una arquitectura técnica inviolable (cero red, cifrado fuerte), sus datos siempre permanecen en sus manos.
+Una aplicación de seguimiento y gestión del ciclo menstrual completamente offline y de código abierto. A través de una arquitectura de red cero, sus datos siempre permanecen en sus manos.
 
 ## Stack tecnológico
 
 - **Lenguaje/Framework**: Kotlin, Jetpack Compose (Material 3)
-- **Base de datos**: Room (SQLite local, cifrado SQLCipher)
+- **Base de datos**: Room (SQLite local)
 - **Arquitectura**: MVVM + Repository
 - **SDK mínimo**: 28 (Android 9), objetivo 34
 
@@ -29,7 +29,7 @@ Una aplicación de seguimiento y gestión del ciclo menstrual completamente offl
 - Registro y predicción del ciclo menstrual
 - Predicción de ovulación y período fértil
 - Análisis de dismenorrea y síntomas
-- Almacenamiento de datos cifrado en local
+- Almacenamiento de datos en local
 - Bloqueo biométrico de la aplicación
 - Soporte multilingüe (7 idiomas)
 - Copia de seguridad y exportación de datos
@@ -38,14 +38,14 @@ Una aplicación de seguimiento y gestión del ciclo menstrual completamente offl
 ## Características de privacidad
 
 - Completamente offline — cero peticiones de red
-- Base de datos cifrada con SQLCipher
 - Bloqueo con huella dactilar / contraseña
 - Todos los datos almacenados solo en el dispositivo
+- Nota: el cifrado SQLCipher se consideró inicialmente pero finalmente se abandonó; los datos se almacenan en SQLite local en texto plano.
 
 ## Hoja de ruta
 
 1. ✅ Inicialización del proyecto
-2. ✅ Base de datos y cifrado
+2. ✅ Configuración de la base de datos
 3. ✅ Términos de uso y bloqueo de aplicación
 4. ✅ Funciones de registro
 5. ✅ Motor de predicción

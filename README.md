@@ -15,12 +15,12 @@
 
 ## Overview
 
-A fully offline, locally encrypted, open-source menstrual cycle tracking and management app. Through a non-bypassable technical architecture (zero network, strong encryption), your data stays in your hands — always.
+A fully offline, open-source menstrual cycle tracking and management app. Through a zero-network architecture, your data stays in your hands — always.
 
 ## Tech Stack
 
 - **Language/Framework**: Kotlin, Jetpack Compose (Material 3)
-- **Database**: Room (local SQLite, SQLCipher encryption)
+- **Database**: Room (local SQLite)
 - **Architecture**: MVVM + Repository
 - **Min SDK**: 28 (Android 9), Target 34
 
@@ -29,7 +29,7 @@ A fully offline, locally encrypted, open-source menstrual cycle tracking and man
 - Menstrual cycle recording & prediction
 - Ovulation & fertile window prediction
 - Dysmenorrhea & symptom analysis
-- Local encrypted data storage
+- Local data storage
 - Biometric app lock
 - Multi-language support (7 languages)
 - Data backup & export
@@ -38,14 +38,14 @@ A fully offline, locally encrypted, open-source menstrual cycle tracking and man
 ## Privacy Features
 
 - Fully offline — zero network requests
-- Database encrypted with SQLCipher
 - App lock with fingerprint / password
 - All data stored locally on device only
+- Note: SQLCipher encryption was initially considered but ultimately abandoned; data is stored in plain local SQLite
 
 ## Roadmap
 
 1. ✅ Project initialization
-2. ✅ Database & encryption
+2. ✅ Database setup
 3. ✅ Terms of service & app lock
 4. ✅ Recording features
 5. ✅ Prediction engine
