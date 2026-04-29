@@ -38,7 +38,7 @@ fun ThemeScreen(navController: NavController) {
     val imagePickerLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
-        uri?.let { viewModel.setBackgroundImage(it.toString()) }
+        uri?.let { viewModel.setBackgroundImage(it) }
     }
     
     Scaffold(
