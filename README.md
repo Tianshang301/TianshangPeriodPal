@@ -15,7 +15,7 @@
 
 # 🌸 TianshangPeriodPal (天殇·月记)
 
-**一款完全离线、注重隐私的月经周期跟踪与管理工具**
+**A fully offline, privacy-focused menstrual cycle tracking and management app**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-28%20(Android%209)-green.svg)](https://developer.android.com/about/versions/pie)
@@ -27,29 +27,29 @@
 
 ---
 
-## 📱 功能预览
+## 📱 Feature Preview
 
-> 💡 **提示**：您可以在 [Releases](https://github.com/Tianshang301/TianshangPeriodPal/releases) 页面下载最新 APK 安装体验。
+> 💡 **Tip**: Download the latest APK from the [Releases](https://github.com/Tianshang301/TianshangPeriodPal/releases) page.
 
-### 核心功能
-| 功能 | 描述 |
-|------|------|
-| 📅 **周期记录** | 记录经期起止日期、流量、疼痛程度、10种症状 |
-| 🔮 **智能预测** | 基于统计学算法预测未来6个周期，含排卵期和易孕期 |
-| 📊 **数据分析** | 周期规律性分析、疼痛趋势、症状频率统计 |
-| 🎨 **主题定制** | 5种粉色系主题 + 自定义背景图片（支持透明度调节）|
-| 🌗️ **深色模式** | 支持跟随系统或手动切换 |
-| 🔒 **应用锁** | 指纹/面部识别 + PIN 码，Argon2 哈希加密 |
-| 🌐 **多语言** | 支持 7 种语言（中/英/日/韩/法/西/阿）|
-| 💾 **数据管理** | 数据库备份(ZIP)、CSV 导出、回收站(30天自动清理) |
-| ⚖️ **BMI 追踪** | 计算 BMI 并追踪历史记录（中国标准）|
-| ⏰ **提醒系统** | 经期/排卵/PMS 三种提醒，可自定义提前天数和时间 |
+### Core Features
+| Feature | Description |
+|--------|-------------|
+| 📅 **Cycle Recording** | Record period start/end dates, flow level, pain level, 10 symptoms |
+| 🔮 **Smart Prediction** | Predict next 6 cycles with ovulation and fertile window using statistical algorithms |
+| 📊 **Data Analysis** | Cycle regularity analysis, pain trends, symptom frequency statistics |
+| 🎨 **Theme Customization** | 5 pink themes + custom background image (with transparency control) |
+| 🌗️ **Dark Mode** | Follow system or manual toggle |
+| 🔒 **App Lock** | Fingerprint/facial recognition + PIN, Argon2 hash encryption |
+| 🌐 **Multi-Language** | Supports 7 languages (zh/en/ja/ko/fr/es/ar) |
+| 💾 **Data Management** | Database backup (ZIP), CSV export, recycle bin (auto-cleanup after 30 days) |
+| ⚖️ **BMI Tracking** | Calculate BMI and track history (Chinese standards) |
+| ⏰ **Reminder System** | 3 reminder types (period/ovulation/PMS), customizable days in advance and time |
 
 ---
 
-## 🏗️ 技术架构
+## 🏗️ Technical Architecture
 
-### 架构模式
+### Architecture Pattern
 ```
 ┌─────────────────────────────────────┐
 │                 UI Layer (Compose)            │
@@ -71,95 +71,95 @@
 └─────────────────────────────────────────────┘
 ```
 
-### 技术栈
-| 类别 | 库/框架 | 版本 |
-|------|----------|------|
-| **语言** | Kotlin | 1.9.20 |
-| **UI 框架** | Jetpack Compose (Material 3) | BOM 2023.10.01 |
-| **导航** | Compose Navigation | 2.7.6 |
-| **架构** | MVVM + Repository | - |
-| **数据库** | Room + SQLite | 2.6.1 |
-| **本地存储** | DataStore Preferences | 1.0.0 |
-| **后台任务** | WorkManager | 2.9.0 |
-| **生物识别** | AndroidX Biometric | 1.1.0 |
-| **图片加载** | Coil Compose | 2.5.0 |
-| **数据安全** | Argon2 (Bouncy Castle) | 1.78 |
-| **数据导出** | Apache Commons CSV | 1.10.0 |
+### Tech Stack
+| Category | Library/Framework | Version |
+|----------|------------------|---------|
+| **Language** | Kotlin | 1.9.20 |
+| **UI Framework** | Jetpack Compose (Material 3) | BOM 2023.10.01 |
+| **Navigation** | Compose Navigation | 2.7.6 |
+| **Architecture** | MVVM + Repository | - |
+| **Database** | Room + SQLite | 2.6.1 |
+| **Local Storage** | DataStore Preferences | 1.0.0 |
+| **Background** | WorkManager | 2.9.0 |
+| **Biometrics** | AndroidX Biometric | 1.1.0 |
+| **Image Loading** | Coil Compose | 2.5.0 |
+| **Security** | Argon2 (Bouncy Castle) | 1.78 |
+| **Data Export** | Apache Commons CSV | 1.10.0 |
 | **JSON** | Gson | 2.10.1 |
-| **构建工具** | Gradle | 8.2 |
-| **编译** | JDK | 17 |
+| **Build Tool** | Gradle | 8.2 |
+| **Compile** | JDK | 17 |
 
 ---
 
-## 📲 屏幕说明
+## 📲 Screen Guide
 
-### 底部导航（5 个标签页）
+### Bottom Navigation (5 tabs)
 
-| 屏幕 | 功能 |
-|------|------|
-| 📅 **日历** | 显示经期（红色）、预测（浅红）、排卵（蓝色）、易孕（浅蓝）；点击日期可记录 |
-| 📝 **记录** | 记录流量、疼痛、10种症状、性生活、排卵测试、宫颈粘液、体温 |
-| 📊 **分析** | 周期统计、疼痛趋势图、症状频率、未来3周期预测 |
-| ⏰ **提醒** | 配置经期/排卵/PMS 提醒的开关、提前天数、提醒时间 |
-| 👤 **我的** | 快捷入口：主题、语言、BMI、应用锁、回收站、备份 |
+| Screen | Function |
+|-------|----------|
+| 📅 **Calendar** | Displays periods (red), predictions (light red), ovulation (blue), fertile window (light blue); tap dates to record |
+| 📝 **Record** | Record flow, pain, 10 symptoms, sexual activity, ovulation test, cervical mucus, body temperature |
+| 📊 **Analysis** | Cycle statistics, pain trends, symptom frequency, next 3 cycles prediction |
+| ⏰ **Reminder** | Configure period/ovulation/PMS reminders (toggle, days in advance, time) |
+| 👤 **Profile** | Quick access: theme, language, BMI, app lock, recycle bin, backup |
 
-### 二级界面
+### Secondary Screens
 
-- **主题定制**：5种粉色主题 + 自定义背景图片 + 透明度调节
-- **语言选择**：7种语言即时切换（AppCompatDelegate）
-- **BMI 计算**：输入身高体重，查看历史记录
-- **应用锁**：首次设置 PIN，后续支持指纹/面部识别
-- **回收站**：恢复30天内删除的记录
-- **备份恢复**：导出 ZIP 数据库 / 导入备份 / CSV 导出
-- **设置**：应用锁开关、截图防护开关
-
----
-
-## 🔒 隐私与安全
-
-### 隐私特性
-- ✅ **完全离线** — 零网络请求，无需任何权限
-- ✅ **本地存储** — 所有数据仅存储在设备本地
-- ✅ **应用锁** — 支持指纹/面部识别 + PIN 码
-- ✅ **截图防护** — 可开启禁止截图模式（FLAG_SECURE）
-
-### 关于加密说明
-> ⚠️ **注意**：项目初期曾考虑使用 SQLCipher 进行数据库加密，但最终放弃。当前数据以**明文形式**存储在本地 SQLite 数据库中。应用锁仅保护应用访问，不加密数据库文件本身。
-
-### 数据安全建议
-1. 开启应用锁功能
-2. 定期使用备份功能导出数据
-3. 设备建议设置屏幕锁
+- **Theme Customization**: 5 pink themes + custom background + transparency slider
+- **Language Selection**: 7 languages, instant switching (AppCompatDelegate)
+- **BMI Calculator**: Input height/weight, view history
+- **App Lock**: First-time PIN setup, biometric (fingerprint/facial) support
+- **Recycle Bin**: Restore records deleted within 30 days
+- **Backup & Restore**: Export ZIP database / Import backup / CSV export
+- **Settings**: App lock toggle, screenshot prevention toggle
 
 ---
 
-## 🚀 快速开始
+## 🔒 Privacy & Security
 
-### 前置要求
-- JDK 17（推荐 Eclipse Adoptium JDK 17）
-- Gradle 8.2（项目自带 Gradle Wrapper）
+### Privacy Features
+- ✅ **Fully Offline** — Zero network requests, no permissions required
+- ✅ **Local Storage** — All data stored locally on device only
+- ✅ **App Lock** — Fingerprint/facial recognition + PIN code
+- ✅ **Screenshot Prevention** — Enable FLAG_SECURE to block screenshots
+
+### Note on Encryption
+> ⚠️ **Important**: SQLCipher database encryption was initially considered but ultimately abandoned. Data is currently stored in **plaintext** in the local SQLite database. The app lock only protects access to the app, not the database file itself.
+
+### Security Recommendations
+1. Enable the app lock feature
+2. Regularly export data using the backup function
+3. Set a screen lock on your device
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- JDK 17 (Eclipse Adoptium JDK 17 recommended)
+- Gradle 8.2 (Gradle Wrapper included)
 - Android SDK 34
 
-### 构建命令
+### Build Commands
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/Tianshang301/TianshangPeriodPal.git
 cd TianshangPeriodPal
 
-# 设置 JDK 17
+# Set JDK 17
 set JAVA_HOME="C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot"
 
-# 构建 Debug 版本
+# Build Debug version
 .\gradlew.bat assembleDebug
 
-# 构建 Release 版本（需配置签名）
+# Build Release version (signature configuration required)
 .\gradlew.bat assembleRelease
 ```
 
-### Release 签名配置
+### Release Signing Configuration
 
-在 `app/build.gradle` 中已配置签名：
+Already configured in `app/build.gradle`:
 ```gradle
 signingConfigs {
     release {
@@ -173,27 +173,27 @@ signingConfigs {
 
 ---
 
-## 🛣️ 开发路线图
+## 🛣️ Development Roadmap
 
-- [x] 1. 项目初始化与架构搭建
-- [x] 2. Room 数据库与本地存储
-- [x] 3. 用户协议与应用锁
-- [x] 4. 周期记录功能
-- [x] 5. 预测引擎（统计学算法）
-- [x] 6. 数据分析与统计
-- [x] 7. 提醒系统（WorkManager）
-- [x] 8. 多语言支持（7种语言）
-- [x] 9. 主题定制与深色模式
-- [x] 10. 回收站、备份与 CSV 导出
-- [x] 11. BMI 计算与追踪
-- [x] 12. 测试与 Bug 修复
-- [ ] 13. 经期症状图表可视化（MPAndroidChart）
-- [ ] 14. 小组件（Home Screen Widget）
-- [ ] 15. 同名开源项目整合研究
+- [x] 1. Project initialization & architecture setup
+- [x] 2. Room database & local storage
+- [x] 3. Terms of service & app lock
+- [x] 4. Cycle recording features
+- [x] 5. Prediction engine (statistical algorithms)
+- [x] 6. Data analysis & statistics
+- [x] 7. Reminder system (WorkManager)
+- [x] 8. Multi-language support (7 languages)
+- [x] 9. Theme customization & dark mode
+- [x] 10. Recycle bin, backup & CSV export
+- [x] 11. BMI calculation & tracking
+- [x] 12. Testing & bug fixes
+- [ ] 13. Symptom chart visualization (MPAndroidChart)
+- [ ] 14. Home screen widget
+- [ ] 15. Integration research with similar open source projects
 
 ---
 
-## 📦 项目结构
+## 📦 Project Structure
 
 ```
 TianshangPeriodPal/
@@ -201,24 +201,24 @@ TianshangPeriodPal/
 │   ├── src/main/
 │   │   ├── java/com/tianshang/periodpal/
 │   │   │   ├── ui/
-│   │   │   │   ├── screens/      # 12个界面
-│   │   │   │   ├── theme/        # Material3 主题
-│   │   │   │   └── navigation/   # NavHost 导航图
-│   │   │   ├── viewmodel/     # 9个 ViewModel
+│   │   │   │   ├── screens/      # 12 screens
+│   │   │   │   ├── theme/        # Material3 theme
+│   │   │   │   └── navigation/   # NavHost
+│   │   │   ├── viewmodel/     # 9 ViewModels
 │   │   │   ├── data/
-│   │   │   │   ├── model/      # 数据模型
+│   │   │   │   ├── model/      # Data models
 │   │   │   │   ├── local/      # Room DAO + Database
-│   │   │   │   └── repository/ # Repository 层
-│   │   │   ├── utils/         # 工具类
-│   │   │   └── service/       # 后台服务
+│   │   │   │   └── repository/ # Repository layer
+│   │   │   ├── utils/         # Utilities
+│   │   │   └── service/       # Background services
 │   │   └── res/
-│   │       ├── values/        # 英文字符串
-│   │       ├── values-zh/     # 简体中文
-│   │       ├── values-ja/     # 日文
-│   │       ├── values-ko/     # 韩文
-│   │       ├── values-fr/     # 法文
-│   │       ├── values-es/     # 西班牙文
-│   │       └── values-ar/     # 阿拉伯文
+│   │       ├── values/        # English strings
+│   │       ├── values-zh/     # Simplified Chinese
+│   │       ├── values-ja/     # Japanese
+│   │       ├── values-ko/     # Korean
+│   │       ├── values-fr/     # French
+│   │       ├── values-es/     # Spanish
+│   │       └── values-ar/     # Arabic
 │   └── build.gradle
 ├── build.gradle
 ├── gradle.properties
@@ -227,15 +227,15 @@ TianshangPeriodPal/
 
 ---
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
 ---
 
-## 📄 许可证
+## 📄 License
 
-本项目基于 [MIT License](LICENSE) 开源发布。
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
