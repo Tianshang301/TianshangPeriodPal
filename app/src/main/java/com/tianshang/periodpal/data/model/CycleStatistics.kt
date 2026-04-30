@@ -6,5 +6,6 @@ data class CycleStatistics(
     val cycleRegularity: String,
     val totalCycles: Int,
     val painTrend: List<Pair<Int, Double>>,
-    val symptomFrequency: Map<String, Int>
+    val symptomFrequency: Map<String, Int>,
+    val cycleLengths: List<Pair<Int, Int>> = emptyList() // Pair<cycleIndex, length>
 )

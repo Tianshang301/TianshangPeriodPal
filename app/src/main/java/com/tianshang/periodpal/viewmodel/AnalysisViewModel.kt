@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.tianshang.periodpal.PeriodPalApplication
 import com.tianshang.periodpal.data.model.CyclePrediction
 import com.tianshang.periodpal.data.model.CycleStatistics
+import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.utils.PredictionEngine
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -26,11 +27,12 @@ class AnalysisViewModel(
         predictionEngine.calculateStatistics(records, symptoms)
     }.stateIn(viewModelScope, SharingStarted.Lazily, null)
     
-    val predictions: StateFlow<List<CyclePrediction>> = periodRepository.getAllRecords()
-        .map { records ->
-            predictionEngine.predictNextCycles(records, emptyList())
-        }
-        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
+    val predictions: StateFlow<List<CyclePrediction>> = combine(
+        periodRepository.getAllRecords(),
+        symptomRepository.getAllSymptoms()
+    ) { records, symptoms ->
+        predictionEngine.predictNextCycles(records, symptoms)
+    }.stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
     
     class Factory(private val context: Context) : ViewModelProvider.Factory {
         @Suppress("UNCHECKED_CAST")

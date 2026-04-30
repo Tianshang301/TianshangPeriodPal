@@ -179,9 +179,14 @@ class PredictionEngine {
             "数据不足"
         }
         
-        // Pain trend
+        // Pain trend with cycle index
         val painTrend = sortedRecords.mapIndexed { index, record ->
             index to (record.painLevel?.toDouble() ?: 0.0)
+        }
+        
+        // Cycle lengths with cycle index
+        val cycleLengthsWithIndex = cycleLengths.mapIndexed { index, length ->
+            index to length
         }
         
         // Symptom frequency
@@ -189,7 +194,7 @@ class PredictionEngine {
         symptoms.forEach { symptom ->
             val symptomList = parseSymptoms(symptom.symptoms)
             symptomList.forEach { s ->
-                symptomFrequency[s] = symptomFrequency.getOrDefault(s, 0) + 1
+                symptomFrequency[s] = symptomFrequency.getOrDefault(s,0) + 1
             }
         }
         
@@ -199,7 +204,8 @@ class PredictionEngine {
             cycleRegularity = regularity,
             totalCycles = sortedRecords.size,
             painTrend = painTrend,
-            symptomFrequency = symptomFrequency
+            symptomFrequency = symptomFrequency,
+            cycleLengths = cycleLengthsWithIndex
         )
     }
     

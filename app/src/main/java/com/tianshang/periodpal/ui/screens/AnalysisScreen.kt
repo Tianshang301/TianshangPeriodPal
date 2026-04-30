@@ -14,6 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.CycleLengthChart
+import com.tianshang.periodpal.ui.components.PainTrendChart
+import com.tianshang.periodpal.ui.components.SymptomFrequencyChart
 import com.tianshang.periodpal.viewmodel.AnalysisViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -66,63 +69,29 @@ fun AnalysisScreen(navController: NavController) {
                     )
                 }
             }
-        
-            // Pain trend
-            if (stats.painTrend.isNotEmpty()) {
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp)
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            stringResource(R.string.pain_trend),
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                        
-                        Spacer(modifier = Modifier.height(8.dp))
-                        
-                        stats.painTrend.forEach { (cycle, pain) ->
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Text("第 ${cycle + 1} 周期")
-                                Text("疼痛等级: %.1f".format(pain))
-                            }
-                        }
-                    }
-                }
+            
+            // Cycle length chart
+            if (stats.cycleLengths.isNotEmpty()) {
+                CycleLengthChart(
+                    cycleLengths = stats.cycleLengths,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
             }
         
-            // Symptom frequency
+            // Pain trend chart
+            if (stats.painTrend.isNotEmpty()) {
+                PainTrendChart(
+                    painTrend = stats.painTrend,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+            }
+        
+            // Symptom frequency chart
             if (stats.symptomFrequency.isNotEmpty()) {
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp)
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            stringResource(R.string.symptom_frequency),
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                        
-                        Spacer(modifier = Modifier.height(8.dp))
-                        
-                        stats.symptomFrequency.entries
-                            .sortedByDescending { it.value }
-                            .forEach { (symptom, count) ->
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(symptom)
-                                    Text("${count} 次")
-                                }
-                            }
-                    }
-                }
+                SymptomFrequencyChart(
+                    symptomFrequency = stats.symptomFrequency,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
             }
         }
         

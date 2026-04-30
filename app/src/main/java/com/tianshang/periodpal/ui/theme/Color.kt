@@ -31,3 +31,9 @@ val OvulationBlue = Color(0xFF4488FF)
 val OvulationBlueLight = Color(0xFFAACCEE)
 val FertileGreen = Color(0xFF44AA44)
 val FertileGreenLight = Color(0xFFAADDAA)
+
+// Pain Level Colors
+val PainNone = Color(0xFF4CAF50)    // Green - 无疼痛
+val PainMild = Color(0xFFFFEB3B)    // Yellow - 轻微
+val PainModerate = Color(0xFFFF9800) // Orange - 中度
+val PainSevere = Color(0xFFF44336)  // Red - 重度

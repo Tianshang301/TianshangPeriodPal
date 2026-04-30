@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.tianshang.periodpal.PeriodPalApplication
 import com.tianshang.periodpal.data.model.CyclePrediction
+import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.data.model.PeriodRecord
 import com.tianshang.periodpal.utils.PredictionEngine
 import kotlinx.coroutines.flow.*
@@ -31,8 +32,11 @@ class CalendarViewModel(
     val records: StateFlow<List<PeriodRecord>> = periodRepository.getAllRecords()
         .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
     
-    val predictions: StateFlow<List<CyclePrediction>> = records.map { records ->
-        predictionEngine.predictNextCycles(records, emptyList())
+    val symptoms: StateFlow<List<DailySymptom>> = symptomRepository.getAllSymptoms()
+        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
+    
+    val predictions: StateFlow<List<CyclePrediction>> = combine(records, symptoms) { records, symptoms ->
+        predictionEngine.predictNextCycles(records, symptoms)
     }.stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
     
     val currentCycleDay: StateFlow<Int> = records.map { records ->
