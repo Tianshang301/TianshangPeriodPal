@@ -94,6 +94,30 @@ class ReminderScheduler {
         ) {
             scheduleDailyCheck(context)
         }
+        
+        fun showTestNotification(context: Context) {
+            createNotificationChannels(context)
+            
+            val intent = Intent(context, com.tianshang.periodpal.MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
+            val pendingIntent = PendingIntent.getActivity(
+                context, 999, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+            
+            val notification = NotificationCompat.Builder(context, CHANNEL_CUSTOM)
+                .setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("PeriodPal")
+                .setContentText(context.getString(R.string.test_notification_message))
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .build()
+            
+            val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            manager.notify(999, notification)
+        }
     }
 }
 

@@ -131,6 +131,8 @@
     <string name="time_picker_mode_wheel">ホイール入力</string>
     <string name="time_picker_mode_keyboard">キーボード入力</string>
     <string name="time_format_error">HH:MM形式で入力してください</string>
+    <string name="test_reminder">テスト通知</string>
+    <string name="test_notification_message">リマインダーは正常に動作しています</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">有効</string>

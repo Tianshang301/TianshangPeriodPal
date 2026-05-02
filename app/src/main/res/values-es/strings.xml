@@ -131,6 +131,8 @@
     <string name="time_picker_mode_wheel">Selector de rueda</string>
     <string name="time_picker_mode_keyboard">Entrada de teclado</string>
     <string name="time_format_error">Formato inválido, use HH:MM</string>
+    <string name="test_reminder">Probar recordatorio</string>
+    <string name="test_notification_message">El recordatorio funciona correctamente</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">Activado</string>

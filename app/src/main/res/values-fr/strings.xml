@@ -131,6 +131,8 @@
     <string name="time_picker_mode_wheel">Sélecteur à roue</string>
     <string name="time_picker_mode_keyboard">Saisie clavier</string>
     <string name="time_format_error">Format invalide, utilisez HH:MM</string>
+    <string name="test_reminder">Tester le rappel</string>
+    <string name="test_notification_message">Le rappel fonctionne</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">Activé</string>
