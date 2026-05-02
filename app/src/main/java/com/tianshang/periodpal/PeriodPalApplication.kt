@@ -4,8 +4,13 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import com.tianshang.periodpal.data.local.PeriodDatabase
+import com.tianshang.periodpal.data.repository.SettingsRepository
 import com.tianshang.periodpal.service.ReminderScheduler
 import com.tianshang.periodpal.utils.EncryptionManager
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 class PeriodPalApplication : Application() {
@@ -35,6 +40,17 @@ class PeriodPalApplication : Application() {
         savedLang?.let { applyLanguage(it) }
         
         ReminderScheduler.createNotificationChannels(this)
+        
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val records = database.periodRecordDao().getAllRecordsSync()
+                val symptoms = database.dailySymptomDao().getAllSymptoms().first()
+                val settings = SettingsRepository(instance).settings.first()
+                ReminderScheduler.scheduleReminders(instance, records, symptoms, settings)
+            } catch (_: Exception) {
+                ReminderScheduler.scheduleDailyCheck(instance)
+            }
+        }
     }
     
     fun applyLanguage(language: String) {

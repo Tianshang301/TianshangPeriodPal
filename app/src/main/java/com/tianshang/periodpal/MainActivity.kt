@@ -1,15 +1,23 @@
 package com.tianshang.periodpal
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import com.tianshang.periodpal.data.repository.SettingsRepository
 import com.tianshang.periodpal.ui.navigation.PeriodPalNavHost
 import com.tianshang.periodpal.ui.theme.PeriodPalTheme
@@ -33,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         settingsRepository = SettingsRepository(this)
         
         setContent {
+            val context = LocalContext.current
             val settings by settingsRepository.settings.collectAsState(initial = null)
             
             val darkTheme = when {
@@ -44,6 +53,21 @@ class MainActivity : AppCompatActivity() {
             val preventScreenshot = settings?.preventScreenshot ?: false
             updateSecureFlag(preventScreenshot)
             
+            val notificationPermissionLauncher = rememberLauncherForActivityResult(
+                ActivityResultContracts.RequestPermission()
+            ) { /* granted or denied */ }
+            
+            LaunchedEffect(Unit) {
+                if (Build.VERSION.SDK_INT >= 33) {
+                    val hasPermission = ContextCompat.checkSelfPermission(
+                        context, Manifest.permission.POST_NOTIFICATIONS
+                    ) == PackageManager.PERMISSION_GRANTED
+                    if (!hasPermission) {
+                        notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                    }
+                }
+            }
+            
             PeriodPalTheme(
                 darkTheme = darkTheme,
                 themeColor = settings?.themeColor
@@ -54,10 +78,8 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun getSavedLocale(context: Context): Locale {
-        // 优先从 SharedPreferences 读取（LanguageScreen 同步写入）
         val prefs = context.getSharedPreferences("periodpal_prefs", Context.MODE_PRIVATE)
         val lang = prefs.getString("language", null) ?: run {
-            // 回退到 AppCompat 的 locales（可能通过 setApplicationLocales 设置）
             val appLocales = AppCompatDelegate.getApplicationLocales()
             if (!appLocales.isEmpty) return appLocales[0] ?: Locale.getDefault()
             return@run null
