@@ -128,6 +128,8 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">何日前</string>
     <string name="reminder_time">通知時間</string>
+    <string name="reminder_hour">時</string>
+    <string name="reminder_minute">分</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">有効</string>

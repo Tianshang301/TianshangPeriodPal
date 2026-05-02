@@ -3,8 +3,6 @@ package com.tianshang.periodpal.ui.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,6 +14,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.viewmodel.ReminderViewModel
+import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,7 +32,6 @@ fun ReminderScreen(navController: NavController) {
             .padding(16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        // Period reminder
         ReminderCard(
             title = stringResource(R.string.period_reminder),
             enabled = settings.periodReminderEnabled,
@@ -44,26 +42,24 @@ fun ReminderScreen(navController: NavController) {
             onTimeChange = { viewModel.updatePeriodReminderTime(it) }
         )
         
-        // Ovulation reminder
         ReminderCard(
             title = stringResource(R.string.ovulation_reminder),
             enabled = settings.ovulationReminderEnabled,
             days = settings.ovulationReminderDays,
-            time = settings.periodReminderTime,
+            time = settings.ovulationReminderTime,
             onEnabledChange = { viewModel.updateOvulationReminderEnabled(it) },
             onDaysChange = { viewModel.updateOvulationReminderDays(it) },
-            onTimeChange = { viewModel.updatePeriodReminderTime(it) }
+            onTimeChange = { viewModel.updateOvulationReminderTime(it) }
         )
         
-        // PMS reminder
         ReminderCard(
             title = stringResource(R.string.pms_reminder),
             enabled = settings.pmsReminderEnabled,
             days = settings.pmsReminderDays,
-            time = settings.periodReminderTime,
+            time = settings.pmsReminderTime,
             onEnabledChange = { viewModel.updatePmsReminderEnabled(it) },
             onDaysChange = { viewModel.updatePmsReminderDays(it) },
-            onTimeChange = { viewModel.updatePeriodReminderTime(it) }
+            onTimeChange = { viewModel.updatePmsReminderTime(it) }
         )
     }
 }
@@ -78,6 +74,17 @@ fun ReminderCard(
     onDaysChange: (Int) -> Unit,
     onTimeChange: (String) -> Unit
 ) {
+    val timeParts = time.split(":")
+    var hour by remember(time) { mutableFloatStateOf(timeParts.getOrNull(0)?.toFloatOrNull() ?: 8f) }
+    var minute by remember(time) { mutableFloatStateOf(timeParts.getOrNull(1)?.toFloatOrNull() ?: 0f) }
+    
+    LaunchedEffect(hour, minute) {
+        val newTime = "%02d:%02d".format(hour.toInt(), minute.toInt())
+        if (newTime != time) {
+            onTimeChange(newTime)
+        }
+    }
+    
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -122,11 +129,66 @@ fun ReminderCard(
                     )
                 }
                 
-                OutlinedTextField(
-                    value = time,
-                    onValueChange = onTimeChange,
-                    label = { Text(stringResource(R.string.reminder_time)) },
-                    modifier = Modifier.fillMaxWidth()
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                Text(
+                    stringResource(R.string.reminder_time),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                
+                Spacer(modifier = Modifier.height(4.dp))
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        stringResource(R.string.reminder_hour),
+                        modifier = Modifier.weight(0.2f),
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                    Slider(
+                        value = hour,
+                        onValueChange = { hour = it },
+                        valueRange = 0f..23f,
+                        steps = 22,
+                        modifier = Modifier.weight(0.6f)
+                    )
+                    Text(
+                        "%02d".format(hour.toInt()),
+                        modifier = Modifier.weight(0.2f),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        stringResource(R.string.reminder_minute),
+                        modifier = Modifier.weight(0.2f),
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                    Slider(
+                        value = minute,
+                        onValueChange = { minute = it },
+                        valueRange = 0f..55f,
+                        steps = 10,
+                        modifier = Modifier.weight(0.6f)
+                    )
+                    Text(
+                        "%02d".format(minute.toInt()),
+                        modifier = Modifier.weight(0.2f),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+                
+                Text(
+                    text = "%02d:%02d".format(hour.toInt(), minute.toInt()),
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
             }
         }

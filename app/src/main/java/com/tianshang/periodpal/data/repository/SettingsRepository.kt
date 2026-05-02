@@ -30,9 +30,11 @@ class SettingsRepository(private val context: Context) {
         
         val OVULATION_REMINDER_ENABLED = booleanPreferencesKey("ovulation_reminder_enabled")
         val OVULATION_REMINDER_DAYS = intPreferencesKey("ovulation_reminder_days")
+        val OVULATION_REMINDER_TIME = stringPreferencesKey("ovulation_reminder_time")
         
         val PMS_REMINDER_ENABLED = booleanPreferencesKey("pms_reminder_enabled")
         val PMS_REMINDER_DAYS = intPreferencesKey("pms_reminder_days")
+        val PMS_REMINDER_TIME = stringPreferencesKey("pms_reminder_time")
         
         // Theme settings
         val DARK_MODE = booleanPreferencesKey("dark_mode")
@@ -57,8 +59,10 @@ class SettingsRepository(private val context: Context) {
             periodReminderTime = preferences[PreferencesKeys.PERIOD_REMINDER_TIME] ?: "08:00",
             ovulationReminderEnabled = preferences[PreferencesKeys.OVULATION_REMINDER_ENABLED] ?: true,
             ovulationReminderDays = preferences[PreferencesKeys.OVULATION_REMINDER_DAYS] ?: 1,
+            ovulationReminderTime = preferences[PreferencesKeys.OVULATION_REMINDER_TIME] ?: "09:00",
             pmsReminderEnabled = preferences[PreferencesKeys.PMS_REMINDER_ENABLED] ?: true,
             pmsReminderDays = preferences[PreferencesKeys.PMS_REMINDER_DAYS] ?: 5,
+            pmsReminderTime = preferences[PreferencesKeys.PMS_REMINDER_TIME] ?: "08:00",
             darkMode = preferences[PreferencesKeys.DARK_MODE] ?: false,
             darkModeFollowSystem = preferences[PreferencesKeys.DARK_MODE_FOLLOW_SYSTEM] ?: true,
             preventScreenshot = preferences[PreferencesKeys.PREVENT_SCREENSHOT] ?: false
@@ -86,8 +90,10 @@ class SettingsRepository(private val context: Context) {
             preferences[PreferencesKeys.PERIOD_REMINDER_TIME] = settings.periodReminderTime
             preferences[PreferencesKeys.OVULATION_REMINDER_ENABLED] = settings.ovulationReminderEnabled
             preferences[PreferencesKeys.OVULATION_REMINDER_DAYS] = settings.ovulationReminderDays
+            preferences[PreferencesKeys.OVULATION_REMINDER_TIME] = settings.ovulationReminderTime
             preferences[PreferencesKeys.PMS_REMINDER_ENABLED] = settings.pmsReminderEnabled
             preferences[PreferencesKeys.PMS_REMINDER_DAYS] = settings.pmsReminderDays
+            preferences[PreferencesKeys.PMS_REMINDER_TIME] = settings.pmsReminderTime
             preferences[PreferencesKeys.DARK_MODE] = settings.darkMode
             preferences[PreferencesKeys.DARK_MODE_FOLLOW_SYSTEM] = settings.darkModeFollowSystem
             preferences[PreferencesKeys.PREVENT_SCREENSHOT] = settings.preventScreenshot
@@ -118,8 +124,10 @@ data class UserSettings(
     val periodReminderTime: String = "08:00",
     val ovulationReminderEnabled: Boolean = true,
     val ovulationReminderDays: Int = 1,
+    val ovulationReminderTime: String = "09:00",
     val pmsReminderEnabled: Boolean = true,
     val pmsReminderDays: Int = 5,
+    val pmsReminderTime: String = "08:00",
     val darkMode: Boolean = false,
     val darkModeFollowSystem: Boolean = true,
     val preventScreenshot: Boolean = false

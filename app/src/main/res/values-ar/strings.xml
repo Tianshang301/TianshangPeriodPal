@@ -126,6 +126,8 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">أيام قبل</string>
     <string name="reminder_time">وقت التذكير</string>
+    <string name="reminder_hour">ساعة</string>
+    <string name="reminder_minute">دقيقة</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">مفعل</string>

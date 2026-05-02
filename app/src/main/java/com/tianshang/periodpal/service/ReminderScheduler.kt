@@ -76,14 +76,15 @@ class ReminderScheduler {
             if (predictions.isEmpty()) return
             
             val nextPrediction = predictions.first()
-            val timeParts = settings.periodReminderTime.split(":")
-            val hour = timeParts.getOrNull(0)?.toIntOrNull() ?: 8
-            val minute = timeParts.getOrNull(1)?.toIntOrNull() ?: 0
-            val reminderTime = LocalTime.of(hour, minute)
             
             if (settings.periodReminderEnabled) {
+                val periodTimeParts = settings.periodReminderTime.split(":")
+                val periodHour = periodTimeParts.getOrNull(0)?.toIntOrNull() ?: 8
+                val periodMinute = periodTimeParts.getOrNull(1)?.toIntOrNull() ?: 0
+                val periodReminderTime = LocalTime.of(periodHour, periodMinute)
+                
                 val periodDate = nextPrediction.periodStartDate.minusDays(settings.periodReminderDays.toLong())
-                val triggerDateTime = LocalDateTime.of(periodDate, reminderTime)
+                val triggerDateTime = LocalDateTime.of(periodDate, periodReminderTime)
                 if (triggerDateTime.isAfter(LocalDateTime.now())) {
                     scheduleReminder(
                         context = context,
@@ -97,8 +98,13 @@ class ReminderScheduler {
             }
             
             if (settings.ovulationReminderEnabled) {
+                val ovulationTimeParts = settings.ovulationReminderTime.split(":")
+                val ovulationHour = ovulationTimeParts.getOrNull(0)?.toIntOrNull() ?: 9
+                val ovulationMinute = ovulationTimeParts.getOrNull(1)?.toIntOrNull() ?: 0
+                val ovulationReminderTime = LocalTime.of(ovulationHour, ovulationMinute)
+                
                 val ovulationDate = nextPrediction.ovulationDate.minusDays(settings.ovulationReminderDays.toLong())
-                val triggerDateTime = LocalDateTime.of(ovulationDate, reminderTime)
+                val triggerDateTime = LocalDateTime.of(ovulationDate, ovulationReminderTime)
                 if (triggerDateTime.isAfter(LocalDateTime.now())) {
                     scheduleReminder(
                         context = context,
@@ -112,8 +118,13 @@ class ReminderScheduler {
             }
             
             if (settings.pmsReminderEnabled) {
+                val pmsTimeParts = settings.pmsReminderTime.split(":")
+                val pmsHour = pmsTimeParts.getOrNull(0)?.toIntOrNull() ?: 8
+                val pmsMinute = pmsTimeParts.getOrNull(1)?.toIntOrNull() ?: 0
+                val pmsReminderTime = LocalTime.of(pmsHour, pmsMinute)
+                
                 val pmsDate = nextPrediction.periodStartDate.minusDays(settings.pmsReminderDays.toLong())
-                val triggerDateTime = LocalDateTime.of(pmsDate, reminderTime)
+                val triggerDateTime = LocalDateTime.of(pmsDate, pmsReminderTime)
                 if (triggerDateTime.isAfter(LocalDateTime.now())) {
                     scheduleReminder(
                         context = context,
