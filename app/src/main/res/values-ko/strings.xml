@@ -131,6 +131,8 @@
     <string name="time_picker_mode_wheel">휠 입력</string>
     <string name="time_picker_mode_keyboard">키보드 입력</string>
     <string name="time_format_error">HH:MM 형식으로 입력하세요</string>
+    <string name="test_reminder">알림 테스트</string>
+    <string name="test_notification_message">알림이 정상 작동 중입니다</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">활성화</string>
