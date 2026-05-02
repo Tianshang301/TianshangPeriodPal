@@ -8,17 +8,16 @@ import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.work.*
-import com.tianshang.periodpal.MainActivity
+import com.tianshang.periodpal.PeriodPalApplication
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.data.model.PeriodRecord
+import com.tianshang.periodpal.data.repository.SettingsRepository
 import com.tianshang.periodpal.data.repository.UserSettings
 import com.tianshang.periodpal.utils.PredictionEngine
-import java.time.Duration
+import kotlinx.coroutines.flow.first
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.LocalTime
-import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
 
@@ -29,6 +28,7 @@ class ReminderScheduler {
         const val CHANNEL_OVULATION = "ovulation_reminder"
         const val CHANNEL_PMS = "pms_reminder"
         const val CHANNEL_CUSTOM = "custom_reminder"
+        const val TAG_DAILY_CHECK = "daily_reminder_check"
         
         fun createNotificationChannels(context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -36,22 +36,22 @@ class ReminderScheduler {
                     NotificationChannel(
                         CHANNEL_PERIOD,
                         context.getString(R.string.channel_period_reminder),
-                        NotificationManager.IMPORTANCE_DEFAULT
+                        NotificationManager.IMPORTANCE_HIGH
                     ),
                     NotificationChannel(
                         CHANNEL_OVULATION,
                         context.getString(R.string.channel_ovulation_reminder),
-                        NotificationManager.IMPORTANCE_DEFAULT
+                        NotificationManager.IMPORTANCE_HIGH
                     ),
                     NotificationChannel(
                         CHANNEL_PMS,
                         context.getString(R.string.channel_pms_reminder),
-                        NotificationManager.IMPORTANCE_DEFAULT
+                        NotificationManager.IMPORTANCE_HIGH
                     ),
                     NotificationChannel(
                         CHANNEL_CUSTOM,
                         context.getString(R.string.channel_custom_reminder),
-                        NotificationManager.IMPORTANCE_DEFAULT
+                        NotificationManager.IMPORTANCE_HIGH
                     )
                 )
                 
@@ -60,123 +60,97 @@ class ReminderScheduler {
             }
         }
         
+        fun scheduleDailyCheck(context: Context) {
+            WorkManager.getInstance(context).cancelAllWorkByTag(TAG_DAILY_CHECK)
+            
+            val now = java.time.LocalDateTime.now()
+            val targetTime = LocalTime.of(8, 0)
+            var nextRun = now.toLocalDate().atTime(targetTime)
+            if (nextRun.isBefore(now) || nextRun.isEqual(now)) {
+                nextRun = nextRun.plusDays(1)
+            }
+            
+            val delayMinutes = java.time.Duration.between(now, nextRun).toMinutes()
+            
+            val workRequest = PeriodicWorkRequestBuilder<DailyReminderWorker>(
+                24, TimeUnit.HOURS
+            )
+                .setInitialDelay(delayMinutes, TimeUnit.MINUTES)
+                .addTag(TAG_DAILY_CHECK)
+                .build()
+            
+            WorkManager.getInstance(context).enqueueUniquePeriodicWork(
+                TAG_DAILY_CHECK,
+                ExistingPeriodicWorkPolicy.UPDATE,
+                workRequest
+            )
+        }
+        
         fun scheduleReminders(
             context: Context,
             records: List<PeriodRecord>,
             symptoms: List<DailySymptom>,
             settings: UserSettings
         ) {
-            WorkManager.getInstance(context).cancelAllWorkByTag("period_reminder")
-            WorkManager.getInstance(context).cancelAllWorkByTag("ovulation_reminder")
-            WorkManager.getInstance(context).cancelAllWorkByTag("pms_reminder")
-            
-            val predictionEngine = PredictionEngine()
-            val predictions = predictionEngine.predictNextCycles(records, symptoms, settings.lutealPhaseLength)
-            
-            if (predictions.isEmpty()) return
-            
-            val nextPrediction = predictions.first()
-            
-            if (settings.periodReminderEnabled) {
-                val periodTimeParts = settings.periodReminderTime.split(":")
-                val periodHour = periodTimeParts.getOrNull(0)?.toIntOrNull() ?: 8
-                val periodMinute = periodTimeParts.getOrNull(1)?.toIntOrNull() ?: 0
-                val periodReminderTime = LocalTime.of(periodHour, periodMinute)
-                
-                val periodDate = nextPrediction.periodStartDate.minusDays(settings.periodReminderDays.toLong())
-                val triggerDateTime = LocalDateTime.of(periodDate, periodReminderTime)
-                if (triggerDateTime.isAfter(LocalDateTime.now())) {
-                    scheduleReminder(
-                        context = context,
-                        reminderType = "period",
-                        tag = "period_reminder",
-                        triggerTime = triggerDateTime,
-                        title = context.getString(R.string.notif_period_title),
-                        message = context.getString(R.string.notif_period_message, settings.periodReminderDays)
-                    )
-                }
-            }
-            
-            if (settings.ovulationReminderEnabled) {
-                val ovulationTimeParts = settings.ovulationReminderTime.split(":")
-                val ovulationHour = ovulationTimeParts.getOrNull(0)?.toIntOrNull() ?: 9
-                val ovulationMinute = ovulationTimeParts.getOrNull(1)?.toIntOrNull() ?: 0
-                val ovulationReminderTime = LocalTime.of(ovulationHour, ovulationMinute)
-                
-                val ovulationDate = nextPrediction.ovulationDate.minusDays(settings.ovulationReminderDays.toLong())
-                val triggerDateTime = LocalDateTime.of(ovulationDate, ovulationReminderTime)
-                if (triggerDateTime.isAfter(LocalDateTime.now())) {
-                    scheduleReminder(
-                        context = context,
-                        reminderType = "ovulation",
-                        tag = "ovulation_reminder",
-                        triggerTime = triggerDateTime,
-                        title = context.getString(R.string.notif_ovulation_title),
-                        message = context.getString(R.string.notif_ovulation_message, settings.ovulationReminderDays)
-                    )
-                }
-            }
-            
-            if (settings.pmsReminderEnabled) {
-                val pmsTimeParts = settings.pmsReminderTime.split(":")
-                val pmsHour = pmsTimeParts.getOrNull(0)?.toIntOrNull() ?: 8
-                val pmsMinute = pmsTimeParts.getOrNull(1)?.toIntOrNull() ?: 0
-                val pmsReminderTime = LocalTime.of(pmsHour, pmsMinute)
-                
-                val pmsDate = nextPrediction.periodStartDate.minusDays(settings.pmsReminderDays.toLong())
-                val triggerDateTime = LocalDateTime.of(pmsDate, pmsReminderTime)
-                if (triggerDateTime.isAfter(LocalDateTime.now())) {
-                    scheduleReminder(
-                        context = context,
-                        reminderType = "pms",
-                        tag = "pms_reminder",
-                        triggerTime = triggerDateTime,
-                        title = context.getString(R.string.notif_pms_title),
-                        message = context.getString(R.string.notif_pms_message, settings.pmsReminderDays)
-                    )
-                }
-            }
-        }
-        
-        private fun scheduleReminder(
-            context: Context,
-            reminderType: String,
-            tag: String,
-            triggerTime: LocalDateTime,
-            title: String,
-            message: String
-        ) {
-            val delay = Duration.between(LocalDateTime.now(), triggerTime)
-            
-            if (delay.isNegative) return
-            
-            val workRequest = OneTimeWorkRequestBuilder<ReminderWorker>()
-                .setInitialDelay(delay.toMillis(), TimeUnit.MILLISECONDS)
-                .setInputData(workDataOf(
-                    "type" to reminderType,
-                    "title" to title,
-                    "message" to message
-                ))
-                .addTag(tag)
-                .build()
-            
-            WorkManager.getInstance(context).enqueueUniqueWork(
-                "reminder_${reminderType}_${System.currentTimeMillis()}",
-                ExistingWorkPolicy.REPLACE,
-                workRequest
-            )
+            scheduleDailyCheck(context)
         }
     }
 }
 
-class ReminderWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
+class DailyReminderWorker(
+    context: Context,
+    params: WorkerParameters
+) : CoroutineWorker(context, params) {
     
-    override fun doWork(): Result {
-        val type = inputData.getString("type") ?: return Result.failure()
-        val title = inputData.getString("title") ?: return Result.failure()
-        val message = inputData.getString("message") ?: return Result.failure()
+    override suspend fun doWork(): Result {
+        val app = applicationContext as PeriodPalApplication
+        val records = app.database.periodRecordDao().getAllRecordsSync()
+        val symptoms = app.database.dailySymptomDao().getAllSymptoms().first()
+        val settings = SettingsRepository(applicationContext).settings.first()
         
-        showNotification(type, title, message)
+        if (!settings.periodReminderEnabled && !settings.ovulationReminderEnabled && !settings.pmsReminderEnabled) {
+            return Result.success()
+        }
+        
+        val predictionEngine = PredictionEngine()
+        val predictions = predictionEngine.predictNextCycles(records, symptoms, settings.lutealPhaseLength)
+        if (predictions.isEmpty()) return Result.success()
+        
+        val today = LocalDate.now()
+        val prediction = predictions.first()
+        
+        if (settings.periodReminderEnabled) {
+            val reminderDate = prediction.periodStartDate.minusDays(settings.periodReminderDays.toLong())
+            if (today == reminderDate || today.isAfter(reminderDate)) {
+                showNotification(
+                    "period",
+                    applicationContext.getString(R.string.notif_period_title),
+                    applicationContext.getString(R.string.notif_period_message, settings.periodReminderDays)
+                )
+            }
+        }
+        
+        if (settings.ovulationReminderEnabled) {
+            val reminderDate = prediction.ovulationDate.minusDays(settings.ovulationReminderDays.toLong())
+            if (today == reminderDate || today.isAfter(reminderDate)) {
+                showNotification(
+                    "ovulation",
+                    applicationContext.getString(R.string.notif_ovulation_title),
+                    applicationContext.getString(R.string.notif_ovulation_message, settings.ovulationReminderDays)
+                )
+            }
+        }
+        
+        if (settings.pmsReminderEnabled) {
+            val reminderDate = prediction.periodStartDate.minusDays(settings.pmsReminderDays.toLong())
+            if (today == reminderDate || today.isAfter(reminderDate)) {
+                showNotification(
+                    "pms",
+                    applicationContext.getString(R.string.notif_pms_title),
+                    applicationContext.getString(R.string.notif_pms_message, settings.pmsReminderDays)
+                )
+            }
+        }
         
         return Result.success()
     }
@@ -189,13 +163,13 @@ class ReminderWorker(context: Context, params: WorkerParameters) : Worker(contex
             else -> ReminderScheduler.CHANNEL_CUSTOM
         }
         
-        val intent = Intent(applicationContext, MainActivity::class.java).apply {
+        val intent = Intent(applicationContext, com.tianshang.periodpal.MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
         }
         
         val pendingIntent = PendingIntent.getActivity(
             applicationContext,
-            0,
+            type.hashCode(),
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
@@ -204,12 +178,12 @@ class ReminderWorker(context: Context, params: WorkerParameters) : Worker(contex
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(title)
             .setContentText(message)
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
             .build()
         
         val notificationManager = applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.notify(System.currentTimeMillis().toInt(), notification)
+        notificationManager.notify(type.hashCode(), notification)
     }
 }

@@ -7,6 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.tianshang.periodpal.PeriodPalApplication
 import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.data.model.PeriodRecord
+import com.tianshang.periodpal.data.repository.SettingsRepository
+import com.tianshang.periodpal.service.ReminderScheduler
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
@@ -17,6 +20,17 @@ class RecordViewModel(
     private val periodRepository = application.database.periodRecordDao()
     private val symptomRepository = application.database.dailySymptomDao()
     
+    private fun rescheduleReminders() {
+        viewModelScope.launch {
+            try {
+                val records = periodRepository.getAllRecordsSync()
+                val symptoms = symptomRepository.getAllSymptoms().first()
+                val settings = SettingsRepository(application).settings.first()
+                ReminderScheduler.scheduleReminders(application, records, symptoms, settings)
+            } catch (_: Exception) {}
+        }
+    }
+    
     fun quickStartPeriod(date: LocalDate = LocalDate.now()) {
         viewModelScope.launch {
             val record = PeriodRecord(
@@ -24,6 +38,7 @@ class RecordViewModel(
                 endDate = null
             )
             periodRepository.insert(record)
+            rescheduleReminders()
         }
     }
     
@@ -34,6 +49,7 @@ class RecordViewModel(
                 val updatedRecord = lastRecord.copy(endDate = date)
                 periodRepository.update(updatedRecord)
             }
+            rescheduleReminders()
         }
     }
     
@@ -49,7 +65,6 @@ class RecordViewModel(
         notes: String?
     ) {
         viewModelScope.launch {
-            // Save or update daily symptom
             val existingSymptom = symptomRepository.getSymptomForDate(date)
             val symptom = DailySymptom(
                 date = date,
@@ -67,7 +82,6 @@ class RecordViewModel(
                 symptomRepository.insert(symptom)
             }
             
-            // Update period record if flow or pain level changed
             if (flowLevel != null || painLevel != null) {
                 val existingRecord = periodRepository.getRecordForDate(date)
                 if (existingRecord != null) {
@@ -79,22 +93,24 @@ class RecordViewModel(
                     periodRepository.update(updatedRecord)
                 }
             }
+            
+            rescheduleReminders()
         }
     }
     
     fun deleteRecord(date: LocalDate) {
         viewModelScope.launch {
-            // Soft delete period record for the date
             val periodRecord = periodRepository.getRecordForDate(date)
             periodRecord?.let {
                 periodRepository.softDelete(it.id)
             }
             
-            // Delete daily symptom for the date
             val symptom = symptomRepository.getSymptomForDate(date)
             symptom?.let {
                 symptomRepository.delete(it)
             }
+            
+            rescheduleReminders()
         }
     }
     
