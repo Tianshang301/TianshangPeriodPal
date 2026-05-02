@@ -1,5 +1,7 @@
 package com.tianshang.periodpal.ui.navigation
 
+import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -59,6 +61,15 @@ fun PeriodPalNavHost(
     if (!isReady) return
     
     MainScreen(navController = navController) {
+        BackHandler {
+            val currentRoute = navController.currentBackStackEntry?.destination?.route
+            if (currentRoute == startDest || currentRoute == null) {
+                (context as? Activity)?.finish()
+            } else {
+                navController.popBackStack()
+            }
+        }
+        
         NavHost(
             navController = navController,
             startDestination = startDest
