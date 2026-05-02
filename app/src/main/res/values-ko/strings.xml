@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">천상·월기</string>
+    <string name="terms_title">이용약관 및 개인정보처리방침</string>
+    <string name="privacy_title">개인정보처리방침</string>
+    <string name="accept_terms">읽고 동의합니다</string>
+    <string name="app_lock_title">앱 잠금</string>
+    <string name="enter_pin">비밀번호 입력</string>
+    <string name="unlock">잠금 해제</string>
+    <string name="invalid_pin">비밀번호가 잘못되었습니다</string>
+    <string name="calendar_title">달력</string>
+    <string name="current_cycle_day">현재 주기 %d일차</string>
+    <string name="tap_date_to_record">날짜를 탭하여 기록</string>
+    <string name="period">월경</string>
+    <string name="predicted_period">예측 월경</string>
+    <string name="ovulation">배란일</string>
+    <string name="fertile_window">임신 가능 기간</string>
+    <string name="record_title">기록</string>
+    <string name="start_period">월경 시작</string>
+    <string name="end_period">월경 종료</string>
+    <string name="flow_level">유량</string>
+    <string name="pain_level">통증 정도</string>
+    <string name="symptoms">증상</string>
+    <string name="sexual_activity">성생활</string>
+    <string name="ovulation_test">배란 테스트</string>
+    <string name="cervical_mucus">자궁경관 점액</string>
+    <string name="body_temperature">기초체온</string>
+    <string name="notes">메모</string>
+    <string name="save">저장</string>
+    <string name="analysis_title">분석</string>
+    <string name="cycle_statistics">주기 통계</string>
+    <string name="avg_cycle_length">평균 주기 길이</string>
+    <string name="avg_period_length">평균 월경 길이</string>
+    <string name="cycle_regularity">주기 규칙성</string>
+    <string name="total_cycles">총 주기 수</string>
+    <string name="pain_trend">통증 추이</string>
+    <string name="symptom_frequency">증상 빈도</string>
+    <string name="predictions">예측</string>
+    <string name="reminder_title">알림</string>
+    <string name="period_reminder">월경 알림</string>
+    <string name="ovulation_reminder">배란 알림</string>
+    <string name="pms_reminder">PMS 알림</string>
+    <string name="profile_title">내 정보</string>
+    <string name="theme_customization">테마</string>
+    <string name="theme_color">테마 색상</string>
+    <string name="app_lock">앱 잠금</string>
+    <string name="language">언어</string>
+    <string name="recycle_bin">휴지통</string>
+    <string name="backup_restore">백업 및 복원</string>
+    <string name="about">정보</string>
+    <string name="recycle_bin_title">휴지통</string>
+    <string name="no_deleted_records">삭제된 기록이 없습니다</string>
+    <string name="backup_restore_title">백업 및 복원</string>
+    <string name="export_backup">백업 내보내기</string>
+    <string name="import_backup">백업 가져오기</string>
+    <string name="export_csv">CSV 내보내기</string>
+    <string name="settings_title">설정</string>
+    <string name="bmi_title">BMI 기록</string>
+    <string name="add_bmi_record">기록 추가</string>
+    <string name="height_cm">신장(cm)</string>
+    <string name="weight_kg">체중(kg)</string>
+    <string name="latest_bmi">최근 BMI</string>
+    <string name="bmi_history">기록</string>
+    <string name="dark_mode">다크 모드</string>
+    <string name="dark_mode_description">테마 전환</string>
+    <string name="record_date">기록 날짜</string>
+    <string name="select_date">날짜 선택</string>
+    <string name="confirm">확인</string>
+    <string name="cancel">취소</string>
+    <string name="background_customization">배경 설정</string>
+    <string name="select_background_image">배경 이미지 선택</string>
+    <string name="background_transparency">배경 투명도</string>
+    <string name="remove_background">배경 제거</string>
+    <string name="delete">삭제</string>
+    <string name="delete_record">기록 삭제</string>
+    <string name="delete_record_confirm">이 날짜의 기록을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
+    <string name="security_settings">보안 설정</string>
+    <string name="prevent_screenshot">스크린샷 방지</string>
+    <string name="prevent_screenshot_description">스크린샷과 화면 녹화를 금지하여 프라이버시 보호</string>
+    <string name="app_lock_setup_title">앱 잠금 비밀번호 설정</string>
+    <string name="set_pin">비밀번호 설정</string>
+    <string name="confirm_pin">비밀번호 확인</string>
+    <string name="set_password">비밀번호 설정</string>
+    <string name="pin_empty_error">비밀번호를 입력하세요</string>
+    <string name="pin_mismatch_error">비밀번호가 일치하지 않습니다</string>
+    <string name="pin_length_error">비밀번호는 %d자 이상이어야 합니다</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">일</string>
+    <string name="week_mon">월</string>
+    <string name="week_tue">화</string>
+    <string name="week_wed">수</string>
+    <string name="week_thu">목</string>
+    <string name="week_fri">금</string>
+    <string name="week_sat">토</string>
+    <string name="calendar_date_format">yyyy년 MM월</string>
+    <string name="calendar_previous_month">이전 달</string>
+    <string name="calendar_next_month">다음 달</string>
+    <string name="calendar_add_record">기록 추가</string>
+    <string name="calendar_today">오늘</string>
+    <string name="back">뒤로</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">두통</string>
+    <string name="symptom_bloating">복부 팽만</string>
+    <string name="symptom_breast_tenderness">유방 통증</string>
+    <string name="symptom_backache">요통</string>
+    <string name="symptom_fatigue">피로</string>
+    <string name="symptom_mood_swings">기분 변화</string>
+    <string name="symptom_acne">여드름</string>
+    <string name="symptom_increased_appetite">식욕 증가</string>
+    <string name="symptom_insomnia">불면증</string>
+    <string name="symptom_nausea">메스꺼움</string>
+    <string name="flow_light">약함</string>
+    <string name="flow_medium">보통</string>
+    <string name="flow_heavy">심함</string>
+    <string name="pain_none">없음</string>
+    <string name="pain_mild">약간</string>
+    <string name="pain_moderate">중간</string>
+    <string name="pain_severe">심함</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">일</string>
+    <string name="predicted_period_label">예측 월경: %1$s - %2$s</string>
+    <string name="ovulation_date_label">배란일: %s</string>
+    <string name="confidence_label">신뢰도: %1$s (%2$d 주기 기준)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">며칠 전</string>
+    <string name="reminder_time">알림 시간</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">활성화</string>
+    <string name="disabled">비활성화</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">핑크</string>
+    <string name="color_dark_pink">다크 핑크</string>
+    <string name="color_peach">피치</string>
+    <string name="color_light_purple">라이트 퍼플</string>
+    <string name="color_medium_purple">미디엄 퍼플</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">저체중</string>
+    <string name="bmi_category_normal">정상</string>
+    <string name="bmi_category_overweight">과체중</string>
+    <string name="bmi_category_obese">비만</string>
+    <string name="bmi_standard_note">중국 BMI 기준 기반</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">백업 성공</string>
+    <string name="backup_fail">백업 실패</string>
+    <string name="restore_success">복원 성공</string>
+    <string name="restore_fail">복원 실패</string>
+    <string name="export_success">내보내기 성공</string>
+    <string name="export_fail">내보내기 실패</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">데이터베이스를 ZIP 백업 파일로 내보내기</string>
+    <string name="backup_import_desc">백업 파일에서 데이터 복원</string>
+    <string name="backup_csv_desc">레코드를 CSV 스프레드시트로 내보내기</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">삭제 시간: %s</string>
+    <string name="in_progress">진행 중</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">%d초 기다려 주세요</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">인증 실패: %s</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">주기 길이 추이</string>
+    <string name="chart_title_pain_trend">통증 추이</string>
+    <string name="chart_title_symptom_distribution">증상 분포</string>
+    <string name="chart_cycle_label">%d주기</string>
+    <string name="chart_cycle_length_label">주기 길이</string>
+    <string name="chart_pain_level_label">통증 수준</string>
+
+    <string name="regularity_regular">규칙적</string>
+    <string name="regularity_somewhat_regular">다소 규칙적</string>
+    <string name="regularity_irregular">불규칙</string>
+    <string name="regularity_insufficient_data">데이터 부족</string>
+    <string name="confidence_high">높음</string>
+    <string name="confidence_medium">중간</string>
+    <string name="confidence_low">낮음</string>
+
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">데이터가 없습니다</string>
+    <string name="analysis_no_data_hint">생리 기록을 시작하면 여기에서 분석과 예측을 확인할 수 있습니다</string>
+
+    <plurals name="days_count">
+        <item quantity="other">%d일</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">생리 리마인더</string>
+    <string name="channel_ovulation_reminder">배란기 리마인더</string>
+    <string name="channel_pms_reminder">PMS 리마인더</string>
+    <string name="channel_custom_reminder">사용자 정의 리마인더</string>
+    <string name="notif_period_title">생리 리마인더</string>
+    <string name="notif_period_message">생리가 %d일 후에 시작될 예정입니다</string>
+    <string name="notif_ovulation_title">배란기 리마인더</string>
+    <string name="notif_ovulation_message">배란일이 %d일 후에 예정됩니다</string>
+    <string name="notif_pms_title">PMS 리마인더</string>
+    <string name="notif_pms_message">PMS 증상이 %d일 후에 나타날 수 있습니다</string>
+</resources>
