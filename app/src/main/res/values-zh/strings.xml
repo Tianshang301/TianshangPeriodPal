@@ -133,8 +133,6 @@
     <string name="time_picker_mode_wheel">滚轮选时</string>
     <string name="time_picker_mode_keyboard">键盘输入</string>
     <string name="time_format_error">格式错误，应为 HH:MM</string>
-    <string name="test_reminder">测试提醒</string>
-    <string name="test_notification_message">提醒功能正常工作</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">已启用</string>
