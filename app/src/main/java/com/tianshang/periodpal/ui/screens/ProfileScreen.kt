@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Backup
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -98,6 +99,21 @@ fun ProfileScreen(navController: NavController) {
                 Switch(
                     checked = settings.appLockEnabled,
                     onCheckedChange = { viewModel.toggleAppLock(it) }
+                )
+            }
+        )
+        
+        Divider()
+        
+        // Prevent screenshot
+        ListItem(
+            headlineContent = { Text(stringResource(R.string.prevent_screenshot)) },
+            supportingContent = { Text(stringResource(R.string.prevent_screenshot_description)) },
+            leadingContent = { Icon(Icons.Default.Security, null) },
+            trailingContent = {
+                Switch(
+                    checked = settings.preventScreenshot,
+                    onCheckedChange = { viewModel.togglePreventScreenshot(it) }
                 )
             }
         )
