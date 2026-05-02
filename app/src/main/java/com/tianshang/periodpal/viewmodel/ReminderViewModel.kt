@@ -58,12 +58,20 @@ class ReminderViewModel(
         updateAndReschedule(settings.value.copy(ovulationReminderDays = days))
     }
     
+    fun updateOvulationReminderTime(time: String) {
+        updateAndReschedule(settings.value.copy(ovulationReminderTime = time))
+    }
+    
     fun updatePmsReminderEnabled(enabled: Boolean) {
         updateAndReschedule(settings.value.copy(pmsReminderEnabled = enabled))
     }
     
     fun updatePmsReminderDays(days: Int) {
         updateAndReschedule(settings.value.copy(pmsReminderDays = days))
+    }
+    
+    fun updatePmsReminderTime(time: String) {
+        updateAndReschedule(settings.value.copy(pmsReminderTime = time))
     }
     
     class Factory(private val context: Context) : ViewModelProvider.Factory {

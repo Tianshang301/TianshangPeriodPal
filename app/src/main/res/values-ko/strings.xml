@@ -128,6 +128,8 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">며칠 전</string>
     <string name="reminder_time">알림 시간</string>
+    <string name="reminder_hour">시</string>
+    <string name="reminder_minute">분</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">활성화</string>

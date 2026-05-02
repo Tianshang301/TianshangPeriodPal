@@ -121,6 +121,8 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">Days before</string>
     <string name="reminder_time">Reminder time</string>
+    <string name="reminder_hour">Hour</string>
+    <string name="reminder_minute">Minute</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">Enabled</string>
