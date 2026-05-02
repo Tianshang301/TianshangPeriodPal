@@ -130,8 +130,9 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">提前天数</string>
     <string name="reminder_time">提醒时间</string>
-    <string name="reminder_hour">时</string>
-    <string name="reminder_minute">分</string>
+    <string name="time_picker_mode_wheel">滚轮选时</string>
+    <string name="time_picker_mode_keyboard">键盘输入</string>
+    <string name="time_format_error">格式错误，应为 HH:MM</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">已启用</string>

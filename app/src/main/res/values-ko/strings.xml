@@ -128,8 +128,9 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">며칠 전</string>
     <string name="reminder_time">알림 시간</string>
-    <string name="reminder_hour">시</string>
-    <string name="reminder_minute">분</string>
+    <string name="time_picker_mode_wheel">휠 입력</string>
+    <string name="time_picker_mode_keyboard">키보드 입력</string>
+    <string name="time_format_error">HH:MM 형식으로 입력하세요</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">활성화</string>

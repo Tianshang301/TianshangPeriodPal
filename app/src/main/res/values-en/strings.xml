@@ -121,8 +121,9 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">Days before</string>
     <string name="reminder_time">Reminder time</string>
-    <string name="reminder_hour">Hour</string>
-    <string name="reminder_minute">Minute</string>
+    <string name="time_picker_mode_wheel">Wheel picker</string>
+    <string name="time_picker_mode_keyboard">Keyboard input</string>
+    <string name="time_format_error">Invalid format, use HH:MM</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">Enabled</string>
