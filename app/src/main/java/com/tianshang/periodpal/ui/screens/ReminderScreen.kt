@@ -21,7 +21,6 @@ import androidx.navigation.NavController
 import com.commandiron.wheel_picker_compose.WheelTimePicker
 import com.commandiron.wheel_picker_compose.core.TimeFormat
 import com.tianshang.periodpal.R
-import com.tianshang.periodpal.service.ReminderScheduler
 import com.tianshang.periodpal.viewmodel.ReminderViewModel
 import java.time.LocalTime
 
@@ -70,15 +69,6 @@ fun ReminderScreen(navController: NavController) {
             onDaysChange = { viewModel.updatePmsReminderDays(it) },
             onTimeChange = { viewModel.updatePmsReminderTime(it) }
         )
-        
-        Spacer(modifier = Modifier.height(16.dp))
-        
-        OutlinedButton(
-            onClick = { ReminderScheduler.showTestNotification(context) },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(stringResource(R.string.test_reminder))
-        }
     }
 }
 

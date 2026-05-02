@@ -133,8 +133,6 @@
     <string name="time_picker_mode_wheel">Wheel picker</string>
     <string name="time_picker_mode_keyboard">Keyboard input</string>
     <string name="time_format_error">Invalid format, use HH:MM</string>
-    <string name="test_reminder">Test Reminder</string>
-    <string name="test_notification_message">Reminder is working</string>
     
     <!-- SettingsScreen -->
     <string name="enabled">Enabled</string>
