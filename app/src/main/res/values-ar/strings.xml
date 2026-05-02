@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources dir="rtl">
+    <string name="app_name">تيانشانغ بيريود بال</string>
+    <string name="terms_title">شروط الخدمة</string>
+    <string name="privacy_title">سياسة الخصوصية</string>
+    <string name="accept_terms">لقد قرأت وأوافق</string>
+    <string name="app_lock_title">قفل التطبيق</string>
+    <string name="enter_pin">كلمة المرور</string>
+    <string name="unlock">فتح القفل</string>
+    <string name="invalid_pin">كلمة المرور غير صالحة</string>
+    <string name="calendar_title">التقويم</string>
+    <string name="current_cycle_day">اليوم %d من الدورة</string>
+    <string name="tap_date_to_record">اضغط للتسجيل</string>
+    <string name="period">الحيض</string>
+    <string name="predicted_period">الحيض المتوقع</string>
+    <string name="ovulation">الإباضة</string>
+    <string name="fertile_window">نافذة الخصوبة</string>
+    <string name="record_title">تسجيل</string>
+    <string name="start_period">بدء الحيض</string>
+    <string name="end_period">انتهاء الحيض</string>
+    <string name="flow_level">مستوى التدفق</string>
+    <string name="pain_level">مستوى الألم</string>
+    <string name="symptoms">الأعراض</string>
+    <string name="notes">ملاحظات</string>
+    <string name="save">حفظ</string>
+    <string name="analysis_title">تحليل</string>
+    <string name="predictions">التنبؤات</string>
+    <string name="reminder_title">التذكيرات</string>
+    <string name="profile_title">ملفي</string>
+    <string name="app_lock">قفل التطبيق</string>
+    <string name="language">اللغة</string>
+    <string name="recycle_bin">سلة المحذوفات</string>
+    <string name="about">حول</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="bmi_title">مؤشر كتلة الجسم</string>
+    <string name="add_bmi_record">إضافة</string>
+    <string name="height_cm">الطول(سم)</string>
+    <string name="weight_kg">الوزن(كجم)</string>
+    <string name="latest_bmi">آخر قياس</string>
+    <string name="bmi_history">السجل</string>
+    <string name="dark_mode">الوضع الداكن</string>
+    <string name="dark_mode_description">تبديل السمة</string>
+    <string name="record_date">تاريخ التسجيل</string>
+    <string name="select_date">اختيار التاريخ</string>
+    <string name="confirm">تأكيد</string>
+    <string name="cancel">إلغاء</string>
+    <string name="background_customization">الخلفية</string>
+    <string name="select_background_image">اختيار صورة الخلفية</string>
+    <string name="background_transparency">شفافية الخلفية</string>
+    <string name="remove_background">إزالة الخلفية</string>
+    <string name="delete">حذف</string>
+    <string name="delete_record">حذف السجل</string>
+    <string name="delete_record_confirm">هل أنت متأكد أنك تريد حذف سجل هذا التاريخ؟ هذا الإجراء لا يمكن التراجع عنه.</string>
+    <string name="security_settings">الأمان</string>
+    <string name="prevent_screenshot">منع لقطات الشاشة</string>
+    <string name="prevent_screenshot_description">تعطيل لقطات الشاشة وتسجيل الشاشة</string>
+    <string name="app_lock_setup_title">تعيين كلمة مرور القفل</string>
+    <string name="set_pin">تعيين كلمة المرور</string>
+    <string name="confirm_pin">تأكيد كلمة المرور</string>
+    <string name="set_password">تعيين كلمة المرور</string>
+    <string name="pin_empty_error">كلمة المرور لا يمكن أن تكون فارغة</string>
+    <string name="pin_mismatch_error">كلمات المرور غير متطابقة</string>
+    <string name="pin_length_error">يجب أن تكون كلمة المرور %d أحرف على الأقل</string>
+    <string name="ovulation_reminder">تذكير بالإباضة</string>
+    <string name="pms_reminder">تذكير بمتلازمة ما قبل الحيض</string>
+    <string name="no_deleted_records">لا توجد سجلات محذوفة</string>
+    <string name="backup_restore_title">النسخ الاحتياطي والاستعادة</string>
+    <string name="export_backup">تصدير النسخة الاحتياطية</string>
+    <string name="import_backup">استيراد النسخة الاحتياطية</string>
+    <string name="export_csv">تصدير CSV</string>
+    <string name="avg_period_length">متوسط مدة الحيض</string>
+    <string name="symptom_frequency">تكرار الأعراض</string>
+    <string name="theme_color">لون السمة</string>
+    <string name="recycle_bin_title">سلة المحذوفات</string>
+    <string name="cycle_statistics">إحصائيات الدورة</string>
+    <string name="avg_cycle_length">متوسط طول الدورة</string>
+    <string name="cycle_regularity">انتظام الدورة</string>
+    <string name="total_cycles">إجمالي الدورات</string>
+    <string name="pain_trend">اتجاه الألم</string>
+    <string name="sexual_activity">نشاط جنسي</string>
+    <string name="ovulation_test">اختبار الإباضة</string>
+    <string name="cervical_mucus">مخاط عنق الرحم</string>
+    <string name="body_temperature">درجة حرارة الجسم</string>
+    <string name="backup_restore">النسخ الاحتياطي</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">أحد</string>
+    <string name="week_mon">إثن</string>
+    <string name="week_tue">ثلاث</string>
+    <string name="week_wed">أربع</string>
+    <string name="week_thu">خميس</string>
+    <string name="week_fri">جمعة</string>
+    <string name="week_sat">سبت</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">الشهر السابق</string>
+    <string name="calendar_next_month">الشهر التالي</string>
+    <string name="calendar_add_record">إضافة تسجيل</string>
+    <string name="calendar_today">اليوم</string>
+    <string name="back">رجوع</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">صداع</string>
+    <string name="symptom_bloating">انتفاخ</string>
+    <string name="symptom_breast_tenderness">ألم الثدي</string>
+    <string name="symptom_backache">ألم الظهر</string>
+    <string name="symptom_fatigue">تعب</string>
+    <string name="symptom_mood_swings">تقلبات مزاجية</string>
+    <string name="symptom_acne">حب الشباب</string>
+    <string name="symptom_increased_appetite">زيادة الشهية</string>
+    <string name="symptom_insomnia">أرق</string>
+    <string name="symptom_nausea">غثيان</string>
+    <string name="flow_light">خفيف</string>
+    <string name="flow_medium">متوسط</string>
+    <string name="flow_heavy">غزير</string>
+    <string name="pain_none">لا يوجد</string>
+    <string name="pain_mild">خفيف</string>
+    <string name="pain_moderate">متوسط</string>
+    <string name="pain_severe">شديد</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">أيام</string>
+    <string name="predicted_period_label">الحيض المتوقع: %1$s - %2$s</string>
+    <string name="ovulation_date_label">الإباضة: %s</string>
+    <string name="confidence_label">الثقة: %1$s (بناءً على %2$d دورات)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">أيام قبل</string>
+    <string name="reminder_time">وقت التذكير</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">مفعل</string>
+    <string name="disabled">غير مفعل</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">وردي</string>
+    <string name="color_dark_pink">وردي غامق</string>
+    <string name="color_peach">خوخي</string>
+    <string name="color_light_purple">أرجواني فاتح</string>
+    <string name="color_medium_purple">أرجواني متوسط</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">سم</string>
+    <string name="unit_kg">كجم</string>
+    <string name="bmi_category_underweight">نقص وزن</string>
+    <string name="bmi_category_normal">طبيعي</string>
+    <string name="bmi_category_overweight">زيادة وزن</string>
+    <string name="bmi_category_obese">سمنة</string>
+    <string name="bmi_standard_note">استناداً إلى معيار مؤشر كتلة الجسم الصيني</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">تم النسخ الاحتياطي بنجاح</string>
+    <string name="backup_fail">فشل النسخ الاحتياطي</string>
+    <string name="restore_success">تمت الاستعادة بنجاح</string>
+    <string name="restore_fail">فشلت الاستعادة</string>
+    <string name="export_success">تم التصدير بنجاح</string>
+    <string name="export_fail">فشل التصدير</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">تصدير قاعدة البيانات كملف نسخ احتياطي ZIP</string>
+    <string name="backup_import_desc">استعادة البيانات من ملف النسخ الاحتياطي</string>
+    <string name="backup_csv_desc">تصدير السجلات كجدول CSV</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">تم الحذف: %s</string>
+    <string name="in_progress">قيد التنفيذ</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">يرجى الانتظار %d ثانية</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">فشل المصادقة: %s</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">اتجاه طول الدورة</string>
+    <string name="chart_title_pain_trend">اتجاه الألم</string>
+    <string name="chart_title_symptom_distribution">توزيع الأعراض</string>
+    <string name="chart_cycle_label">الدورة %d</string>
+    <string name="chart_cycle_length_label">طول الدورة</string>
+    <string name="chart_pain_level_label">مستوى الألم</string>
+
+    <string name="regularity_regular">منتظم</string>
+    <string name="regularity_somewhat_regular">منتظم إلى حد ما</string>
+    <string name="regularity_irregular">غير منتظم</string>
+    <string name="regularity_insufficient_data">بيانات غير كافية</string>
+    <string name="confidence_high">عالية</string>
+    <string name="confidence_medium">متوسطة</string>
+    <string name="confidence_low">منخفضة</string>
+
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">لا توجد بيانات بعد</string>
+    <string name="analysis_no_data_hint">ابدأ بتسجيل دورتك الشهرية لرؤية التحليلات والتنبؤات هنا</string>
+
+    <plurals name="days_count">
+        <item quantity="one">%d يوم</item>
+        <item quantity="two">%d يومان</item>
+        <item quantity="few">%d أيام</item>
+        <item quantity="many">%d يوماً</item>
+        <item quantity="other">%d يوم</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">تذكير بالحيض</string>
+    <string name="channel_ovulation_reminder">تذكير بالبويضة</string>
+    <string name="channel_pms_reminder">تذكير متلازمة ما قبل الطمث</string>
+    <string name="channel_custom_reminder">تذكير مخصص</string>
+    <string name="notif_period_title">تذكير بالحيض</string>
+    <string name="notif_period_message">من المتوقع أن يبدأ الحيض خلال %d يوم</string>
+    <string name="notif_ovulation_title">تذكير بالبويضة</string>
+    <string name="notif_ovulation_message">من المتوقع أن تحدث التبويض خلال %d يوم</string>
+    <string name="notif_pms_title">تذكير متلازمة ما قبل الطمث</string>
+    <string name="notif_pms_message">قد تظهر أعراض متلازمة ما قبل الطمث خلال %d يوم</string>
+</resources>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">天殤·月記</string>
+    <string name="terms_title">利用規約とプライバシーポリシー</string>
+    <string name="privacy_title">プライバシーポリシー</string>
+    <string name="accept_terms">読んで同意する</string>
+    <string name="app_lock_title">アプリロック</string>
+    <string name="enter_pin">パスワードを入力</string>
+    <string name="unlock">ロック解除</string>
+    <string name="invalid_pin">パスワードが無効です</string>
+    <string name="calendar_title">カレンダー</string>
+    <string name="current_cycle_day">現在の周期 %d 日目</string>
+    <string name="tap_date_to_record">日付をタップして記録</string>
+    <string name="period">月経</string>
+    <string name="predicted_period">予測月経</string>
+    <string name="ovulation">排卵日</string>
+    <string name="fertile_window">受孕期間</string>
+    <string name="record_title">記録</string>
+    <string name="start_period">月経開始</string>
+    <string name="end_period">月経終了</string>
+    <string name="flow_level">流量</string>
+    <string name="pain_level">痛みの程度</string>
+    <string name="symptoms">症状</string>
+    <string name="sexual_activity">性的活動</string>
+    <string name="ovulation_test">排卵検査薬</string>
+    <string name="cervical_mucus">子宮頸管粘液</string>
+    <string name="body_temperature">基礎体温</string>
+    <string name="notes">メモ</string>
+    <string name="save">保存</string>
+    <string name="analysis_title">分析</string>
+    <string name="cycle_statistics">周期統計</string>
+    <string name="avg_cycle_length">平均周期長</string>
+    <string name="avg_period_length">平均月経長</string>
+    <string name="cycle_regularity">周期の規則性</string>
+    <string name="total_cycles">総周期数</string>
+    <string name="pain_trend">痛みの傾向</string>
+    <string name="symptom_frequency">症状の頻度</string>
+    <string name="predictions">予測</string>
+    <string name="reminder_title">通知</string>
+    <string name="period_reminder">月経リマインダー</string>
+    <string name="ovulation_reminder">排卵リマインダー</string>
+    <string name="pms_reminder">PMSリマインダー</string>
+    <string name="profile_title">マイページ</string>
+    <string name="theme_customization">テーマ</string>
+    <string name="theme_color">テーマカラー</string>
+    <string name="app_lock">アプリロック</string>
+    <string name="language">言語</string>
+    <string name="recycle_bin">ごみ箱</string>
+    <string name="backup_restore">バックアップと復元</string>
+    <string name="about">について</string>
+    <string name="recycle_bin_title">ごみ箱</string>
+    <string name="no_deleted_records">削除された記録はありません</string>
+    <string name="backup_restore_title">バックアップと復元</string>
+    <string name="export_backup">バックアップをエクスポート</string>
+    <string name="import_backup">バックアップをインポート</string>
+    <string name="export_csv">CSVをエクスポート</string>
+    <string name="settings_title">設定</string>
+    <string name="bmi_title">BMI記録</string>
+    <string name="add_bmi_record">記録を追加</string>
+    <string name="height_cm">身長(cm)</string>
+    <string name="weight_kg">体重(kg)</string>
+    <string name="latest_bmi">最新のBMI</string>
+    <string name="bmi_history">履歴</string>
+    <string name="dark_mode">ダークモード</string>
+    <string name="dark_mode_description">テーマを切り替え</string>
+    <string name="record_date">記録日</string>
+    <string name="select_date">日付を選択</string>
+    <string name="confirm">確認</string>
+    <string name="cancel">キャンセル</string>
+    <string name="background_customization">背景設定</string>
+    <string name="select_background_image">背景画像を選択</string>
+    <string name="background_transparency">背景の透明度</string>
+    <string name="remove_background">背景を削除</string>
+    <string name="delete">削除</string>
+    <string name="delete_record">記録を削除</string>
+    <string name="delete_record_confirm">この日付の記録を削除してもよろしいですか？この操作は取り消せません。</string>
+    <string name="security_settings">セキュリティ設定</string>
+    <string name="prevent_screenshot">スクリーンショット防止</string>
+    <string name="prevent_screenshot_description">スクリーンショットと画面録画を禁止し、プライバシーを保護</string>
+    <string name="app_lock_setup_title">アプリロックパスワードを設定</string>
+    <string name="set_pin">パスワードを設定</string>
+    <string name="confirm_pin">パスワードを確認</string>
+    <string name="set_password">パスワードを設定</string>
+    <string name="pin_empty_error">パスワードを入力してください</string>
+    <string name="pin_mismatch_error">パスワードが一致しません</string>
+    <string name="pin_length_error">パスワードは%d文字以上必要です</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">日</string>
+    <string name="week_mon">月</string>
+    <string name="week_tue">火</string>
+    <string name="week_wed">水</string>
+    <string name="week_thu">木</string>
+    <string name="week_fri">金</string>
+    <string name="week_sat">土</string>
+    <string name="calendar_date_format">yyyy年MM月</string>
+    <string name="calendar_previous_month">先月</string>
+    <string name="calendar_next_month">来月</string>
+    <string name="calendar_add_record">記録を追加</string>
+    <string name="calendar_today">今日</string>
+    <string name="back">戻る</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">頭痛</string>
+    <string name="symptom_bloating">腹部膨満</string>
+    <string name="symptom_breast_tenderness">乳房の張り</string>
+    <string name="symptom_backache">腰痛</string>
+    <string name="symptom_fatigue">疲労</string>
+    <string name="symptom_mood_swings">気分の変動</string>
+    <string name="symptom_acne">ニキビ</string>
+    <string name="symptom_increased_appetite">食欲増進</string>
+    <string name="symptom_insomnia">不眠</string>
+    <string name="symptom_nausea">吐き気</string>
+    <string name="flow_light">少ない</string>
+    <string name="flow_medium">普通</string>
+    <string name="flow_heavy">多い</string>
+    <string name="pain_none">なし</string>
+    <string name="pain_mild">軽い</string>
+    <string name="pain_moderate">中程度</string>
+    <string name="pain_severe">重度</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">日</string>
+    <string name="predicted_period_label">予測月経: %1$s - %2$s</string>
+    <string name="ovulation_date_label">排卵日: %s</string>
+    <string name="confidence_label">信頼度: %1$s（%2$d 周期に基づく）</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">何日前</string>
+    <string name="reminder_time">通知時間</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">有効</string>
+    <string name="disabled">無効</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">ピンク</string>
+    <string name="color_dark_pink">ダークピンク</string>
+    <string name="color_peach">ピーチ</string>
+    <string name="color_light_purple">薄紫</string>
+    <string name="color_medium_purple">中紫</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">低体重</string>
+    <string name="bmi_category_normal">標準</string>
+    <string name="bmi_category_overweight">過体重</string>
+    <string name="bmi_category_obese">肥満</string>
+    <string name="bmi_standard_note">中国BMI基準に基づく</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">バックアップ成功</string>
+    <string name="backup_fail">バックアップ失敗</string>
+    <string name="restore_success">復元成功</string>
+    <string name="restore_fail">復元失敗</string>
+    <string name="export_success">エクスポート成功</string>
+    <string name="export_fail">エクスポート失敗</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">データベースをZIPバックアップファイルとしてエクスポート</string>
+    <string name="backup_import_desc">バックアップファイルからデータを復元</string>
+    <string name="backup_csv_desc">レコードをCSVスプレッドシートとしてエクスポート</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">削除日時: %s</string>
+    <string name="in_progress">進行中</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">%d秒お待ちください</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">認証失敗: %s</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">周期長さの傾向</string>
+    <string name="chart_title_pain_trend">痛みの傾向</string>
+    <string name="chart_title_symptom_distribution">症状分布</string>
+    <string name="chart_cycle_label">第%d周期</string>
+    <string name="chart_cycle_length_label">周期長さ</string>
+    <string name="chart_pain_level_label">痛みの程度</string>
+
+    <string name="regularity_regular">規則的</string>
+    <string name="regularity_somewhat_regular">やや規則的</string>
+    <string name="regularity_irregular">不規則</string>
+    <string name="regularity_insufficient_data">データ不足</string>
+    <string name="confidence_high">高い</string>
+    <string name="confidence_medium">中程度</string>
+    <string name="confidence_low">低い</string>
+
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">データがありません</string>
+    <string name="analysis_no_data_hint">月経の記録を開始すると、ここで分析と予測を確認できます</string>
+
+    <plurals name="days_count">
+        <item quantity="other">%d日</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">月経リマインダー</string>
+    <string name="channel_ovulation_reminder">排卵期リマインダー</string>
+    <string name="channel_pms_reminder">PMSリマインダー</string>
+    <string name="channel_custom_reminder">カスタムリマインダー</string>
+    <string name="notif_period_title">月経リマインダー</string>
+    <string name="notif_period_message">月経が%d日後に始まる予定です</string>
+    <string name="notif_ovulation_title">排卵期リマインダー</string>
+    <string name="notif_ovulation_message">排卵日が%d日後の予定です</string>
+    <string name="notif_pms_title">PMSリマインダー</string>
+    <string name="notif_pms_message">PMS症状が%d日後に現れる可能性があります</string>
+</resources>

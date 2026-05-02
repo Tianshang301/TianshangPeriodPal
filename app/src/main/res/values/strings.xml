@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Terms of Service</string>
+    <string name="privacy_title">Privacy Policy</string>
+    <string name="accept_terms">I have read and accept</string>
+    <string name="app_lock_title">App Lock</string>
+    <string name="enter_pin">Password</string>
+    <string name="unlock">Unlock</string>
+    <string name="invalid_pin">Invalid password</string>
+    <string name="app_lock_setup_title">Set App Lock Password</string>
+    <string name="set_pin">Set Password</string>
+    <string name="confirm_pin">Confirm Password</string>
+    <string name="set_password">Set Password</string>
+    <string name="pin_empty_error">Password cannot be empty</string>
+    <string name="pin_mismatch_error">Passwords do not match</string>
+    <string name="pin_length_error">Password must be at least %d characters</string>
+    <string name="calendar_title">Calendar</string>
+    <string name="current_cycle_day">Day %d of cycle</string>
+    <string name="tap_date_to_record">Tap to record</string>
+    <string name="period">Period</string>
+    <string name="predicted_period">Predicted Period</string>
+    <string name="ovulation">Ovulation</string>
+    <string name="fertile_window">Fertile Window</string>
+    <string name="record_title">Record</string>
+    <string name="start_period">Start Period</string>
+    <string name="end_period">End Period</string>
+    <string name="flow_level">Flow</string>
+    <string name="pain_level">Pain</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="sexual_activity">Sexual Activity</string>
+    <string name="ovulation_test">Ovulation Test</string>
+    <string name="cervical_mucus">Cervical Mucus</string>
+    <string name="body_temperature">Body Temperature</string>
+    <string name="notes">Notes</string>
+    <string name="save">Save</string>
+    <string name="analysis_title">Analysis</string>
+    <string name="cycle_statistics">Statistics</string>
+    <string name="avg_cycle_length">Average Cycle</string>
+    <string name="avg_period_length">Average Period</string>
+    <string name="cycle_regularity">Regularity</string>
+    <string name="total_cycles">Total Cycles</string>
+    <string name="pain_trend">Pain Trend</string>
+    <string name="symptom_frequency">Symptom Frequency</string>
+    <string name="predictions">Predictions</string>
+    <string name="reminder_title">Reminders</string>
+    <string name="period_reminder">Period Reminder</string>
+    <string name="ovulation_reminder">Ovulation Reminder</string>
+    <string name="pms_reminder">PMS Reminder</string>
+    <string name="profile_title">Profile</string>
+    <string name="theme_customization">Theme</string>
+    <string name="theme_color">Theme Color</string>
+    <string name="app_lock">App Lock</string>
+    <string name="language">Language</string>
+    <string name="recycle_bin">Recycle Bin</string>
+    <string name="recycle_bin_title">Recycle Bin</string>
+    <string name="backup_restore">Backup</string>
+    <string name="backup_restore_title">Backup &amp; Restore</string>
+    <string name="export_backup">Export Backup</string>
+    <string name="import_backup">Import Backup</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="about">About</string>
+    <string name="settings_title">Settings</string>
+    <string name="bmi_title">BMI</string>
+    <string name="add_bmi_record">Add</string>
+    <string name="height_cm">Height (cm)</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="latest_bmi">Current BMI</string>
+    <string name="bmi_history">History</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode_description">Change theme</string>
+    <string name="terms_content">Terms and conditions content.</string>
+    <string name="privacy_content">Privacy policy content.</string>
+    <string name="no_deleted_records">No deleted records</string>
+    <string name="security_settings">Security</string>
+    <string name="prevent_screenshot">Prevent Screenshot</string>
+    <string name="prevent_screenshot_description">Disable screenshots and screen recording to protect privacy</string>
+    <string name="record_date">Record Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="background_customization">Background</string>
+    <string name="select_background_image">Select Background Image</string>
+    <string name="background_transparency">Background Transparency</string>
+    <string name="remove_background">Remove Background</string>
+    <string name="delete">Delete</string>
+    <string name="delete_record">Delete Record</string>
+    <string name="delete_record_confirm">Are you sure you want to delete the record for this date? This action cannot be undone.</string>
+    
+    <!-- CalendarScreen -->
+    <string name="week_sun">Sun</string>
+    <string name="week_mon">Mon</string>
+    <string name="week_tue">Tue</string>
+    <string name="week_wed">Wed</string>
+    <string name="week_thu">Thu</string>
+    <string name="week_fri">Fri</string>
+    <string name="week_sat">Sat</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Previous month</string>
+    <string name="calendar_next_month">Next month</string>
+    <string name="calendar_add_record">Add record</string>
+    <string name="calendar_today">Today</string>
+    <string name="back">Back</string>
+    
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Headache</string>
+    <string name="symptom_bloating">Bloating</string>
+    <string name="symptom_breast_tenderness">Breast tenderness</string>
+    <string name="symptom_backache">Backache</string>
+    <string name="symptom_fatigue">Fatigue</string>
+    <string name="symptom_mood_swings">Mood swings</string>
+    <string name="symptom_acne">Acne</string>
+    <string name="symptom_increased_appetite">Increased appetite</string>
+    <string name="symptom_insomnia">Insomnia</string>
+    <string name="symptom_nausea">Nausea</string>
+    <string name="flow_light">Light</string>
+    <string name="flow_medium">Medium</string>
+    <string name="flow_heavy">Heavy</string>
+    <string name="pain_none">None</string>
+    <string name="pain_mild">Mild</string>
+    <string name="pain_moderate">Moderate</string>
+    <string name="pain_severe">Severe</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="unit_days">days</string>
+    <string name="predicted_period_label">Predicted period: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Ovulation: %s</string>
+    <string name="confidence_label">Confidence: %1$s (based on %2$d cycles)</string>
+    
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Days before</string>
+    <string name="reminder_time">Reminder time</string>
+    
+    <!-- SettingsScreen -->
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    
+    <!-- ThemeScreen -->
+    <string name="color_pink">Pink</string>
+    <string name="color_dark_pink">Dark pink</string>
+    <string name="color_peach">Peach</string>
+    <string name="color_light_purple">Light purple</string>
+    <string name="color_medium_purple">Medium purple</string>
+    
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Underweight</string>
+    <string name="bmi_category_normal">Normal</string>
+    <string name="bmi_category_overweight">Overweight</string>
+    <string name="bmi_category_obese">Obese</string>
+    <string name="bmi_standard_note">Based on Chinese BMI standard</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_success">Backup successful</string>
+    <string name="backup_fail">Backup failed</string>
+    <string name="restore_success">Restore successful</string>
+    <string name="restore_fail">Restore failed</string>
+    <string name="export_success">Export successful</string>
+    <string name="export_fail">Export failed</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Export database as a ZIP backup file</string>
+    <string name="backup_import_desc">Restore data from a backup file</string>
+    <string name="backup_csv_desc">Export records as a CSV spreadsheet</string>
+    
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Deleted: %s</string>
+    <string name="in_progress">In progress</string>
+    
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Please wait %d seconds</string>
+    
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Authentication failed: %s</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Cycle Length Trend</string>
+    <string name="chart_title_pain_trend">Pain Trend</string>
+    <string name="chart_title_symptom_distribution">Symptom Distribution</string>
+    <string name="chart_cycle_label">Cycle %d</string>
+    <string name="chart_cycle_length_label">Cycle Length</string>
+    <string name="chart_pain_level_label">Pain Level</string>
+    
+    <string name="regularity_regular">Regular</string>
+    <string name="regularity_somewhat_regular">Somewhat regular</string>
+    <string name="regularity_irregular">Irregular</string>
+    <string name="regularity_insufficient_data">Insufficient data</string>
+    <string name="confidence_high">High</string>
+    <string name="confidence_medium">Medium</string>
+    <string name="confidence_low">Low</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">No data yet</string>
+    <string name="analysis_no_data_hint">Start recording your period to see analysis and predictions here</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Period Reminder</string>
+    <string name="channel_ovulation_reminder">Ovulation Reminder</string>
+    <string name="channel_pms_reminder">PMS Reminder</string>
+    <string name="channel_custom_reminder">Custom Reminder</string>
+    <string name="notif_period_title">Period Reminder</string>
+    <string name="notif_period_message">Your period is predicted to start in %d days</string>
+    <string name="notif_ovulation_title">Ovulation Reminder</string>
+    <string name="notif_ovulation_message">Ovulation is predicted in %d days</string>
+    <string name="notif_pms_title">PMS Reminder</string>
+    <string name="notif_pms_message">PMS symptoms may start in %d days</string>
+</resources>
