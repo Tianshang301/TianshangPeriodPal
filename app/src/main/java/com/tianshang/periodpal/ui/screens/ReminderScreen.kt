@@ -2,19 +2,27 @@ package com.tianshang.periodpal.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Keyboard
+import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.commandiron.wheel_picker_compose.WheelTimePicker
+import com.commandiron.wheel_picker_compose.core.TimeFormat
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.viewmodel.ReminderViewModel
-import kotlin.math.roundToInt
+import java.time.LocalTime
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,14 +83,28 @@ fun ReminderCard(
     onTimeChange: (String) -> Unit
 ) {
     val timeParts = time.split(":")
-    var hour by remember(time) { mutableFloatStateOf(timeParts.getOrNull(0)?.toFloatOrNull() ?: 8f) }
-    var minute by remember(time) { mutableFloatStateOf(timeParts.getOrNull(1)?.toFloatOrNull() ?: 0f) }
+    val initialHour = timeParts.getOrNull(0)?.toIntOrNull() ?: 8
+    val initialMinute = timeParts.getOrNull(1)?.toIntOrNull() ?: 0
     
-    LaunchedEffect(hour, minute) {
-        val newTime = "%02d:%02d".format(hour.toInt(), minute.toInt())
-        if (newTime != time) {
-            onTimeChange(newTime)
+    var useWheelPicker by remember { mutableStateOf(false) }
+    var timeText by remember(time) { mutableStateOf(time) }
+    var timeError by remember { mutableStateOf(false) }
+    
+    fun parseAndApplyTime(text: String) {
+        val regex = Regex("^\\d{2}:\\d{2}$")
+        if (!regex.matches(text)) {
+            timeError = true
+            return
         }
+        val parts = text.split(":")
+        val h = parts[0].toIntOrNull() ?: -1
+        val m = parts[1].toIntOrNull() ?: -1
+        if (h !in 0..23 || m !in 0..59) {
+            timeError = true
+            return
+        }
+        timeError = false
+        onTimeChange(text)
     }
     
     Card(
@@ -131,65 +153,80 @@ fun ReminderCard(
                 
                 Spacer(modifier = Modifier.height(8.dp))
                 
-                Text(
-                    stringResource(R.string.reminder_time),
-                    style = MaterialTheme.typography.bodyMedium
-                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        stringResource(R.string.reminder_time),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    IconButton(onClick = { useWheelPicker = !useWheelPicker }) {
+                        Icon(
+                            imageVector = if (useWheelPicker) Icons.Default.Keyboard else Icons.Default.Schedule,
+                            contentDescription = stringResource(
+                                if (useWheelPicker) R.string.time_picker_mode_keyboard
+                                else R.string.time_picker_mode_wheel
+                            ),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                }
                 
                 Spacer(modifier = Modifier.height(4.dp))
                 
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        stringResource(R.string.reminder_hour),
-                        modifier = Modifier.weight(0.2f),
-                        style = MaterialTheme.typography.bodySmall
+                if (useWheelPicker) {
+                    WheelTimePicker(
+                        startTime = LocalTime.of(initialHour, initialMinute),
+                        minTime = LocalTime.of(0, 0),
+                        maxTime = LocalTime.of(23, 59),
+                        timeFormat = TimeFormat.HOUR_24,
+                        size = DpSize(200.dp, 180.dp),
+                        rowCount = 5,
+                        textStyle = MaterialTheme.typography.titleMedium,
+                        textColor = MaterialTheme.colorScheme.onSurface,
+                        selectorProperties = com.commandiron.wheel_picker_compose.core.WheelPickerDefaults.selectorProperties(
+                            enabled = true,
+                            shape = MaterialTheme.shapes.medium,
+                            color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
+                            border = androidx.compose.foundation.BorderStroke(2.dp, MaterialTheme.colorScheme.primary)
+                        )
+                    ) { snappedTime ->
+                        val newTime = "%02d:%02d".format(snappedTime.hour, snappedTime.minute)
+                        onTimeChange(newTime)
+                        timeText = newTime
+                    }
+                } else {
+                    OutlinedTextField(
+                        value = timeText,
+                        onValueChange = { newValue ->
+                            if (newValue.length <= 5) {
+                                timeText = newValue
+                                timeError = false
+                            }
+                        },
+                        label = { Text("HH:MM") },
+                        isError = timeError,
+                        supportingText = if (timeError) {
+                            { Text(stringResource(R.string.time_format_error)) }
+                        } else null,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        singleLine = true,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 4.dp)
                     )
-                    Slider(
-                        value = hour,
-                        onValueChange = { hour = it },
-                        valueRange = 0f..23f,
-                        steps = 22,
-                        modifier = Modifier.weight(0.6f)
-                    )
-                    Text(
-                        "%02d".format(hour.toInt()),
-                        modifier = Modifier.weight(0.2f),
-                        style = MaterialTheme.typography.bodyMedium
-                    )
+                    
+                    Spacer(modifier = Modifier.height(4.dp))
+                    
+                    Button(
+                        onClick = { parseAndApplyTime(timeText) },
+                        modifier = Modifier.align(Alignment.End)
+                    ) {
+                        Text(stringResource(R.string.confirm))
+                    }
                 }
-                
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        stringResource(R.string.reminder_minute),
-                        modifier = Modifier.weight(0.2f),
-                        style = MaterialTheme.typography.bodySmall
-                    )
-                    Slider(
-                        value = minute,
-                        onValueChange = { minute = it },
-                        valueRange = 0f..55f,
-                        steps = 10,
-                        modifier = Modifier.weight(0.6f)
-                    )
-                    Text(
-                        "%02d".format(minute.toInt()),
-                        modifier = Modifier.weight(0.2f),
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                }
-                
-                Text(
-                    text = "%02d:%02d".format(hour.toInt(), minute.toInt()),
-                    style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                )
             }
         }
     }

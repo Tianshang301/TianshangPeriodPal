@@ -126,8 +126,9 @@
     <!-- ReminderScreen -->
     <string name="reminder_days_before">أيام قبل</string>
     <string name="reminder_time">وقت التذكير</string>
-    <string name="reminder_hour">ساعة</string>
-    <string name="reminder_minute">دقيقة</string>
+    <string name="time_picker_mode_wheel">مُختار العجلة</string>
+    <string name="time_picker_mode_keyboard">إدخال لوحة المفاتيح</string>
+    <string name="time_format_error">تنسيق غير صحيح، استخدم HH:MM</string>
 
     <!-- SettingsScreen -->
     <string name="enabled">مفعل</string>
