@@ -54,16 +54,39 @@ class SettingsViewModel(
         return withContext(Dispatchers.IO) {
             try {
                 val inputStream = context.contentResolver.openInputStream(contentUri) ?: return@withContext null
+
+                val header = ByteArray(12)
+                val read = inputStream.read(header)
+                inputStream.close()
+
+                if (read < 4) return@withContext null
+                val isJpeg = header[0] == 0xFF.toByte() && header[1] == 0xD8.toByte() && header[2] == 0xFF.toByte()
+                val isPng = header[0] == 0x89.toByte() && header[1] == 0x50.toByte() && header[2] == 0x4E.toByte() && header[3] == 0x47.toByte()
+                val isWebP = read >= 12 && header[8] == 0x57.toByte() && header[9] == 0x45.toByte() && header[10] == 0x42.toByte() && header[11] == 0x50.toByte()
+                if (!isJpeg && !isPng && !isWebP) return@withContext null
+
+                val reOpenStream = context.contentResolver.openInputStream(contentUri) ?: return@withContext null
+                val maxSize = 10 * 1024 * 1024
                 val dir = File(context.filesDir, "backgrounds")
                 dir.mkdirs()
                 val file = File(dir, "background_image.jpg")
                 file.outputStream().use { output ->
-                    inputStream.copyTo(output)
+                    val buffer = ByteArray(8192)
+                    var totalBytes = 0L
+                    var bytesRead: Int
+                    while (reOpenStream.read(buffer).also { bytesRead = it } != -1) {
+                        totalBytes += bytesRead
+                        if (totalBytes > maxSize) {
+                            reOpenStream.close()
+                            file.delete()
+                            return@withContext null
+                        }
+                        output.write(buffer, 0, bytesRead)
+                    }
                 }
-                inputStream.close()
+                reOpenStream.close()
                 Uri.fromFile(file).toString()
-            } catch (e: Exception) {
-                e.printStackTrace()
+            } catch (_: Exception) {
                 null
             }
         }

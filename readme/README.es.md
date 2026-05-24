@@ -164,12 +164,14 @@ Ya configurada en `app/build.gradle`:
 signingConfigs {
     release {
         storeFile file('periodpal-release.jks')
-        storePassword 'periodpal123'
-        keyAlias 'periodpal'
-        keyPassword 'periodpal123'
+        storePassword '<YOUR_KEYSTORE_PASSWORD>'
+        keyAlias '<YOUR_KEY_ALIAS>'
+        keyPassword '<YOUR_KEY_PASSWORD>'
     }
 }
 ```
+
+> **Nota**: Copia `local.properties.example` como `local.properties` y completa tus credenciales de firma. Nunca hagas commit de `local.properties` en el control de versiones.
 
 ---
 

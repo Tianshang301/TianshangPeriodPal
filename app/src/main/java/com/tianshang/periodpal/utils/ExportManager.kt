@@ -68,8 +68,7 @@ class ExportManager(private val context: Context) {
             }
             
             Uri.fromFile(file)
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } catch (_: Exception) {
             null
         }
     }

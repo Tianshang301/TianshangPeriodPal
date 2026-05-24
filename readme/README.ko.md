@@ -164,12 +164,14 @@ set JAVA_HOME="C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot"
 signingConfigs {
     release {
         storeFile file('periodpal-release.jks')
-        storePassword 'periodpal123'
-        keyAlias 'periodpal'
-        keyPassword 'periodpal123'
+        storePassword '<YOUR_KEYSTORE_PASSWORD>'
+        keyAlias '<YOUR_KEY_ALIAS>'
+        keyPassword '<YOUR_KEY_PASSWORD>'
     }
 }
 ```
+
+> **참고**: `local.properties.example`을 `local.properties`로 복사하고 서명 정보를 입력하세요. `local.properties`를 버전 관리에 커밋하지 마세요.
 
 ---
 

@@ -18,7 +18,6 @@ class SettingsRepository(private val context: Context) {
         val BACKGROUND_IMAGE_URI = stringPreferencesKey("background_image_uri")
         val BACKGROUND_TRANSPARENCY = intPreferencesKey("background_transparency")
         val APP_LOCK_ENABLED = booleanPreferencesKey("app_lock_enabled")
-        val APP_LOCK_PASSWORD_HASH = stringPreferencesKey("app_lock_password_hash")
         val LANGUAGE = stringPreferencesKey("language")
         val FIRST_LAUNCH = booleanPreferencesKey("first_launch")
         val TERMS_ACCEPTED = booleanPreferencesKey("terms_accepted")
@@ -50,7 +49,6 @@ class SettingsRepository(private val context: Context) {
             backgroundImageUri = preferences[PreferencesKeys.BACKGROUND_IMAGE_URI],
             backgroundTransparency = preferences[PreferencesKeys.BACKGROUND_TRANSPARENCY] ?: 50,
             appLockEnabled = preferences[PreferencesKeys.APP_LOCK_ENABLED] ?: false,
-            appLockPasswordHash = preferences[PreferencesKeys.APP_LOCK_PASSWORD_HASH],
             language = preferences[PreferencesKeys.LANGUAGE],
             firstLaunch = preferences[PreferencesKeys.FIRST_LAUNCH] ?: true,
             termsAccepted = preferences[PreferencesKeys.TERMS_ACCEPTED] ?: false,
@@ -81,7 +79,6 @@ class SettingsRepository(private val context: Context) {
             }
             preferences[PreferencesKeys.BACKGROUND_TRANSPARENCY] = settings.backgroundTransparency
             preferences[PreferencesKeys.APP_LOCK_ENABLED] = settings.appLockEnabled
-            settings.appLockPasswordHash?.let { preferences[PreferencesKeys.APP_LOCK_PASSWORD_HASH] = it }
             settings.language?.let { preferences[PreferencesKeys.LANGUAGE] = it }
             preferences[PreferencesKeys.FIRST_LAUNCH] = settings.firstLaunch
             preferences[PreferencesKeys.TERMS_ACCEPTED] = settings.termsAccepted
@@ -115,7 +112,6 @@ data class UserSettings(
     val backgroundImageUri: String? = null,
     val backgroundTransparency: Int = 50,
     val appLockEnabled: Boolean = false,
-    val appLockPasswordHash: String? = null,
     val language: String? = null,
     val firstLaunch: Boolean = true,
     val termsAccepted: Boolean = false,

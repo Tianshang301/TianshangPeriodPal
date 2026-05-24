@@ -38,8 +38,7 @@ class BackupManager(private val context: Context) {
             }
             
             Uri.fromFile(exportFile)
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } catch (_: Exception) {
             null
         }
     }
@@ -49,15 +48,26 @@ class BackupManager(private val context: Context) {
             context.contentResolver.openInputStream(uri)?.use { inputStream ->
                 val tempDir = File(context.cacheDir, "import_temp")
                 tempDir.mkdirs()
-                
+
                 ZipInputStream(inputStream).use { zipIn ->
                     var entry: ZipEntry?
                     var hash: String? = null
-                    
+
                     while (zipIn.nextEntry.also { entry = it } != null) {
-                        val file = File(tempDir, entry!!.name)
-                        
-                        if (entry!!.name == "integrity_hash.txt") {
+                        val entryName = entry!!.name
+                        val sanitizedName = File(entryName).name
+                        if (sanitizedName != entryName || entryName.contains("..") || entryName.contains("/")) {
+                            zipIn.closeEntry()
+                            continue
+                        }
+
+                        val file = File(tempDir, sanitizedName)
+                        val canonicalPath = file.canonicalPath
+                        if (!canonicalPath.startsWith(tempDir.canonicalPath)) {
+                            throw SecurityException("ZIP entry attempts path traversal: $entryName")
+                        }
+
+                        if (sanitizedName == "integrity_hash.txt") {
                             hash = zipIn.bufferedReader().readText()
                         } else {
                             FileOutputStream(file).use { output ->
@@ -65,13 +75,11 @@ class BackupManager(private val context: Context) {
                             }
                         }
                     }
-                    
-                    // Verify integrity
+
                     val dbFile = File(tempDir, "period_pal_database")
                     if (dbFile.exists() && hash != null) {
                         val calculatedHash = calculateFileHash(dbFile)
                         if (calculatedHash == hash) {
-                            // Replace current database
                             val currentDb = context.getDatabasePath("period_pal_database")
                             dbFile.copyTo(currentDb, overwrite = true)
                             return true
@@ -80,8 +88,7 @@ class BackupManager(private val context: Context) {
                 }
             }
             false
-        } catch (e: Exception) {
-            e.printStackTrace()
+        } catch (_: Exception) {
             false
         }
     }

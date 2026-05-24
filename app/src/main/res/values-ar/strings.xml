@@ -172,6 +172,9 @@
 
     <!-- AppLockScreen -->
     <string name="auth_failed">فشل المصادقة: %s</string>
+    <string name="auth_failed_generic">فشل المصادقة</string>
+    <string name="biometric_init_failed">فشل تهيئة المصادقة البيومترية</string>
+    <string name="lockout_message">محاولات كثيرة جداً. يرجى الانتظار %d ثانية.</string>
 
     <!-- ChartComponents -->
     <string name="chart_title_cycle_length_trend">اتجاه طول الدورة</string>

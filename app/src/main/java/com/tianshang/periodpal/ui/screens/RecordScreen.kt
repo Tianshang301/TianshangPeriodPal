@@ -319,7 +319,7 @@ fun RecordScreen(
         // Ovulation test
         OutlinedTextField(
             value = ovulationTest,
-            onValueChange = { ovulationTest = it },
+            onValueChange = { if (it.length <= 200) ovulationTest = it },
             label = { Text(stringResource(R.string.ovulation_test)) },
             modifier = Modifier.fillMaxWidth()
         )
@@ -327,7 +327,7 @@ fun RecordScreen(
         // Cervical mucus
         OutlinedTextField(
             value = cervicalMucus,
-            onValueChange = { cervicalMucus = it },
+            onValueChange = { if (it.length <= 200) cervicalMucus = it },
             label = { Text(stringResource(R.string.cervical_mucus)) },
             modifier = Modifier.fillMaxWidth()
         )
@@ -335,7 +335,7 @@ fun RecordScreen(
         // Body temperature
         OutlinedTextField(
             value = bodyTemperature,
-            onValueChange = { bodyTemperature = it },
+            onValueChange = { if (it.length <= 10) bodyTemperature = it },
             label = { Text(stringResource(R.string.body_temperature)) },
             modifier = Modifier.fillMaxWidth()
         )
@@ -343,7 +343,7 @@ fun RecordScreen(
         // Notes
         OutlinedTextField(
             value = notes,
-            onValueChange = { notes = it },
+            onValueChange = { if (it.length <= 500) notes = it },
             label = { Text(stringResource(R.string.notes)) },
             modifier = Modifier.fillMaxWidth(),
             minLines = 3
@@ -384,7 +384,9 @@ fun RecordScreen(
                         sexualActivity = hasSexualActivity,
                         ovulationTest = ovulationTest.takeIf { it.isNotEmpty() },
                         cervicalMucus = cervicalMucus.takeIf { it.isNotEmpty() },
-                        bodyTemperature = bodyTemperature.toFloatOrNull(),
+                        bodyTemperature = bodyTemperature.toFloatOrNull()?.let { temp ->
+                            if (temp in 30.0f..45.0f) temp else null
+                        },
                         notes = notes.takeIf { it.isNotEmpty() }
                     )
                     navController.popBackStack()

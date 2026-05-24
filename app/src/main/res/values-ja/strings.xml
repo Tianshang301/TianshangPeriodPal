@@ -174,6 +174,9 @@
 
     <!-- AppLockScreen -->
     <string name="auth_failed">認証失敗: %s</string>
+    <string name="auth_failed_generic">認証失敗</string>
+    <string name="biometric_init_failed">生体認証の初期化に失敗しました</string>
+    <string name="lockout_message">試行回数が多すぎます。%d秒お待ちください。</string>
 
     <!-- ChartComponents -->
     <string name="chart_title_cycle_length_trend">周期長さの傾向</string>

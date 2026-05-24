@@ -7,6 +7,7 @@ import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
+import com.tianshang.periodpal.R
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
@@ -33,7 +34,7 @@ class BiometricHelper(private val context: Context) {
         try {
             val activity = context as? FragmentActivity
             if (activity == null) {
-                onError("无法启动生物识别")
+                onError(context.getString(R.string.biometric_init_failed))
                 return
             }
             
@@ -48,7 +49,7 @@ class BiometricHelper(private val context: Context) {
                     
                     override fun onAuthenticationFailed() {
                         super.onAuthenticationFailed()
-                        onError("验证失败")
+                        onError(context.getString(R.string.auth_failed_generic))
                     }
                     
                     override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
@@ -65,8 +66,8 @@ class BiometricHelper(private val context: Context) {
                 .build()
             
             biometricPrompt.authenticate(promptInfo)
-        } catch (e: Exception) {
-            onError("生物识别初始化失败: ${e.message}")
+        } catch (_: Exception) {
+            onError(context.getString(R.string.biometric_init_failed))
         }
     }
     

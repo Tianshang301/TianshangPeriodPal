@@ -176,6 +176,9 @@
 
     <!-- AppLockScreen -->
     <string name="auth_failed">验证失败: %s</string>
+    <string name="auth_failed_generic">验证失败</string>
+    <string name="biometric_init_failed">生物识别初始化失败</string>
+    <string name="lockout_message">尝试次数过多，请等待 %d 秒。</string>
 
     <!-- ChartComponents -->
     <string name="chart_title_cycle_length_trend">周期长度趋势</string>

@@ -25,10 +25,16 @@ android {
             if (localPropertiesFile.exists()) {
                 localProperties.load(new FileInputStream(localPropertiesFile))
             }
+            def ksPass = localProperties.getProperty('KEYSTORE_PASSWORD')
+            def kAlias = localProperties.getProperty('KEY_ALIAS')
+            def kPass = localProperties.getProperty('KEY_PASSWORD')
+            if (!ksPass) throw new GradleException("KEYSTORE_PASSWORD not set in local.properties. See local.properties.example")
+            if (!kAlias) throw new GradleException("KEY_ALIAS not set in local.properties. See local.properties.example")
+            if (!kPass) throw new GradleException("KEY_PASSWORD not set in local.properties. See local.properties.example")
             storeFile file('periodpal-release.jks')
-            storePassword localProperties.getProperty('KEYSTORE_PASSWORD', 'periodpal123')
-            keyAlias 'periodpal'
-            keyPassword localProperties.getProperty('KEY_PASSWORD', 'periodpal123')
+            storePassword ksPass
+            keyAlias kAlias
+            keyPassword kPass
         }
     }
 

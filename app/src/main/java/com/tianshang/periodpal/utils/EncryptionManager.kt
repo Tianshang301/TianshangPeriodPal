@@ -24,72 +24,51 @@ class EncryptionManager(private val context: Context) {
     )
     
     fun hashPassword(password: String): String {
-        return try {
-            val salt = ByteArray(16)
-            SecureRandom().nextBytes(salt)
-            
-            val parameters = Argon2Parameters.Builder()
-                .withSalt(salt)
-                .withParallelism(1)
-                .withMemoryAsKB(65536)
-                .withIterations(3)
-                .build()
-            
-            val generator = Argon2BytesGenerator()
-            generator.init(parameters)
-            
-            val passwordBytes = password.toByteArray(StandardCharsets.UTF_8)
-            val result = ByteArray(32)
-            generator.generateBytes(passwordBytes, result)
-            
-            val saltBase64 = Base64.encodeToString(salt, Base64.DEFAULT)
-            val hashBase64 = Base64.encodeToString(result, Base64.DEFAULT)
-            
-            "$saltBase64:$hashBase64"
-        } catch (e: Exception) {
-            // Fallback to simple hash if Argon2 fails
-            Base64.encodeToString(
-                password.toByteArray(StandardCharsets.UTF_8),
-                Base64.DEFAULT
-            ) + ":fallback"
-        }
+        val salt = ByteArray(16)
+        SecureRandom().nextBytes(salt)
+
+        val parameters = Argon2Parameters.Builder()
+            .withSalt(salt)
+            .withParallelism(1)
+            .withMemoryAsKB(65536)
+            .withIterations(3)
+            .build()
+
+        val generator = Argon2BytesGenerator()
+        generator.init(parameters)
+
+        val passwordBytes = password.toByteArray(StandardCharsets.UTF_8)
+        val result = ByteArray(32)
+        generator.generateBytes(passwordBytes, result)
+
+        val saltBase64 = Base64.encodeToString(salt, Base64.DEFAULT)
+        val hashBase64 = Base64.encodeToString(result, Base64.DEFAULT)
+
+        return "$saltBase64:$hashBase64"
     }
     
     fun verifyPassword(password: String, storedHash: String): Boolean {
-        return try {
-            val parts = storedHash.split(":")
-            if (parts.size != 2) return false
-            
-            // Check if using fallback hash
-            if (parts[1] == "fallback") {
-                val inputHash = Base64.encodeToString(
-                    password.toByteArray(StandardCharsets.UTF_8),
-                    Base64.DEFAULT
-                ).trim()
-                return inputHash == parts[0].trim()
-            }
-            
-            val salt = Base64.decode(parts[0], Base64.DEFAULT)
-            val expectedHash = Base64.decode(parts[1], Base64.DEFAULT)
-            
-            val parameters = Argon2Parameters.Builder()
-                .withSalt(salt)
-                .withParallelism(1)
-                .withMemoryAsKB(65536)
-                .withIterations(3)
-                .build()
-            
-            val generator = Argon2BytesGenerator()
-            generator.init(parameters)
-            
-            val passwordBytes = password.toByteArray(StandardCharsets.UTF_8)
-            val result = ByteArray(32)
-            generator.generateBytes(passwordBytes, result)
-            
-            result.contentEquals(expectedHash)
-        } catch (e: Exception) {
-            false
-        }
+        val parts = storedHash.split(":")
+        if (parts.size != 2) return false
+
+        val salt = Base64.decode(parts[0], Base64.DEFAULT)
+        val expectedHash = Base64.decode(parts[1], Base64.DEFAULT)
+
+        val parameters = Argon2Parameters.Builder()
+            .withSalt(salt)
+            .withParallelism(1)
+            .withMemoryAsKB(65536)
+            .withIterations(3)
+            .build()
+
+        val generator = Argon2BytesGenerator()
+        generator.init(parameters)
+
+        val passwordBytes = password.toByteArray(StandardCharsets.UTF_8)
+        val result = ByteArray(32)
+        generator.generateBytes(passwordBytes, result)
+
+        return result.contentEquals(expectedHash)
     }
     
     fun savePasswordHash(hash: String) {

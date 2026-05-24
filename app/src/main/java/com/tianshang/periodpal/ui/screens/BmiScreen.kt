@@ -104,7 +104,7 @@ fun BmiScreen(navController: NavController) {
                 onClick = {
                     val h = height.toFloatOrNull()
                     val w = weight.toFloatOrNull()
-                    if (h != null && w != null && h > 0 && w > 0) {
+                    if (h != null && w != null && h in 10f..300f && w in 5f..500f) {
                         viewModel.addRecord(h, w, notes.takeIf { it.isNotEmpty() })
                         height = ""
                         weight = ""

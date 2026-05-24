@@ -176,6 +176,9 @@
     
     <!-- AppLockScreen -->
     <string name="auth_failed">Authentication failed: %s</string>
+    <string name="auth_failed_generic">Authentication failed</string>
+    <string name="biometric_init_failed">Biometric initialization failed</string>
+    <string name="lockout_message">Too many attempts. Please wait %d seconds.</string>
 
     <!-- ChartComponents -->
     <string name="chart_title_cycle_length_trend">Cycle Length Trend</string>
