@@ -5,6 +5,7 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -56,6 +57,13 @@ fun PeriodPalNavHost(
     // Background timestamp for lock delay
     var backgroundTimestamp by remember { mutableLongStateOf(0L) }
     
+    // Monitor current route for bottom bar visibility
+    val navBackStackEntry by navController.currentBackStackEntryFlow.collectAsState(null)
+    val currentRoute = navBackStackEntry?.destination?.route
+    
+    // Routes that should hide bottom navigation bar
+    val hideBottomBarRoutes = setOf(Screen.AppLock.route, Screen.Terms.route)
+    
     // 检查用户协议和应用锁状态
     LaunchedEffect(Unit) {
         val settings = settingsRepository.settings.first()
@@ -105,7 +113,10 @@ fun PeriodPalNavHost(
     // 等待状态加载完成后再渲染 NavHost
     if (!isReady) return
     
-    MainScreen(navController = navController) {
+    MainScreen(
+        navController = navController,
+        showBottomBar = currentRoute !in hideBottomBarRoutes
+    ) {
         BackHandler {
             val currentRoute = navController.currentBackStackEntry?.destination?.route
             if (currentRoute == startDest || currentRoute == null) {

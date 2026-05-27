@@ -255,4 +255,9 @@
     <string name="notif_ovulation_message">L\'ovulation est prévue dans %d jours</string>
     <string name="notif_pms_title">Rappel du syndrome prémenstruel</string>
     <string name="notif_pms_message">Les symptômes du SPM peuvent apparaître dans %d jours</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Apparence</string>
+    <string name="section_data">Données</string>
+    <string name="section_other">Autre</string>
 </resources>

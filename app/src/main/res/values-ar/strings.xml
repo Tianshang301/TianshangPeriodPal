@@ -256,4 +256,9 @@
     <string name="notif_ovulation_message">من المتوقع أن تحدث التبويض خلال %d يوم</string>
     <string name="notif_pms_title">تذكير متلازمة ما قبل الطمث</string>
     <string name="notif_pms_message">قد تظهر أعراض متلازمة ما قبل الطمث خلال %d يوم</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">المظهر</string>
+    <string name="section_data">البيانات</string>
+    <string name="section_other">أخرى</string>
 </resources>

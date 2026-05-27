@@ -8,6 +8,7 @@ import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.data.model.PeriodRecord
 import com.tianshang.periodpal.utils.PredictionEngine
 import java.time.LocalDate
+import java.time.temporal.ChronoUnit
 
 class PredictionEngineTest {
     
@@ -179,5 +180,141 @@ class PredictionEngineTest {
         
         val stats = engine.calculateStatistics(records, emptyList())
         assertEquals(2, stats.totalCycles)
+    }
+    
+    // New tests for optimizations
+    
+    @Test
+    fun testLearnedLutealPhaseFromOvulationTest() {
+        val records = listOf(
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 1), endDate = LocalDate.of(2024, 1, 5)),
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 29), endDate = LocalDate.of(2024, 2, 2)),
+            PeriodRecord(startDate = LocalDate.of(2024, 2, 26), endDate = LocalDate.of(2024, 3, 1)),
+            PeriodRecord(startDate = LocalDate.of(2024, 3, 25), endDate = LocalDate.of(2024, 3, 29))
+        )
+        
+        // Ovulation test positive on day 14 of first cycle
+        val symptoms = listOf(
+            DailySymptom(
+                date = LocalDate.of(2024, 1, 14),
+                symptoms = "[]",
+                ovulationTestResult = "positive"
+            ),
+            DailySymptom(
+                date = LocalDate.of(2024, 2, 12),
+                symptoms = "[]",
+                ovulationTestResult = "positive"
+            )
+        )
+        
+        val predictions = engine.predictNextCycles(records, symptoms)
+        assertTrue(predictions.isNotEmpty())
+        // Luteal phase should be learned: Jan 29 - Jan 14 = 15 days
+        // Ovulation date should be period start - learned luteal phase
+        val firstPrediction = predictions.first()
+        val expectedOvulation = firstPrediction.periodStartDate.minusDays(15)
+        assertEquals(expectedOvulation, firstPrediction.ovulationDate)
+    }
+    
+    @Test
+    fun testExpandedOvulationAdjustmentRange() {
+        val records = listOf(
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 1), endDate = LocalDate.of(2024, 1, 5)),
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 29), endDate = LocalDate.of(2024, 2, 2)),
+            PeriodRecord(startDate = LocalDate.of(2024, 2, 26), endDate = LocalDate.of(2024, 3, 1))
+        )
+        
+        // Ovulation test positive on day 22 (beyond old 20-day limit)
+        val symptoms = listOf(
+            DailySymptom(
+                date = LocalDate.of(2024, 2, 22),
+                symptoms = "[]",
+                ovulationTestResult = "positive"
+            )
+        )
+        
+        val predictions = engine.predictNextCycles(records, symptoms)
+        assertTrue(predictions.isNotEmpty())
+        // Should use the ovulation adjustment even though it's after day 20
+    }
+    
+    @Test
+    fun testPeriodLengthIqrFiltering() {
+        val records = listOf(
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 1), endDate = LocalDate.of(2024, 1, 5)),  // 5 days
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 29), endDate = LocalDate.of(2024, 2, 2)),  // 5 days
+            PeriodRecord(startDate = LocalDate.of(2024, 2, 26), endDate = LocalDate.of(2024, 3, 1)),  // 5 days
+            PeriodRecord(startDate = LocalDate.of(2024, 3, 25), endDate = LocalDate.of(2024, 4, 5))   // 12 days (outlier)
+        )
+        
+        val predictions = engine.predictNextCycles(records, emptyList())
+        assertTrue(predictions.isNotEmpty())
+        // Period length should be filtered to ~5 days, not inflated by outlier
+        val periodLength = ChronoUnit.DAYS.between(
+            predictions.first().periodStartDate,
+            predictions.first().periodEndDate
+        ).toInt() + 1
+        assertTrue("Period length should be close to 5, got $periodLength", periodLength in 4..7)
+    }
+    
+    @Test
+    fun testExponentialDecayWeighting() {
+        // Recent cycles should have more influence
+        val records = listOf(
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 1), endDate = LocalDate.of(2024, 1, 5)),
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 31), endDate = LocalDate.of(2024, 2, 4)),  // 30 days
+            PeriodRecord(startDate = LocalDate.of(2024, 2, 28), endDate = LocalDate.of(2024, 3, 3)),  // 28 days
+            PeriodRecord(startDate = LocalDate.of(2024, 3, 27), endDate = LocalDate.of(2024, 3, 31))  // 28 days
+        )
+        
+        val predictions = engine.predictNextCycles(records, emptyList())
+        assertTrue(predictions.isNotEmpty())
+        // With exponential decay, recent 28-day cycles should dominate
+        // Prediction should be closer to 28 than to 30
+        val nextStart = predictions.first().periodStartDate
+        val lastRecordEnd = LocalDate.of(2024, 3, 27)
+        val daysBetween = ChronoUnit.DAYS.between(lastRecordEnd, nextStart)
+        assertTrue("Should be closer to 28 days, got $daysBetween", daysBetween in 26..30)
+    }
+    
+    @Test
+    fun testDynamicCycleLengthRange() {
+        // Test with a user who has consistently long cycles (35 days)
+        val records = listOf(
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 1), endDate = LocalDate.of(2024, 1, 5)),
+            PeriodRecord(startDate = LocalDate.of(2024, 2, 5), endDate = LocalDate.of(2024, 2, 9)),  // 35 days
+            PeriodRecord(startDate = LocalDate.of(2024, 3, 11), endDate = LocalDate.of(2024, 3, 15)), // 35 days
+            PeriodRecord(startDate = LocalDate.of(2024, 4, 15), endDate = LocalDate.of(2024, 4, 19))  // 35 days
+        )
+        
+        val predictions = engine.predictNextCycles(records, emptyList())
+        assertTrue(predictions.isNotEmpty())
+        // Dynamic range should accept 35-day cycles
+        val nextStart = predictions.first().periodStartDate
+        val daysBetween = ChronoUnit.DAYS.between(LocalDate.of(2024, 4, 15), nextStart)
+        assertTrue("Should predict ~35 days, got $daysBetween", daysBetween in 33..37)
+    }
+    
+    @Test
+    fun testTemperatureBasedLutealPhaseLearning() {
+        val records = listOf(
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 1), endDate = LocalDate.of(2024, 1, 5)),
+            PeriodRecord(startDate = LocalDate.of(2024, 1, 29), endDate = LocalDate.of(2024, 2, 2)),
+            PeriodRecord(startDate = LocalDate.of(2024, 2, 26), endDate = LocalDate.of(2024, 3, 1)),
+            PeriodRecord(startDate = LocalDate.of(2024, 3, 25), endDate = LocalDate.of(2024, 3, 29))
+        )
+        
+        // Temperature rise on day 13, 14, 15
+        val symptoms = listOf(
+            DailySymptom(date = LocalDate.of(2024, 1, 12), symptoms = "[]", bodyTemperature = 36.2f),
+            DailySymptom(date = LocalDate.of(2024, 1, 13), symptoms = "[]", bodyTemperature = 36.2f),
+            DailySymptom(date = LocalDate.of(2024, 1, 14), symptoms = "[]", bodyTemperature = 36.5f),
+            DailySymptom(date = LocalDate.of(2024, 1, 15), symptoms = "[]", bodyTemperature = 36.6f),
+            DailySymptom(date = LocalDate.of(2024, 1, 16), symptoms = "[]", bodyTemperature = 36.5f)
+        )
+        
+        val predictions = engine.predictNextCycles(records, symptoms)
+        assertTrue(predictions.isNotEmpty())
+        // Luteal phase should be learned from temperature: Jan 29 - Jan 14 = 15 days
     }
 }

@@ -254,4 +254,9 @@
     <string name="notif_ovulation_message">배란일이 %d일 후에 예정됩니다</string>
     <string name="notif_pms_title">PMS 리마인더</string>
     <string name="notif_pms_message">PMS 증상이 %d일 후에 나타날 수 있습니다</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">외관</string>
+    <string name="section_data">데이터</string>
+    <string name="section_other">기타</string>
 </resources>

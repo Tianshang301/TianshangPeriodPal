@@ -255,4 +255,9 @@
     <string name="notif_ovulation_message">La ovulación está prevista en %d días</string>
     <string name="notif_pms_title">Recordatorio del síndrome premenstrual</string>
     <string name="notif_pms_message">Los síntomas del SPN pueden aparecer en %d días</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Apariencia</string>
+    <string name="section_data">Datos</string>
+    <string name="section_other">Otro</string>
 </resources>

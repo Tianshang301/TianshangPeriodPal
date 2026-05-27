@@ -254,4 +254,9 @@
     <string name="notif_ovulation_message">排卵日が%d日後の予定です</string>
     <string name="notif_pms_title">PMSリマインダー</string>
     <string name="notif_pms_message">PMS症状が%d日後に現れる可能性があります</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">外観</string>
+    <string name="section_data">データ</string>
+    <string name="section_other">その他</string>
 </resources>

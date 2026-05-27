@@ -256,4 +256,9 @@
     <string name="notif_ovulation_message">预测排卵日在 %d 天后</string>
     <string name="notif_pms_title">经前综合征提醒</string>
     <string name="notif_pms_message">经前症状可能在 %d 天后出现</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">外观</string>
+    <string name="section_data">数据</string>
+    <string name="section_other">其他</string>
 </resources>
