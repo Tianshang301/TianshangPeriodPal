@@ -16,6 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.tianshang.periodpal.PeriodPalApplication
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.utils.DatabaseMigrationManager
 import com.tianshang.periodpal.utils.EncryptionManager
@@ -240,6 +241,8 @@ fun SettingsScreen(navController: NavController) {
                             isMigrating = false
                             migrationMessage = when (result) {
                                 is DatabaseMigrationManager.MigrationResult.Success -> {
+                                    // Reinitialize database with new encryption state
+                                    (context.applicationContext as? PeriodPalApplication)?.reinitializeDatabase()
                                     context.getString(R.string.migration_success)
                                 }
                                 is DatabaseMigrationManager.MigrationResult.Failure -> {

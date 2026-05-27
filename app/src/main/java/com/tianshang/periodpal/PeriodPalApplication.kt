@@ -1,8 +1,10 @@
 package com.tianshang.periodpal
 
 import android.app.Application
+import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
+import com.tianshang.periodpal.data.local.EncryptionKeyManager
 import com.tianshang.periodpal.data.local.PeriodDatabase
 import com.tianshang.periodpal.data.repository.SettingsRepository
 import com.tianshang.periodpal.service.ReminderScheduler
@@ -17,18 +19,45 @@ import java.util.Locale
 class PeriodPalApplication : Application() {
     
     companion object {
+        private const val TAG = "PeriodPalApp"
         lateinit var instance: PeriodPalApplication
             private set
     }
     
-    val database: PeriodDatabase by lazy {
-        // 必须在 Application 创建阶段确定加密状态
-        val settings = runBlocking { SettingsRepository(instance).settings.first() }
-        try {
-            PeriodDatabase.getDatabase(this, encrypted = settings.dbEncrypted)
-        } catch (e: Exception) {
-            PeriodDatabase.recreateDatabase(this, encrypted = settings.dbEncrypted)
+    @Volatile
+    private var _database: PeriodDatabase? = null
+    
+    val database: PeriodDatabase
+        get() = _database ?: throw IllegalStateException("Database not initialized. Call initDatabase() first.")
+    
+    val isDatabaseInitialized: Boolean
+        get() = _database != null
+    
+    fun initDatabase() {
+        if (_database != null) return
+        
+        val settingsRepo = SettingsRepository(instance)
+        val settings = runBlocking(Dispatchers.IO) { settingsRepo.settings.first() }
+        
+        // First launch: no database file exists → default to encrypted
+        val dbFile = getDatabasePath("period_pal_database")
+        val isFirstLaunch = !dbFile.exists()
+        
+        if (isFirstLaunch && !settings.dbEncrypted) {
+            // Generate passphrase before creating encrypted database
+            EncryptionKeyManager.getOrCreatePassphrase(this)
+            runBlocking(Dispatchers.IO) {
+                settingsRepo.updateSettings(settings.copy(dbEncrypted = true))
+            }
+            _database = PeriodDatabase.getDatabase(this, encrypted = true)
+        } else {
+            _database = PeriodDatabase.getDatabase(this, encrypted = settings.dbEncrypted)
         }
+    }
+    
+    fun reinitializeDatabase() {
+        _database = null
+        initDatabase()
     }
     
     val encryptionManager: EncryptionManager by lazy {
@@ -38,6 +67,7 @@ class PeriodPalApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        
         val savedLang = getSharedPreferences("periodpal_prefs", MODE_PRIVATE)
             .getString("language", null)
         savedLang?.let { applyLanguage(it) }
@@ -46,11 +76,13 @@ class PeriodPalApplication : Application() {
         
         CoroutineScope(Dispatchers.IO).launch {
             try {
+                initDatabase()
                 val records = database.periodRecordDao().getAllRecordsSync()
                 val symptoms = database.dailySymptomDao().getAllSymptoms().first()
                 val settings = SettingsRepository(instance).settings.first()
                 ReminderScheduler.scheduleReminders(instance, records, symptoms, settings)
-            } catch (_: Exception) {
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to initialize database or schedule reminders", e)
                 ReminderScheduler.scheduleDailyCheck(instance)
             }
         }

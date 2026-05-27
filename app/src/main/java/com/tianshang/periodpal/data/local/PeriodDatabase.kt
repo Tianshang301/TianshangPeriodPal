@@ -1,6 +1,7 @@
 package com.tianshang.periodpal.data.local
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -24,12 +25,11 @@ abstract class PeriodDatabase : RoomDatabase() {
     abstract fun bmiRecordDao(): BmiRecordDao
     
     companion object {
+        private const val TAG = "PeriodDatabase"
+        
         @Volatile
         private var INSTANCE: PeriodDatabase? = null
         
-        /**
-         * 关闭数据库实例并清除引用
-         */
         fun closeInstance() {
             synchronized(this) {
                 INSTANCE?.close()
@@ -52,7 +52,7 @@ abstract class PeriodDatabase : RoomDatabase() {
                 "period_pal_database"
             )
                 .addMigrations(MIGRATION_1_2)
-                .fallbackToDestructiveMigration()
+                .fallbackToDestructiveMigrationOnDowngrade()
             
             if (encrypted) {
                 val passphrase = EncryptionKeyManager.getOrCreatePassphrase(context)
@@ -60,13 +60,7 @@ abstract class PeriodDatabase : RoomDatabase() {
                 builder.openHelperFactory(factory)
             }
             
-            return try {
-                builder.build()
-            } catch (e: Exception) {
-                // 数据库损坏，删除并重建
-                context.deleteDatabase("period_pal_database")
-                builder.build()
-            }
+            return builder.build()
         }
         
         fun recreateDatabase(context: Context, encrypted: Boolean = false): PeriodDatabase {

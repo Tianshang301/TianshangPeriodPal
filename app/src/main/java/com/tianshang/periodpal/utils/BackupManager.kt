@@ -3,6 +3,9 @@ package com.tianshang.periodpal.utils
 import android.content.Context
 import android.net.Uri
 import com.tianshang.periodpal.data.local.EncryptionKeyManager
+import com.tianshang.periodpal.data.repository.SettingsRepository
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -26,6 +29,7 @@ class BackupManager(private val context: Context) {
         private const val METADATA_FILE = "backup_metadata.txt"
         private const val DB_FILE = "period_pal_database"
         private const val HASH_FILE = "integrity_hash.txt"
+        private const val ENCRYPTION_STATE_FILE = "encryption_state.txt"
         private const val GCM_TAG_LENGTH = 128
         private const val GCM_IV_LENGTH = 12
         private const val MAGIC_ENCRYPTED = "ENCRYPTED_V1"
@@ -45,10 +49,19 @@ class BackupManager(private val context: Context) {
             val passphrase = EncryptionKeyManager.getOrCreatePassphrase(context)
             val secretKey = deriveKey(passphrase)
             
+            // Read current encryption state
+            val settings = runBlocking { SettingsRepository(context).settings.first() }
+            val isEncrypted = settings.dbEncrypted
+            
             ZipOutputStream(FileOutputStream(exportFile)).use { zipOut ->
                 // Metadata indicating encrypted format
                 zipOut.putNextEntry(ZipEntry(METADATA_FILE))
                 zipOut.write(MAGIC_ENCRYPTED.toByteArray())
+                zipOut.closeEntry()
+                
+                // Encryption state
+                zipOut.putNextEntry(ZipEntry(ENCRYPTION_STATE_FILE))
+                zipOut.write(if (isEncrypted) "true".toByteArray() else "false".toByteArray())
                 zipOut.closeEntry()
                 
                 // Encrypt and add database file
@@ -60,7 +73,6 @@ class BackupManager(private val context: Context) {
                 cipher.init(Cipher.ENCRYPT_MODE, secretKey, gcmSpec)
                 
                 zipOut.putNextEntry(ZipEntry(DB_FILE))
-                // Write IV first
                 zipOut.write(iv)
                 
                 FileInputStream(dbFile).use { input ->
@@ -70,7 +82,7 @@ class BackupManager(private val context: Context) {
                 }
                 zipOut.closeEntry()
                 
-                // Hash of the ORIGINAL (unencrypted) database
+                // Hash of the database file
                 zipOut.putNextEntry(ZipEntry(HASH_FILE))
                 zipOut.write(dbHash.toByteArray())
                 zipOut.closeEntry()
@@ -92,6 +104,7 @@ class BackupManager(private val context: Context) {
                     var entry: ZipEntry?
                     var hash: String? = null
                     var isEncrypted = false
+                    var backupEncryptionState: Boolean? = null
                     var dbBytes: ByteArray? = null
 
                     while (zipIn.nextEntry.also { entry = it } != null) {
@@ -107,12 +120,15 @@ class BackupManager(private val context: Context) {
                                 val content = zipIn.bufferedReader().readText()
                                 isEncrypted = content.contains(MAGIC_ENCRYPTED)
                             }
+                            ENCRYPTION_STATE_FILE -> {
+                                val content = zipIn.bufferedReader().readText().trim()
+                                backupEncryptionState = content == "true"
+                            }
                             HASH_FILE -> {
                                 hash = zipIn.bufferedReader().readText()
                             }
                             DB_FILE -> {
                                 if (isEncrypted) {
-                                    // Read IV (first 12 bytes)
                                     val iv = ByteArray(GCM_IV_LENGTH)
                                     var read = 0
                                     while (read < GCM_IV_LENGTH) {
@@ -133,7 +149,6 @@ class BackupManager(private val context: Context) {
                                     }
                                     dbBytes = bos.toByteArray()
                                 } else {
-                                    // Legacy plaintext format
                                     val file = File(tempDir, sanitizedName)
                                     FileOutputStream(file).use { output ->
                                         zipIn.copyTo(output)
@@ -156,6 +171,15 @@ class BackupManager(private val context: Context) {
                         if (calculatedHash == hash) {
                             val currentDb = context.getDatabasePath("period_pal_database")
                             dbFile.copyTo(currentDb, overwrite = true)
+                            
+                            // Restore encryption state from backup
+                            val settingsRepo = SettingsRepository(context)
+                            val settings = runBlocking { settingsRepo.settings.first() }
+                            val newEncryptedState = backupEncryptionState ?: isEncrypted
+                            if (settings.dbEncrypted != newEncryptedState) {
+                                runBlocking { settingsRepo.updateSettings(settings.copy(dbEncrypted = newEncryptedState)) }
+                            }
+                            
                             return true
                         }
                     }
