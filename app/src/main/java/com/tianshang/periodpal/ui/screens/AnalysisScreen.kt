@@ -104,6 +104,22 @@ fun AnalysisScreen(navController: NavController) {
                     
                     Spacer(modifier = Modifier.height(8.dp))
                     
+                    // Prediction explanation
+                    val stats = statistics
+                    if (stats != null && stats.totalCycles >= 3) {
+                        Text(
+                            text = stringResource(
+                                R.string.prediction_explanation,
+                                stats.totalCycles,
+                                "%.1f".format(stats.averageCycleLength),
+                                "%.1f".format(stats.averagePeriodLength)
+                            ),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(bottom = 12.dp)
+                        )
+                    }
+                    
                     predictions.take(3).forEach { prediction ->
                         Column(modifier = Modifier.padding(vertical = 4.dp)) {
                             Text(

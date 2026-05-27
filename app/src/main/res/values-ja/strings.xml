@@ -77,6 +77,47 @@
     <string name="security_settings">セキュリティ設定</string>
     <string name="prevent_screenshot">スクリーンショット防止</string>
     <string name="prevent_screenshot_description">スクリーンショットと画面録画を禁止し、プライバシーを保護</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">データセキュリティ</string>
+    <string name="database_encryption">データベース暗号化</string>
+    <string name="encrypted">暗号化済み (AES-256)</string>
+    <string name="unencrypted">未暗号化</string>
+    <string name="migrate_to_encrypted">暗号化データベースへの移行</string>
+    <string name="migration_description">既存のデータをAES-256暗号化データベースに移行します。この操作はアトミックで、失敗した場合は自動的にロールバックされます。</string>
+    <string name="migration_success">移行に成功しました！データベースが暗号化されました。</string>
+    <string name="migration_failed">移行に失敗しました: %s。データは元の状態に復元されました。</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">バックグラウンド後のロック</string>
+    <string name="lock_immediately">すぐにロック</string>
+    <string name="lock_after_seconds">%d秒後にロック</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">カスタムリマインダー</string>
+    <string name="add_custom_reminder">カスタムリマインダーを追加</string>
+    <string name="no_custom_reminders">カスタムリマインダーはまだありません</string>
+    <string name="reminder_title_label">リマインダータイトル</string>
+    <string name="reminder_title_required">タイトルは必須です</string>
+    <string name="reminder_message_label">メッセージ（任意）</string>
+    <string name="reminder_date">リマインダー日</string>
+    <string name="select_time">時刻を選択</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">色相</string>
+    <string name="saturation">彩度</string>
+    <string name="lightness">明度</string>
+    <string name="apply_color">色を適用</string>
+    <string name="preset_colors">プリセットカラー</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">症状を追加</string>
+    <string name="symptom_name">症状名</string>
+    <string name="symptom_name_required">症状名は必須です</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">過去%1$d周期に基づく適応的予測（平均%2$s日/周期、%3$s日/月経）</string>
+    
     <string name="app_lock_setup_title">アプリロックパスワードを設定</string>
     <string name="set_pin">パスワードを設定</string>
     <string name="confirm_pin">パスワードを確認</string>
@@ -161,8 +202,8 @@
     <string name="export_fail">エクスポート失敗</string>
 
     <!-- BackupScreen -->
-    <string name="backup_export_desc">データベースをZIPバックアップファイルとしてエクスポート</string>
-    <string name="backup_import_desc">バックアップファイルからデータを復元</string>
+    <string name="backup_export_desc">データベースをAES-256暗号化ZIPバックアップファイルとしてエクスポート</string>
+    <string name="backup_import_desc">バックアップファイルからデータを復元（暗号化およびレガシー形式をサポート）</string>
     <string name="backup_csv_desc">レコードをCSVスプレッドシートとしてエクスポート</string>
 
     <!-- RecycleBinScreen -->

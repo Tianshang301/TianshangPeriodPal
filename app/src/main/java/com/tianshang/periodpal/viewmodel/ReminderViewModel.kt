@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.tianshang.periodpal.PeriodPalApplication
+import com.tianshang.periodpal.data.model.CustomReminder
 import com.tianshang.periodpal.data.repository.SettingsRepository
 import com.tianshang.periodpal.data.repository.UserSettings
+import com.tianshang.periodpal.service.CustomReminderWorker
 import com.tianshang.periodpal.service.ReminderScheduler
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -23,6 +25,12 @@ class ReminderViewModel(
         viewModelScope,
         SharingStarted.Lazily,
         UserSettings()
+    )
+    
+    val customReminders: StateFlow<List<CustomReminder>> = settingsRepository.customReminders.stateIn(
+        viewModelScope,
+        SharingStarted.Lazily,
+        emptyList()
     )
     
     private fun updateAndReschedule(settings: UserSettings) {
@@ -72,6 +80,35 @@ class ReminderViewModel(
     
     fun updatePmsReminderTime(time: String) {
         updateAndReschedule(settings.value.copy(pmsReminderTime = time))
+    }
+    
+    fun addCustomReminder(reminder: CustomReminder) {
+        viewModelScope.launch {
+            settingsRepository.addCustomReminder(reminder)
+            CustomReminderWorker.schedule(application, reminder)
+        }
+    }
+    
+    fun removeCustomReminder(id: Long) {
+        viewModelScope.launch {
+            settingsRepository.removeCustomReminder(id)
+            CustomReminderWorker.cancel(application, id)
+        }
+    }
+    
+    fun toggleCustomReminder(id: Long, enabled: Boolean) {
+        viewModelScope.launch {
+            settingsRepository.toggleCustomReminder(id, enabled)
+            if (enabled) {
+                val reminders = customReminders.first()
+                val reminder = reminders.find { it.id == id }
+                if (reminder != null) {
+                    CustomReminderWorker.schedule(application, reminder.copy(enabled = enabled))
+                }
+            } else {
+                CustomReminderWorker.cancel(application, id)
+            }
+        }
     }
     
     class Factory(private val context: Context) : ViewModelProvider.Factory {

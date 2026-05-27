@@ -68,6 +68,47 @@
     <string name="security_settings">Sécurité</string>
     <string name="prevent_screenshot">Empêcher la capture d\'écran</string>
     <string name="prevent_screenshot_description">Désactiver les captures d\'écran et l\'enregistrement d\'écran</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Sécurité des données</string>
+    <string name="database_encryption">Chiffrement de la base de données</string>
+    <string name="encrypted">Chiffré (AES-256)</string>
+    <string name="unencrypted">Non chiffré</string>
+    <string name="migrate_to_encrypted">Migrer vers la base de données chiffrée</string>
+    <string name="migration_description">Migrer les données existantes vers une base de données chiffrée AES-256. Cette opération est atomique et revient automatiquement en arrière en cas d\'échec.</string>
+    <string name="migration_success">Migration réussie ! La base de données est maintenant chiffrée.</string>
+    <string name="migration_failed">Échec de la migration : %s. Vos données ont été restaurées à leur état d\'origine.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Verrouillage après arrière-plan</string>
+    <string name="lock_immediately">Immédiatement</string>
+    <string name="lock_after_seconds">Verrouiller après %d secondes</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Rappels personnalisés</string>
+    <string name="add_custom_reminder">Ajouter un rappel personnalisé</string>
+    <string name="no_custom_reminders">Aucun rappel personnalisé</string>
+    <string name="reminder_title_label">Titre du rappel</string>
+    <string name="reminder_title_required">Le titre est requis</string>
+    <string name="reminder_message_label">Message (optionnel)</string>
+    <string name="reminder_date">Date du rappel</string>
+    <string name="select_time">Sélectionner l\'heure</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Teinte</string>
+    <string name="saturation">Saturation</string>
+    <string name="lightness">Luminosité</string>
+    <string name="apply_color">Appliquer la couleur</string>
+    <string name="preset_colors">Couleurs prédéfinies</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Ajouter un symptôme</string>
+    <string name="symptom_name">Nom du symptôme</string>
+    <string name="symptom_name_required">Le nom du symptôme est requis</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Prédiction adaptative basée sur les %1$d derniers cycles (moyenne de %2$s jours/cycle, %3$s jours/règles)</string>
+    
     <string name="app_lock_setup_title">Définir le mot de passe</string>
     <string name="set_pin">Définir le mot de passe</string>
     <string name="confirm_pin">Confirmer le mot de passe</string>
@@ -161,8 +202,8 @@
     <string name="export_fail">Échec de l\'exportation</string>
     
     <!-- BackupScreen -->
-    <string name="backup_export_desc">Exporter la base de données en fichier ZIP</string>
-    <string name="backup_import_desc">Restaurer les données depuis un fichier de sauvegarde</string>
+    <string name="backup_export_desc">Exporter la base de données en fichier ZIP chiffré AES-256</string>
+    <string name="backup_import_desc">Restaurer les données depuis un fichier de sauvegarde (formats chiffré et ancien supportés)</string>
     <string name="backup_csv_desc">Exporter les enregistrements en feuille de calcul CSV</string>
 
     <!-- RecycleBinScreen -->

@@ -120,6 +120,13 @@ class SettingsViewModel(
         }
     }
     
+    fun updateBackgroundLockDelay(delaySeconds: Int) {
+        viewModelScope.launch {
+            val current = settings.value
+            settingsRepository.updateSettings(current.copy(appLockBackgroundDelay = delaySeconds))
+        }
+    }
+    
     class Factory(private val context: Context) : ViewModelProvider.Factory {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {

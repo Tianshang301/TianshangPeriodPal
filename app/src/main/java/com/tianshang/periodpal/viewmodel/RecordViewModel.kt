@@ -9,7 +9,10 @@ import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.data.model.PeriodRecord
 import com.tianshang.periodpal.data.repository.SettingsRepository
 import com.tianshang.periodpal.service.ReminderScheduler
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
@@ -19,13 +22,20 @@ class RecordViewModel(
     
     private val periodRepository = application.database.periodRecordDao()
     private val symptomRepository = application.database.dailySymptomDao()
+    private val settingsRepository = SettingsRepository(application)
+    
+    val customSymptoms: StateFlow<List<String>> = settingsRepository.customSymptoms.stateIn(
+        viewModelScope,
+        SharingStarted.Lazily,
+        emptyList()
+    )
     
     private fun rescheduleReminders() {
         viewModelScope.launch {
             try {
                 val records = periodRepository.getAllRecordsSync()
                 val symptoms = symptomRepository.getAllSymptoms().first()
-                val settings = SettingsRepository(application).settings.first()
+                val settings = settingsRepository.settings.first()
                 ReminderScheduler.scheduleReminders(application, records, symptoms, settings)
             } catch (_: Exception) {}
         }
@@ -111,6 +121,18 @@ class RecordViewModel(
             }
             
             rescheduleReminders()
+        }
+    }
+    
+    fun addCustomSymptom(symptom: String) {
+        viewModelScope.launch {
+            settingsRepository.addCustomSymptom(symptom)
+        }
+    }
+    
+    fun removeCustomSymptom(symptom: String) {
+        viewModelScope.launch {
+            settingsRepository.removeCustomSymptom(symptom)
         }
     }
     

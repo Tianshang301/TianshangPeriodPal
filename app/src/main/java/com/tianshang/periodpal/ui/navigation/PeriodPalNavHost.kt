@@ -3,12 +3,17 @@ package com.tianshang.periodpal.ui.navigation
 import android.app.Activity
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -42,19 +47,59 @@ fun PeriodPalNavHost(
     navController: NavHostController = rememberNavController()
 ) {
     val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
     val settingsRepository = remember { SettingsRepository(context) }
     var isReady by remember { mutableStateOf(false) }
     var startDest by remember { mutableStateOf(Screen.Terms.route) }
+    var currentSettings by remember { mutableStateOf<com.tianshang.periodpal.data.repository.UserSettings?>(null) }
+    
+    // Background timestamp for lock delay
+    var backgroundTimestamp by remember { mutableLongStateOf(0L) }
     
     // 检查用户协议和应用锁状态
     LaunchedEffect(Unit) {
         val settings = settingsRepository.settings.first()
+        currentSettings = settings
         startDest = when {
             !settings.termsAccepted -> Screen.Terms.route
             settings.appLockEnabled -> Screen.AppLock.route
             else -> Screen.Calendar.route
         }
         isReady = true
+    }
+    
+    // 后台锁定生命周期监听
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
+                Lifecycle.Event.ON_STOP -> {
+                    backgroundTimestamp = System.currentTimeMillis()
+                }
+                Lifecycle.Event.ON_START -> {
+                    val settings = currentSettings
+                    if (settings != null && settings.appLockEnabled && backgroundTimestamp > 0L) {
+                        val elapsed = System.currentTimeMillis() - backgroundTimestamp
+                        val delayMs = settings.appLockBackgroundDelay * 1000L
+                        if (elapsed >= delayMs) {
+                            // Navigate to AppLock screen
+                            val currentRoute = navController.currentBackStackEntry?.destination?.route
+                            if (currentRoute != Screen.AppLock.route) {
+                                navController.navigate(Screen.AppLock.route) {
+                                    popUpTo(Screen.Calendar.route) { inclusive = false }
+                                    launchSingleTop = true
+                                }
+                            }
+                        }
+                    }
+                    backgroundTimestamp = 0L
+                }
+                else -> {}
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
     }
     
     // 等待状态加载完成后再渲染 NavHost

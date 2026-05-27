@@ -58,10 +58,11 @@ fun RecordScreen(
     var selectedDate by remember { mutableStateOf(initialLocalDate) }
     var showDatePicker by remember { mutableStateOf(false) }
     var showDeleteDialog by remember { mutableStateOf(false) }
+    var showAddSymptomDialog by remember { mutableStateOf(false) }
     var isPeriodStart by remember { mutableStateOf(false) }
     var isPeriodEnd by remember { mutableStateOf(false) }
-    var flowLevel by remember { mutableStateOf(0) }
-    var painLevel by remember { mutableStateOf(0) }
+    var flowLevel by remember { mutableIntStateOf(0) }
+    var painLevel by remember { mutableIntStateOf(0) }
     var selectedSymptoms by remember { mutableStateOf(setOf<String>()) }
     var hasSexualActivity by remember { mutableStateOf(false) }
     var ovulationTest by remember { mutableStateOf("") }
@@ -71,10 +72,13 @@ fun RecordScreen(
     
     val dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
     
-    val symptoms = listOf(
+    val builtInSymptoms = listOf(
         R.string.symptom_headache, R.string.symptom_bloating, R.string.symptom_breast_tenderness, R.string.symptom_backache,
         R.string.symptom_fatigue, R.string.symptom_mood_swings, R.string.symptom_acne, R.string.symptom_increased_appetite, R.string.symptom_insomnia, R.string.symptom_nausea
     )
+    
+    val customSymptoms by viewModel.customSymptoms.collectAsState()
+    val allSymptoms = builtInSymptoms.map { stringResource(it) } + customSymptoms
     
     // 删除确认对话框
     if (showDeleteDialog) {
@@ -280,13 +284,21 @@ fun RecordScreen(
         }
         
         // Symptoms
-        Text(stringResource(R.string.symptoms), style = MaterialTheme.typography.titleMedium)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(stringResource(R.string.symptoms), style = MaterialTheme.typography.titleMedium)
+            TextButton(onClick = { showAddSymptomDialog = true }) {
+                Text("+ ${stringResource(R.string.add_symptom)}")
+            }
+        }
         FlowRow(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Start
         ) {
-            symptoms.forEach { symptomResId ->
-                val symptom = stringResource(symptomResId)
+            allSymptoms.forEach { symptom ->
                 FilterChip(
                     selected = selectedSymptoms.contains(symptom),
                     onClick = {
@@ -396,5 +408,53 @@ fun RecordScreen(
                 Text(stringResource(R.string.save))
             }
         }
+    }
+    
+    // Add custom symptom dialog
+    if (showAddSymptomDialog) {
+        var newSymptomName by remember { mutableStateOf("") }
+        var symptomError by remember { mutableStateOf(false) }
+        
+        AlertDialog(
+            onDismissRequest = { showAddSymptomDialog = false },
+            title = { Text(stringResource(R.string.add_symptom)) },
+            text = {
+                Column {
+                    OutlinedTextField(
+                        value = newSymptomName,
+                        onValueChange = {
+                            newSymptomName = it
+                            symptomError = false
+                        },
+                        label = { Text(stringResource(R.string.symptom_name)) },
+                        isError = symptomError,
+                        supportingText = if (symptomError) {
+                            { Text(stringResource(R.string.symptom_name_required)) }
+                        } else null,
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        if (newSymptomName.isBlank()) {
+                            symptomError = true
+                            return@TextButton
+                        }
+                        viewModel.addCustomSymptom(newSymptomName.trim())
+                        showAddSymptomDialog = false
+                    }
+                ) {
+                    Text(stringResource(R.string.confirm))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showAddSymptomDialog = false }) {
+                    Text(stringResource(R.string.cancel))
+                }
+            }
+        )
     }
 }

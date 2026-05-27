@@ -4,8 +4,11 @@ import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -14,6 +17,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -22,6 +27,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.theme.HslColorUtils
 import com.tianshang.periodpal.viewmodel.SettingsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,12 +40,30 @@ fun ThemeScreen(navController: NavController) {
     
     val settings by viewModel.settings.collectAsState()
     
-    // 图片选择器
+    // Parse current HSL from stored hex
+    val currentHsl = remember(settings.themeColor) {
+        HslColorUtils.hexToHsl(settings.themeColor)
+    }
+    
+    var hue by remember(currentHsl) { mutableFloatStateOf(currentHsl.hue) }
+    var saturation by remember(currentHsl) { mutableFloatStateOf(currentHsl.saturation) }
+    var lightness by remember(currentHsl) { mutableFloatStateOf(currentHsl.lightness) }
+    
+    // Image picker
     val imagePickerLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
         uri?.let { viewModel.setBackgroundImage(it) }
     }
+    
+    // Preset colors
+    val presets = listOf(
+        Triple(340f, 60f, 85f) to R.string.color_pink,
+        Triple(330f, 100f, 71f) to R.string.color_dark_pink,
+        Triple(330f, 100f, 54f) to R.string.color_peach,
+        Triple(340f, 50f, 76f) to R.string.color_light_purple,
+        Triple(325f, 78f, 59f) to R.string.color_medium_purple
+    )
     
     Scaffold(
         topBar = {
@@ -60,49 +84,155 @@ fun ThemeScreen(navController: NavController) {
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState())
         ) {
-            // Theme color
+            // Color preview
             Text(
                 stringResource(R.string.theme_color),
                 style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(vertical = 8.dp)
+                modifier = Modifier.padding(bottom = 8.dp)
             )
             
-            val colors = listOf(
-                "#FFB6C1" to R.string.color_pink,
-                "#FF69B4" to R.string.color_dark_pink,
-                "#FF1493" to R.string.color_peach,
-                "#DB7093" to R.string.color_light_purple,
-                "#C71585" to R.string.color_medium_purple
-            )
-            
-            colors.forEach { (color, nameResId) ->
-                Row(
+            // Live preview circle
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Box(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 4.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        .size(80.dp)
+                        .clip(CircleShape)
+                        .background(HslColorUtils.hslToColor(hue, saturation, lightness))
+                        .border(2.dp, MaterialTheme.colorScheme.outline, CircleShape)
+                )
+            }
+            
+            // HSL Sliders
+            Text(
+                stringResource(R.string.hue),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Slider(
+                value = hue,
+                onValueChange = { hue = it },
+                valueRange = 0f..360f,
+                colors = SliderDefaults.colors(
+                    thumbColor = HslColorUtils.hslToColor(hue, saturation, lightness),
+                    activeTrackColor = HslColorUtils.hslToColor(hue, saturation, lightness)
+                )
+            )
+            Text(
+                text = "${hue.toInt()}°",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.align(Alignment.End)
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Text(
+                stringResource(R.string.saturation),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Slider(
+                value = saturation,
+                onValueChange = { saturation = it },
+                valueRange = 0f..100f,
+                colors = SliderDefaults.colors(
+                    thumbColor = HslColorUtils.hslToColor(hue, saturation, lightness),
+                    activeTrackColor = HslColorUtils.hslToColor(hue, saturation, lightness)
+                )
+            )
+            Text(
+                text = "${saturation.toInt()}%",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.align(Alignment.End)
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Text(
+                stringResource(R.string.lightness),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Slider(
+                value = lightness,
+                onValueChange = { lightness = it },
+                valueRange = 0f..100f,
+                colors = SliderDefaults.colors(
+                    thumbColor = HslColorUtils.hslToColor(hue, saturation, lightness),
+                    activeTrackColor = HslColorUtils.hslToColor(hue, saturation, lightness)
+                )
+            )
+            Text(
+                text = "${lightness.toInt()}%",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.align(Alignment.End)
+            )
+            
+            // Apply button
+            Button(
+                onClick = {
+                    val hex = HslColorUtils.hslToHex(hue, saturation, lightness)
+                    viewModel.setThemeColor(hex)
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(stringResource(R.string.apply_color))
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            // Preset colors as quick shortcuts
+            Text(
+                stringResource(R.string.preset_colors),
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                presets.forEach { (hsl, nameResId) ->
+                    val presetColor = HslColorUtils.hslToColor(hsl.first, hsl.second, hsl.third)
+                    val hex = HslColorUtils.hslToHex(hsl.first, hsl.second, hsl.third)
+                    val isSelected = settings.themeColor == hex
+                    
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier.clickable {
+                            viewModel.setThemeColor(hex)
+                            hue = hsl.first
+                            saturation = hsl.second
+                            lightness = hsl.third
+                        }
+                    ) {
                         Box(
                             modifier = Modifier
-                                .size(24.dp)
-                                .background(
-                                    color = androidx.compose.ui.graphics.Color(android.graphics.Color.parseColor(color)),
-                                    shape = MaterialTheme.shapes.small
+                                .size(40.dp)
+                                .clip(CircleShape)
+                                .background(presetColor)
+                                .then(
+                                    if (isSelected) {
+                                        Modifier.border(3.dp, MaterialTheme.colorScheme.primary, CircleShape)
+                                    } else {
+                                        Modifier.border(1.dp, MaterialTheme.colorScheme.outline, CircleShape)
+                                    }
                                 )
                         )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(stringResource(nameResId))
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = stringResource(nameResId),
+                            style = MaterialTheme.typography.labelSmall
+                        )
                     }
-                    RadioButton(
-                        selected = settings.themeColor == color,
-                        onClick = { viewModel.setThemeColor(color) }
-                    )
                 }
             }
             
-            Divider(modifier = Modifier.padding(vertical = 16.dp))
+            HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp))
             
             // Background customization
             Text(

@@ -10,3 +10,7 @@
 -dontwarn com.google.errorprone.annotations.CheckReturnValue
 -dontwarn com.google.errorprone.annotations.Immutable
 -dontwarn com.google.errorprone.annotations.RestrictedApi
+
+# SQLCipher
+-keep class net.zetetic.** { *; }
+-dontwarn net.zetetic.**

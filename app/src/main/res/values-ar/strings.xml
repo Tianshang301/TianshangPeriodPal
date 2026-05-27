@@ -54,6 +54,47 @@
     <string name="security_settings">الأمان</string>
     <string name="prevent_screenshot">منع لقطات الشاشة</string>
     <string name="prevent_screenshot_description">تعطيل لقطات الشاشة وتسجيل الشاشة</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">أمان البيانات</string>
+    <string name="database_encryption">تشفير قاعدة البيانات</string>
+    <string name="encrypted">مشفر (AES-256)</string>
+    <string name="unencrypted">غير مشفر</string>
+    <string name="migrate_to_encrypted">الترحيل إلى قاعدة بيانات مشفرة</string>
+    <string name="migration_description">ترحيل البيانات الحالية إلى قاعدة بيانات مشفرة بـ AES-256. هذه العملية ذرية وستعود تلقائيًا في حالة الفشل.</string>
+    <string name="migration_success">نجح الترحيل! قاعدة البيانات مشفرة الآن.</string>
+    <string name="migration_failed">فشل الترحيل: %s. تم استعادة بياناتك إلى حالتها الأصلية.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">قفل بعد الخلفية</string>
+    <string name="lock_immediately">فوراً</string>
+    <string name="lock_after_seconds">قفل بعد %d ثانية</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">تذكيرات مخصصة</string>
+    <string name="add_custom_reminder">إضافة تذكير مخصص</string>
+    <string name="no_custom_reminders">لا توجد تذكيرات مخصصة بعد</string>
+    <string name="reminder_title_label">عنوان التذكير</string>
+    <string name="reminder_title_required">العنوان مطلوب</string>
+    <string name="reminder_message_label">الرسالة (اختياري)</string>
+    <string name="reminder_date">تاريخ التذكير</string>
+    <string name="select_time">اختيار الوقت</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">اللون</string>
+    <string name="saturation">التشبع</string>
+    <string name="lightness">السطوع</string>
+    <string name="apply_color">تطبيق اللون</string>
+    <string name="preset_colors">ألوان محددة مسبقاً</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">إضافة عرض</string>
+    <string name="symptom_name">اسم العرض</string>
+    <string name="symptom_name_required">اسم العرض مطلوب</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">تنبؤ تكيافي بناءً على آخر %1$d دورة (متوسط %2$s يوم/دورة، %3$s يوم/حيض)</string>
+    
     <string name="app_lock_setup_title">تعيين كلمة مرور القفل</string>
     <string name="set_pin">تعيين كلمة المرور</string>
     <string name="confirm_pin">تأكيد كلمة المرور</string>
@@ -159,8 +200,8 @@
     <string name="export_fail">فشل التصدير</string>
 
     <!-- BackupScreen -->
-    <string name="backup_export_desc">تصدير قاعدة البيانات كملف نسخ احتياطي ZIP</string>
-    <string name="backup_import_desc">استعادة البيانات من ملف النسخ الاحتياطي</string>
+    <string name="backup_export_desc">تصدير قاعدة البيانات كملف نسخ احتياطي ZIP مشفر بـ AES-256</string>
+    <string name="backup_import_desc">استعادة البيانات من ملف النسخ الاحتياطي (يدعم التنسيقات المشفرة والقديمة)</string>
     <string name="backup_csv_desc">تصدير السجلات كجدول CSV</string>
 
     <!-- RecycleBinScreen -->

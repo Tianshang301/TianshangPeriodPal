@@ -77,6 +77,47 @@
     <string name="security_settings">Seguridad</string>
     <string name="prevent_screenshot">Prevenir captura de pantalla</string>
     <string name="prevent_screenshot_description">Deshabilitar capturas de pantalla y grabación de pantalla</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Seguridad de datos</string>
+    <string name="database_encryption">Cifrado de base de datos</string>
+    <string name="encrypted">Cifrado (AES-256)</string>
+    <string name="unencrypted">No cifrado</string>
+    <string name="migrate_to_encrypted">Migrar a base de datos cifrada</string>
+    <string name="migration_description">Migrar los datos existentes a una base de datos cifrada con AES-256. Esta operación es atómica y se revertirá automáticamente en caso de fallo.</string>
+    <string name="migration_success">¡Migración exitosa! La base de datos ahora está cifrada.</string>
+    <string name="migration_failed">Migración fallida: %s. Sus datos han sido restaurados a su estado original.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Bloquear después de segundo plano</string>
+    <string name="lock_immediately">Inmediatamente</string>
+    <string name="lock_after_seconds">Bloquear después de %d segundos</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Recordatorios personalizados</string>
+    <string name="add_custom_reminder">Agregar recordatorio personalizado</string>
+    <string name="no_custom_reminders">No hay recordatorios personalizados</string>
+    <string name="reminder_title_label">Título del recordatorio</string>
+    <string name="reminder_title_required">El título es obligatorio</string>
+    <string name="reminder_message_label">Mensaje (opcional)</string>
+    <string name="reminder_date">Fecha del recordatorio</string>
+    <string name="select_time">Seleccionar hora</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Tono</string>
+    <string name="saturation">Saturación</string>
+    <string name="lightness">Luminosidad</string>
+    <string name="apply_color">Aplicar color</string>
+    <string name="preset_colors">Colores predefinidos</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Agregar síntoma</string>
+    <string name="symptom_name">Nombre del síntoma</string>
+    <string name="symptom_name_required">El nombre del síntoma es obligatorio</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Predicción adaptativa basada en los últimos %1$d ciclos (promedio de %2$s días/ciclo, %3$s días/período)</string>
+    
     <string name="no_deleted_records">No hay registros eliminados</string>
     <string name="avg_period_length">Duración promedio del período</string>
     <string name="symptom_frequency">Frecuencia de síntomas</string>
@@ -161,8 +202,8 @@
     <string name="export_fail">Error en la exportación</string>
     
     <!-- BackupScreen -->
-    <string name="backup_export_desc">Exportar la base de datos como archivo ZIP</string>
-    <string name="backup_import_desc">Restaurar datos desde un archivo de respaldo</string>
+    <string name="backup_export_desc">Exportar la base de datos como archivo ZIP cifrado AES-256</string>
+    <string name="backup_import_desc">Restaurar datos desde un archivo de respaldo (soporta formatos cifrado y heredado)</string>
     <string name="backup_csv_desc">Exportar registros como hoja de cálculo CSV</string>
 
     <!-- RecycleBinScreen -->

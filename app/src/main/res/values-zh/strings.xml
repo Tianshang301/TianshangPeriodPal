@@ -75,6 +75,47 @@
     <string name="security_settings">安全设置</string>
     <string name="prevent_screenshot">防止截屏</string>
     <string name="prevent_screenshot_description">开启后禁止截图和录屏，保护隐私</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">数据安全</string>
+    <string name="database_encryption">数据库加密</string>
+    <string name="encrypted">已加密 (AES-256)</string>
+    <string name="unencrypted">未加密</string>
+    <string name="migrate_to_encrypted">迁移至加密数据库</string>
+    <string name="migration_description">将现有数据迁移到 AES-256 加密数据库。此操作原子执行，失败自动回滚。</string>
+    <string name="migration_success">迁移成功！数据库已加密。</string>
+    <string name="migration_failed">迁移失败: %s。您的数据已恢复到原始状态。</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">后台锁定延迟</string>
+    <string name="lock_immediately">立即锁定</string>
+    <string name="lock_after_seconds">%d 秒后锁定</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">自定义提醒</string>
+    <string name="add_custom_reminder">添加自定义提醒</string>
+    <string name="no_custom_reminders">暂无自定义提醒</string>
+    <string name="reminder_title_label">提醒标题</string>
+    <string name="reminder_title_required">标题不能为空</string>
+    <string name="reminder_message_label">提醒内容（可选）</string>
+    <string name="reminder_date">提醒日期</string>
+    <string name="select_time">选择时间</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">色相</string>
+    <string name="saturation">饱和度</string>
+    <string name="lightness">明度</string>
+    <string name="apply_color">应用颜色</string>
+    <string name="preset_colors">预设颜色</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">添加症状</string>
+    <string name="symptom_name">症状名称</string>
+    <string name="symptom_name_required">症状名称不能为空</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">基于过去 %1$d 个周期（平均 %2$s 天/周期，%3$s 天/经期）自适应推算</string>
+    
     <string name="delete">删除</string>
     <string name="delete_record">删除记录</string>
     <string name="delete_record_confirm">确定要删除该日期的记录吗？此操作无法撤销。</string>
@@ -163,8 +204,8 @@
     <string name="export_fail">导出失败</string>
 
     <!-- BackupScreen -->
-    <string name="backup_export_desc">将数据库导出为 ZIP 备份文件</string>
-    <string name="backup_import_desc">从备份文件恢复数据</string>
+    <string name="backup_export_desc">将数据库导出为 AES-256 加密 ZIP 备份文件</string>
+    <string name="backup_import_desc">从备份文件恢复数据（支持加密和明文格式）</string>
     <string name="backup_csv_desc">将记录导出为 CSV 电子表格</string>
 
     <!-- RecycleBinScreen -->

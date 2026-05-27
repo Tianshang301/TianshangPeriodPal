@@ -11,6 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.util.Locale
 
 class PeriodPalApplication : Application() {
@@ -21,10 +22,12 @@ class PeriodPalApplication : Application() {
     }
     
     val database: PeriodDatabase by lazy {
+        // 必须在 Application 创建阶段确定加密状态
+        val settings = runBlocking { SettingsRepository(instance).settings.first() }
         try {
-            PeriodDatabase.getDatabase(this)
+            PeriodDatabase.getDatabase(this, encrypted = settings.dbEncrypted)
         } catch (e: Exception) {
-            PeriodDatabase.recreateDatabase(this)
+            PeriodDatabase.recreateDatabase(this, encrypted = settings.dbEncrypted)
         }
     }
     

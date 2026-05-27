@@ -13,6 +13,25 @@ object EncryptionKeyManager {
     private const val KEY_ALIAS = "period_pal_master_key"
     private const val ANDROID_KEYSTORE = "AndroidKeyStore"
     
+    /**
+     * 检查数据库是否已加密（即是否存在密钥）
+     */
+    fun isDatabaseEncrypted(context: Context): Boolean {
+        return try {
+            val masterKey = getMasterKey(context)
+            val sharedPreferences = EncryptedSharedPreferences.create(
+                context,
+                PREFS_NAME,
+                masterKey,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+            sharedPreferences.getString(PASSPHRASE_KEY, null) != null
+        } catch (_: Exception) {
+            false
+        }
+    }
+    
     fun getOrCreatePassphrase(context: Context): ByteArray {
         val masterKey = getMasterKey(context)
         val sharedPreferences = EncryptedSharedPreferences.create(

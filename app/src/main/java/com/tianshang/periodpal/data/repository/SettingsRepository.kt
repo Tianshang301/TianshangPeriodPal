@@ -4,12 +4,18 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.tianshang.periodpal.data.model.CustomReminder
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_settings")
 
 class SettingsRepository(private val context: Context) {
+    
+    private val gson = Gson()
     
     private object PreferencesKeys {
         val CYCLE_LENGTH = intPreferencesKey("cycle_length")
@@ -39,6 +45,16 @@ class SettingsRepository(private val context: Context) {
         val DARK_MODE = booleanPreferencesKey("dark_mode")
         val DARK_MODE_FOLLOW_SYSTEM = booleanPreferencesKey("dark_mode_follow_system")
         val PREVENT_SCREENSHOT = booleanPreferencesKey("prevent_screenshot")
+        
+        // Security settings
+        val DB_ENCRYPTED = booleanPreferencesKey("db_encrypted")
+        val APP_LOCK_BACKGROUND_DELAY = intPreferencesKey("app_lock_background_delay")
+        
+        // Custom reminders
+        val CUSTOM_REMINDERS = stringPreferencesKey("custom_reminders_json")
+        
+        // Custom symptoms
+        val CUSTOM_SYMPTOMS = stringPreferencesKey("custom_symptoms_json")
     }
     
     val settings: Flow<UserSettings> = context.dataStore.data.map { preferences ->
@@ -63,7 +79,9 @@ class SettingsRepository(private val context: Context) {
             pmsReminderTime = preferences[PreferencesKeys.PMS_REMINDER_TIME] ?: "08:00",
             darkMode = preferences[PreferencesKeys.DARK_MODE] ?: false,
             darkModeFollowSystem = preferences[PreferencesKeys.DARK_MODE_FOLLOW_SYSTEM] ?: true,
-            preventScreenshot = preferences[PreferencesKeys.PREVENT_SCREENSHOT] ?: false
+            preventScreenshot = preferences[PreferencesKeys.PREVENT_SCREENSHOT] ?: false,
+            dbEncrypted = preferences[PreferencesKeys.DB_ENCRYPTED] ?: false,
+            appLockBackgroundDelay = preferences[PreferencesKeys.APP_LOCK_BACKGROUND_DELAY] ?: 0
         )
     }
     
@@ -94,6 +112,8 @@ class SettingsRepository(private val context: Context) {
             preferences[PreferencesKeys.DARK_MODE] = settings.darkMode
             preferences[PreferencesKeys.DARK_MODE_FOLLOW_SYSTEM] = settings.darkModeFollowSystem
             preferences[PreferencesKeys.PREVENT_SCREENSHOT] = settings.preventScreenshot
+            preferences[PreferencesKeys.DB_ENCRYPTED] = settings.dbEncrypted
+            preferences[PreferencesKeys.APP_LOCK_BACKGROUND_DELAY] = settings.appLockBackgroundDelay
         }
     }
     
@@ -101,6 +121,63 @@ class SettingsRepository(private val context: Context) {
         context.dataStore.edit { preferences ->
             preferences[PreferencesKeys.TERMS_ACCEPTED] = true
             preferences[PreferencesKeys.FIRST_LAUNCH] = false
+        }
+    }
+    
+    val customReminders: Flow<List<CustomReminder>> = context.dataStore.data.map { preferences ->
+        val json = preferences[PreferencesKeys.CUSTOM_REMINDERS] ?: "[]"
+        val type = object : TypeToken<List<CustomReminder>>() {}.type
+        try {
+            gson.fromJson<List<CustomReminder>>(json, type) ?: emptyList()
+        } catch (_: Exception) {
+            emptyList()
+        }
+    }
+    
+    suspend fun updateCustomReminders(reminders: List<CustomReminder>) {
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.CUSTOM_REMINDERS] = gson.toJson(reminders)
+        }
+    }
+    
+    suspend fun addCustomReminder(reminder: CustomReminder) {
+        val current = customReminders.first()
+        updateCustomReminders(current + reminder)
+    }
+    
+    suspend fun removeCustomReminder(id: Long) {
+        val current = customReminders.first()
+        updateCustomReminders(current.filter { it.id != id })
+    }
+    
+    suspend fun toggleCustomReminder(id: Long, enabled: Boolean) {
+        val current = customReminders.first()
+        updateCustomReminders(current.map { if (it.id == id) it.copy(enabled = enabled) else it })
+    }
+    
+    val customSymptoms: Flow<List<String>> = context.dataStore.data.map { preferences ->
+        val json = preferences[PreferencesKeys.CUSTOM_SYMPTOMS] ?: "[]"
+        val type = object : TypeToken<List<String>>() {}.type
+        try {
+            gson.fromJson<List<String>>(json, type) ?: emptyList()
+        } catch (_: Exception) {
+            emptyList()
+        }
+    }
+    
+    suspend fun addCustomSymptom(symptom: String) {
+        val current = customSymptoms.first()
+        if (!current.contains(symptom)) {
+            context.dataStore.edit { preferences ->
+                preferences[PreferencesKeys.CUSTOM_SYMPTOMS] = gson.toJson(current + symptom)
+            }
+        }
+    }
+    
+    suspend fun removeCustomSymptom(symptom: String) {
+        val current = customSymptoms.first()
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.CUSTOM_SYMPTOMS] = gson.toJson(current - symptom)
         }
     }
 }
@@ -126,5 +203,7 @@ data class UserSettings(
     val pmsReminderTime: String = "08:00",
     val darkMode: Boolean = false,
     val darkModeFollowSystem: Boolean = true,
-    val preventScreenshot: Boolean = false
+    val preventScreenshot: Boolean = false,
+    val dbEncrypted: Boolean = false,
+    val appLockBackgroundDelay: Int = 0
 )

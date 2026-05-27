@@ -10,6 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.tianshang.periodpal.data.model.BmiRecord
 import com.tianshang.periodpal.data.model.DailySymptom
 import com.tianshang.periodpal.data.model.PeriodRecord
+import net.sqlcipher.database.SupportFactory
 
 @Database(
     entities = [PeriodRecord::class, DailySymptom::class, BmiRecord::class],
@@ -26,43 +27,53 @@ abstract class PeriodDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: PeriodDatabase? = null
         
-        fun getDatabase(context: Context): PeriodDatabase {
+        /**
+         * 关闭数据库实例并清除引用
+         */
+        fun closeInstance() {
+            synchronized(this) {
+                INSTANCE?.close()
+                INSTANCE = null
+            }
+        }
+        
+        fun getDatabase(context: Context, encrypted: Boolean = false): PeriodDatabase {
             return INSTANCE ?: synchronized(this) {
-                val instance = buildDatabase(context)
+                val instance = buildDatabase(context, encrypted)
                 INSTANCE = instance
                 instance
             }
         }
         
-        private fun buildDatabase(context: Context): PeriodDatabase {
+        private fun buildDatabase(context: Context, encrypted: Boolean): PeriodDatabase {
+            val builder = Room.databaseBuilder(
+                context.applicationContext,
+                PeriodDatabase::class.java,
+                "period_pal_database"
+            )
+                .addMigrations(MIGRATION_1_2)
+                .fallbackToDestructiveMigration()
+            
+            if (encrypted) {
+                val passphrase = EncryptionKeyManager.getOrCreatePassphrase(context)
+                val factory = SupportFactory(passphrase)
+                builder.openHelperFactory(factory)
+            }
+            
             return try {
-                Room.databaseBuilder(
-                    context.applicationContext,
-                    PeriodDatabase::class.java,
-                    "period_pal_database"
-                )
-                    .addMigrations(MIGRATION_1_2)
-                    .fallbackToDestructiveMigration()
-                    .build()
+                builder.build()
             } catch (e: Exception) {
                 // 数据库损坏，删除并重建
                 context.deleteDatabase("period_pal_database")
-                Room.databaseBuilder(
-                    context.applicationContext,
-                    PeriodDatabase::class.java,
-                    "period_pal_database"
-                )
-                    .addMigrations(MIGRATION_1_2)
-                    .fallbackToDestructiveMigration()
-                    .build()
+                builder.build()
             }
         }
         
-        fun recreateDatabase(context: Context): PeriodDatabase {
+        fun recreateDatabase(context: Context, encrypted: Boolean = false): PeriodDatabase {
             synchronized(this) {
+                closeInstance()
                 context.deleteDatabase("period_pal_database")
-                INSTANCE = null
-                return buildDatabase(context)
+                return buildDatabase(context, encrypted).also { INSTANCE = it }
             }
         }
         

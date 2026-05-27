@@ -75,6 +75,46 @@
     <string name="security_settings">Security</string>
     <string name="prevent_screenshot">Prevent Screenshot</string>
     <string name="prevent_screenshot_description">Disable screenshots and screen recording to protect privacy</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Data Security</string>
+    <string name="database_encryption">Database Encryption</string>
+    <string name="encrypted">Encrypted (AES-256)</string>
+    <string name="unencrypted">Not Encrypted</string>
+    <string name="migrate_to_encrypted">Migrate to Encrypted Database</string>
+    <string name="migration_description">Migrate existing data to an AES-256 encrypted database. This operation is atomic and will automatically rollback on failure.</string>
+    <string name="migration_success">Migration successful! Database is now encrypted.</string>
+    <string name="migration_failed">Migration failed: %s. Your data has been restored to its original state.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Lock after background</string>
+    <string name="lock_immediately">Immediately</string>
+    <string name="lock_after_seconds">%d seconds</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Custom Reminders</string>
+    <string name="add_custom_reminder">Add Custom Reminder</string>
+    <string name="no_custom_reminders">No custom reminders yet</string>
+    <string name="reminder_title_label">Reminder title</string>
+    <string name="reminder_title_required">Title is required</string>
+    <string name="reminder_message_label">Message (optional)</string>
+    <string name="reminder_date">Reminder date</string>
+    <string name="select_time">Select time</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="lightness">Lightness</string>
+    <string name="apply_color">Apply Color</string>
+    <string name="preset_colors">Preset Colors</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Add Symptom</string>
+    <string name="symptom_name">Symptom name</string>
+    <string name="symptom_name_required">Symptom name is required</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Adaptively predicted based on the last %1$d cycles (average %2$s days/cycle, %3$s days/period)</string>
     <string name="record_date">Record Date</string>
     <string name="select_date">Select Date</string>
     <string name="confirm">Confirm</string>
