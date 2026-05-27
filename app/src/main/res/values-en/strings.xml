@@ -207,4 +207,15 @@
     <string name="notif_ovulation_message">Ovulation is predicted in %d days</string>
     <string name="notif_pms_title">PMS Reminder</string>
     <string name="notif_pms_message">PMS symptoms may start in %d days</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">Preset Colors</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">Custom Color</string>
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="lightness">Lightness</string>
+    <string name="color_preview">Color Preview</string>
+    <string name="apply">Apply</string>
 </resources>

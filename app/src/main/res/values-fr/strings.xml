@@ -214,4 +214,15 @@
     <string name="notif_ovulation_message">L\'ovulation est prévue dans %d jours</string>
     <string name="notif_pms_title">Rappel du syndrome prémenstruel</string>
     <string name="notif_pms_message">Les symptômes du SPM peuvent apparaître dans %d jours</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">Couleurs prédéfinies</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">Couleur personnalisée</string>
+    <string name="hue">Teinte</string>
+    <string name="saturation">Saturation</string>
+    <string name="lightness">Luminosité</string>
+    <string name="color_preview">Aperçu de la couleur</string>
+    <string name="apply">Appliquer</string>
 </resources>

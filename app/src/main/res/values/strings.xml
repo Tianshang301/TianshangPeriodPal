@@ -145,6 +145,17 @@
     <string name="color_light_purple">Light purple</string>
     <string name="color_medium_purple">Medium purple</string>
     
+    <!-- ThemeScreen -->
+    <string name="color_presets">Preset Colors</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">Custom Color</string>
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="lightness">Lightness</string>
+    <string name="color_preview">Color Preview</string>
+    <string name="apply">Apply</string>
+
     <!-- BmiScreen -->
     <string name="unit_cm">cm</string>
     <string name="unit_kg">kg</string>

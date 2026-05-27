@@ -16,6 +16,7 @@ import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.model.CycleRegularity
 import com.tianshang.periodpal.data.model.ConfidenceLevel
 import com.tianshang.periodpal.ui.components.CycleLengthChart
+import com.tianshang.periodpal.ui.components.EmptyStateCharacter
 import com.tianshang.periodpal.ui.components.PainTrendChart
 import com.tianshang.periodpal.ui.components.SymptomFrequencyChart
 import com.tianshang.periodpal.viewmodel.AnalysisViewModel
@@ -41,7 +42,8 @@ fun AnalysisScreen(navController: NavController) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+                    .padding(bottom = 16.dp),
+                shape = MaterialTheme.shapes.medium
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
@@ -94,7 +96,8 @@ fun AnalysisScreen(navController: NavController) {
         
         if (predictions.isNotEmpty()) {
             Card(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                shape = MaterialTheme.shapes.medium
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
@@ -127,28 +130,12 @@ fun AnalysisScreen(navController: NavController) {
         }
         
         if (statistics == null || (statistics?.totalCycles ?: 0) < 2) {
-            Card(
+            EmptyStateCharacter(
+                message = stringResource(R.string.analysis_no_data_hint),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 16.dp)
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = stringResource(R.string.analysis_no_data_title),
-                        style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = stringResource(R.string.analysis_no_data_hint),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-            }
+                    .padding(top = 32.dp)
+            )
         }
     }
 }

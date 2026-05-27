@@ -213,4 +213,15 @@
     <string name="notif_ovulation_message">배란일이 %d일 후에 예정됩니다</string>
     <string name="notif_pms_title">PMS 리마인더</string>
     <string name="notif_pms_message">PMS 증상이 %d일 후에 나타날 수 있습니다</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">프리셋 색상</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">사용자 지정 색상</string>
+    <string name="hue">색상</string>
+    <string name="saturation">채도</string>
+    <string name="lightness">명도</string>
+    <string name="color_preview">색상 미리보기</string>
+    <string name="apply">적용</string>
 </resources>

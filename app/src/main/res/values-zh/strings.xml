@@ -215,4 +215,15 @@
     <string name="notif_ovulation_message">预测排卵日在 %d 天后</string>
     <string name="notif_pms_title">经前综合征提醒</string>
     <string name="notif_pms_message">经前症状可能在 %d 天后出现</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">预设颜色</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">自定义颜色</string>
+    <string name="hue">色相</string>
+    <string name="saturation">饱和度</string>
+    <string name="lightness">明度</string>
+    <string name="color_preview">颜色预览</string>
+    <string name="apply">应用</string>
 </resources>

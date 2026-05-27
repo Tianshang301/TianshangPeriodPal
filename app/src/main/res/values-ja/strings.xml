@@ -213,4 +213,15 @@
     <string name="notif_ovulation_message">排卵日が%d日後の予定です</string>
     <string name="notif_pms_title">PMSリマインダー</string>
     <string name="notif_pms_message">PMS症状が%d日後に現れる可能性があります</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">プリセットカラー</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">カスタムカラー</string>
+    <string name="hue">色相</string>
+    <string name="saturation">彩度</string>
+    <string name="lightness">明度</string>
+    <string name="color_preview">色プレビュー</string>
+    <string name="apply">適用</string>
 </resources>

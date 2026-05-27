@@ -215,4 +215,15 @@
     <string name="notif_ovulation_message">من المتوقع أن تحدث التبويض خلال %d يوم</string>
     <string name="notif_pms_title">تذكير متلازمة ما قبل الطمث</string>
     <string name="notif_pms_message">قد تظهر أعراض متلازمة ما قبل الطمث خلال %d يوم</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">الألوان المحددة مسبقاً</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">لون مخصص</string>
+    <string name="hue">درجة اللون</string>
+    <string name="saturation">التشبع</string>
+    <string name="lightness">الإضاءة</string>
+    <string name="color_preview">معاينة اللون</string>
+    <string name="apply">تطبيق</string>
 </resources>

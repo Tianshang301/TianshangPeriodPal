@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.EmptyStateCharacter
 import com.tianshang.periodpal.viewmodel.RecycleBinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,7 +48,9 @@ fun RecycleBinScreen(navController: NavController) {
                     .padding(paddingValues),
                 contentAlignment = Alignment.Center
             ) {
-                Text(stringResource(R.string.no_deleted_records))
+                EmptyStateCharacter(
+                    message = stringResource(R.string.no_deleted_records)
+                )
             }
         } else {
             LazyColumn(
@@ -60,7 +63,8 @@ fun RecycleBinScreen(navController: NavController) {
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 8.dp)
+                            .padding(vertical = 8.dp),
+                        shape = MaterialTheme.shapes.medium
                     ) {
                         Row(
                             modifier = Modifier

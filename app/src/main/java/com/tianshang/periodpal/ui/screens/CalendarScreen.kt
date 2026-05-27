@@ -21,6 +21,7 @@ import androidx.navigation.NavController
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.model.CyclePrediction
 import com.tianshang.periodpal.data.model.PeriodRecord
+import com.tianshang.periodpal.ui.components.CartoonCalendarDay
 import com.tianshang.periodpal.ui.navigation.Screen
 import com.tianshang.periodpal.ui.theme.*
 import com.tianshang.periodpal.viewmodel.CalendarViewModel
@@ -50,6 +51,7 @@ fun CalendarScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp),
+            shape = MaterialTheme.shapes.medium,
             colors = CardDefaults.cardColors(
                 containerColor = PinkPrimary.copy(alpha = 0.2f)
             )
@@ -159,7 +161,8 @@ fun CalendarScreen(navController: NavController) {
                     navController.navigate(Screen.RecordWithDate.createRoute(date.toString()))
                 } ?: navController.navigate(Screen.Record.route)
             },
-            modifier = Modifier.align(Alignment.End)
+            modifier = Modifier.align(Alignment.End),
+            shape = ExtraLargeShape
         ) {
             Icon(Icons.Default.Add, stringResource(R.string.calendar_add_record))
         }
@@ -196,6 +199,8 @@ fun CalendarGrid(
         weeks.add(currentWeek)
     }
     
+    val today = LocalDate.now()
+    
     Column(modifier = modifier.fillMaxWidth()) {
         weeks.forEach { week ->
             Row(modifier = Modifier.fillMaxWidth()) {
@@ -217,33 +222,17 @@ fun CalendarGrid(
                             !date.isBefore(prediction.fertileWindowStart) &&
                             !date.isAfter(prediction.fertileWindowEnd)
                         }
-                        val backgroundColor = when {
-                            isPeriod -> PeriodRed
-                            isOvulation -> OvulationBlue
-                            isFertile -> OvulationBlueLight
-                            isPredictedPeriod -> PeriodRedLight
-                            else -> Color.Transparent
-                        }
                         
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .aspectRatio(1f)
-                                .padding(2.dp)
-                                .background(
-                                    color = backgroundColor,
-                                    shape = MaterialTheme.shapes.small
-                                )
-                                .clickable { onDateSelected(date) },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = date.dayOfMonth.toString(),
-                                color = if (backgroundColor != Color.Transparent) Color.White
-                                       else MaterialTheme.colorScheme.onSurface,
-                                style = MaterialTheme.typography.bodyMedium
-                            )
-                        }
+                        CartoonCalendarDay(
+                            date = date,
+                            isPeriod = isPeriod,
+                            isPredicted = isPredictedPeriod,
+                            isOvulation = isOvulation,
+                            isFertile = isFertile,
+                            isToday = date == today,
+                            modifier = Modifier.weight(1f),
+                            onClick = { onDateSelected(date) }
+                        )
                     } else {
                         Spacer(modifier = Modifier.weight(1f))
                     }

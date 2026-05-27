@@ -214,4 +214,15 @@
     <string name="notif_ovulation_message">La ovulación está prevista en %d días</string>
     <string name="notif_pms_title">Recordatorio del síndrome premenstrual</string>
     <string name="notif_pms_message">Los síntomas del SPN pueden aparecer en %d días</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_presets">Colores predefinidos</string>
+
+    <!-- ColorPickerDialog -->
+    <string name="custom_color">Color personalizado</string>
+    <string name="hue">Tono</string>
+    <string name="saturation">Saturación</string>
+    <string name="lightness">Luminosidad</string>
+    <string name="color_preview">Vista previa del color</string>
+    <string name="apply">Aplicar</string>
 </resources>
