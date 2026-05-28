@@ -4,6 +4,39 @@ All notable changes to TianshangPeriodPal (天殇·月记) will be documented in
 
 ---
 
+## [2.1.0] - 2026-05-28
+
+### Bug Fixes
+
+#### Calendar & Cycle Day Display
+- **Fix `currentCycleDay` showing for dates outside active period**: Now only displays "当前周期第 X 天" when today falls within an active period (endDate == null or today <= endDate).
+- **Add `daysUntilNextPeriod` calculation**: Shows "距下次经期还有 X 天" when not in a period but prediction data is available.
+- **Conditional display logic**: Calendar header shows 3 states — in-period day count / days until next period / no data prompt.
+
+#### Period Start/End Buttons
+- **Fix `quickStartPeriod` creating duplicate records**: Added checks for existing record on same date and existing ongoing period (endDate == null).
+- **Fix `quickEndPeriod` finding wrong record**: Changed from `getLastRecord()` (by startDate DESC) to `lastOrNull { endDate == null }` to find the actual ongoing period.
+- **Fix `quickEndPeriod` date validation**: endDate is now clamped to not precede startDate.
+- **Fix `saveRecord` creating garbage period records**: Uses `getRecordForDate` (date range match) instead of `getRecordByStartDate` (exact start date match), and no longer auto-creates PeriodRecord when none found (aligned with v1.5.0).
+- **Fix Save button passing painLevel=0 as non-null**: Changed `painLevel.takeIf { it >= 0 }` to `painLevel.takeIf { it > 0 }` to match v1.5.0 behavior.
+
+#### Prediction Engine
+- **Fix temperature index mismatch in `findOvulationAdjustment`**: `mapNotNull { it.bodyTemperature }` lost date mapping, causing incorrect date returns when symptoms lacked temperature data. Now uses `Pair<LocalDate, Float>` mapping.
+- **Fix Float precision in temperature comparison**: Changed `0.3` (Double) to `0.29f` (Float) to prevent Float→Double promotion causing exactly 0.3°C rises to be missed.
+- **Fix `learnLutealPhase` search range too broad**: Search now starts after period ends (`prevRecord.endDate + 1 day`) instead of from `prevRecord.startDate`, excluding false positives during menstruation.
+- **Remove redundant IQR filtering in `calculateWeightedAverage`**: `calculateCycleLengths` already applies IQR; the second pass was redundant.
+
+### Improvements
+- **New UI components**: BouncyButton (spring-animated button), CartoonCalendarDay (styled calendar day), EmptyStateCharacter, ColorPickerDialog.
+- **New string resources**: `days_until_next_period` and `no_period_data` in all 8 locales (zh/en/ja/ko/fr/es/ar).
+- **ProGuard rules**: Added Gson TypeToken and SQLCipher keep rules for release builds.
+- **Database initialization**: Moved `initDatabase()` to synchronous call before Activity access.
+
+### Version
+- Version: 2.0.0 → 2.1.0 (versionCode 9 → 10)
+
+---
+
 ## [2.0.0] - 2026-05-26
 
 ### Version Fork

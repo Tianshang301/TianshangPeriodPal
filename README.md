@@ -18,7 +18,7 @@
 **A fully offline, privacy-focused menstrual cycle tracking and management app**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/Tianshang301/TianshangPeriodPal/releases)
+[![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg)](https://github.com/Tianshang301/TianshangPeriodPal/releases)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-28%20(Android%209)-green.svg)](https://developer.android.com/about/versions/pie)
 [![Target SDK](https://img.shields.io/badge/Target%20SDK-35%20(Android%2015)-brightgreen.svg)](https://developer.android.com/about/versions/15)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-blue.svg)](https://kotlinlang.org)
