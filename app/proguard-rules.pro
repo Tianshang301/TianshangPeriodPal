@@ -11,6 +11,18 @@
 -dontwarn com.google.errorprone.annotations.Immutable
 -dontwarn com.google.errorprone.annotations.RestrictedApi
 
+# Preserve generic signatures (required by Gson TypeToken)
+-keepattributes Signature
+-keepattributes *Annotation*
+
+# Gson
+-keep class com.google.gson.** { *; }
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * extends com.google.gson.reflect.TypeToken
+-keep class com.tianshang.periodpal.data.repository.** { *; }
+
 # SQLCipher
 -keep class net.zetetic.** { *; }
+-keep class net.sqlcipher.** { *; }
 -dontwarn net.zetetic.**
+-dontwarn net.sqlcipher.**

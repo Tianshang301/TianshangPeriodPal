@@ -43,6 +43,12 @@ class RecordViewModel(
     
     fun quickStartPeriod(date: LocalDate = LocalDate.now()) {
         viewModelScope.launch {
+            val existing = periodRepository.getRecordByStartDate(date)
+            if (existing != null) return@launch
+            
+            val records = periodRepository.getAllRecordsSync()
+            if (records.any { it.endDate == null }) return@launch
+            
             val record = PeriodRecord(
                 startDate = date,
                 endDate = null
@@ -54,9 +60,11 @@ class RecordViewModel(
     
     fun quickEndPeriod(date: LocalDate = LocalDate.now()) {
         viewModelScope.launch {
-            val lastRecord = periodRepository.getLastRecord()
-            if (lastRecord != null && lastRecord.endDate == null) {
-                val updatedRecord = lastRecord.copy(endDate = date)
+            val records = periodRepository.getAllRecordsSync()
+            val ongoingRecord = records.lastOrNull { it.endDate == null }
+            if (ongoingRecord != null) {
+                val endDate = if (date < ongoingRecord.startDate) ongoingRecord.startDate else date
+                val updatedRecord = ongoingRecord.copy(endDate = endDate)
                 periodRepository.update(updatedRecord)
             }
             rescheduleReminders()

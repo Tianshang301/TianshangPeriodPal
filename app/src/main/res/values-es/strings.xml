@@ -17,6 +17,8 @@
     <string name="pin_length_error">La contraseña debe tener al menos %d caracteres</string>
     <string name="calendar_title">Calendario</string>
     <string name="current_cycle_day">Día %d del ciclo</string>
+    <string name="days_until_next_period">Próximo período en %d días</string>
+    <string name="no_period_data">Sin datos de período</string>
     <string name="tap_date_to_record">Toca para registrar</string>
     <string name="period">Período</string>
     <string name="predicted_period">Período previsto</string>
@@ -108,6 +110,9 @@
     <string name="saturation">Saturación</string>
     <string name="lightness">Luminosidad</string>
     <string name="apply_color">Aplicar color</string>
+    <string name="custom_color">Color personalizado</string>
+    <string name="color_preview">Vista previa del color</string>
+    <string name="apply">Aplicar</string>
     <string name="preset_colors">Colores predefinidos</string>
     
     <!-- Custom Symptoms -->

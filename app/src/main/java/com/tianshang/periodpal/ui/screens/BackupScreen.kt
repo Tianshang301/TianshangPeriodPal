@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.BouncyButton
 import com.tianshang.periodpal.viewmodel.BackupViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,7 +62,7 @@ fun BackupScreen(navController: NavController) {
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
-            Button(
+            BouncyButton(
                 onClick = {
                     viewModel.exportDatabase { uri ->
                         val success = uri != null
@@ -91,7 +92,7 @@ fun BackupScreen(navController: NavController) {
                 modifier = Modifier.padding(top = 4.dp, bottom = 16.dp)
             )
             
-            Button(
+            BouncyButton(
                 onClick = {
                     importLauncher.launch(arrayOf("application/zip", "application/octet-stream"))
                 },
@@ -107,7 +108,7 @@ fun BackupScreen(navController: NavController) {
                 modifier = Modifier.padding(top = 4.dp, bottom = 16.dp)
             )
             
-            Button(
+            BouncyButton(
                 onClick = {
                     viewModel.exportToCSV { uri ->
                         val success = uri != null

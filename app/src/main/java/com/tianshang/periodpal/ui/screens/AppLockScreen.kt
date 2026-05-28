@@ -12,6 +12,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.BouncyButton
 import com.tianshang.periodpal.utils.BiometricHelper
 import com.tianshang.periodpal.utils.EncryptionManager
 import kotlinx.coroutines.delay
@@ -160,20 +161,20 @@ fun AppLockScreen(
                 )
             }
 
-            Button(
+            BouncyButton(
                 onClick = {
                     errorMessage = ""
 
-                    if (isLockedOut) return@Button
+                    if (isLockedOut) return@BouncyButton
 
                     if (isFirstTimeSetup) {
                         if (pin.length < PIN_MIN_LENGTH) {
                             errorMessage = context.getString(R.string.pin_length_error, PIN_MIN_LENGTH)
-                            return@Button
+                            return@BouncyButton
                         }
                         if (pin != confirmPin) {
                             errorMessage = context.getString(R.string.pin_mismatch_error)
-                            return@Button
+                            return@BouncyButton
                         }
                         val hash = encryptionManager.hashPassword(pin)
                         encryptionManager.savePasswordHash(hash)

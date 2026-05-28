@@ -27,6 +27,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.BouncyButton
+import com.tianshang.periodpal.ui.theme.ExtraLargeShape
 import com.tianshang.periodpal.ui.theme.HslColorUtils
 import com.tianshang.periodpal.viewmodel.SettingsViewModel
 
@@ -173,12 +175,13 @@ fun ThemeScreen(navController: NavController) {
             )
             
             // Apply button
-            Button(
+            BouncyButton(
                 onClick = {
                     val hex = HslColorUtils.hslToHex(hue, saturation, lightness)
                     viewModel.setThemeColor(hex)
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                shape = ExtraLargeShape
             ) {
                 Text(stringResource(R.string.apply_color))
             }
@@ -285,7 +288,7 @@ fun ThemeScreen(navController: NavController) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                Button(
+                BouncyButton(
                     onClick = { imagePickerLauncher.launch("image/*") }
                 ) {
                     Text(stringResource(R.string.select_background_image))

@@ -94,10 +94,12 @@ class PredictionEngine {
             val prevRecord = records[i - 1]
             val currRecord = records[i]
             
-            // Find ovulation confirmation in the previous cycle
+            // Find ovulation confirmation in the previous cycle (after period ends)
+            val searchStart = prevRecord.endDate?.plusDays(1)
+                ?: prevRecord.startDate.plusDays(DEFAULT_PERIOD_LENGTH.toLong())
             val ovulationDate = findOvulationDateInRange(
                 symptoms,
-                prevRecord.startDate,
+                searchStart,
                 currRecord.startDate
             )
             
@@ -150,8 +152,8 @@ class PredictionEngine {
         }
         if (temps.size >= 3) {
             for (i in 0 until temps.size - 2) {
-                if (temps[i + 1].second > temps[i].second + 0.3 &&
-                    temps[i + 2].second > temps[i].second + 0.3) {
+                if (temps[i + 1].second > temps[i].second + 0.29f &&
+                    temps[i + 2].second > temps[i].second + 0.29f) {
                     return temps[i + 1].first
                 }
             }
@@ -185,21 +187,11 @@ class PredictionEngine {
     private fun calculateWeightedAverage(lengths: List<Int>): Double {
         if (lengths.isEmpty()) return DEFAULT_CYCLE_LENGTH.toDouble()
         
-        val sorted = lengths.sorted()
-        val q1 = sorted[sorted.size / 4]
-        val q3 = sorted[sorted.size * 3 / 4]
-        val iqr = q3 - q1
-        val lowerBound = q1 - 1.5 * iqr
-        val upperBound = q3 + 1.5 * iqr
-        
-        val filtered = lengths.filter { it.toDouble() in lowerBound..upperBound }
-        if (filtered.isEmpty()) return lengths.average()
-        
         // Exponential decay: recent data has higher weight
         var sum = 0.0
         var weightSum = 0.0
-        filtered.forEachIndexed { index, length ->
-            val weight = DECAY_FACTOR.pow((filtered.size - 1 - index).toDouble())
+        lengths.forEachIndexed { index, length ->
+            val weight = DECAY_FACTOR.pow((lengths.size - 1 - index).toDouble())
             sum += length * weight
             weightSum += weight
         }
@@ -249,11 +241,14 @@ class PredictionEngine {
             }
         }
         
-        val temps = relevantSymptoms.mapNotNull { it.bodyTemperature }
+        val temps = relevantSymptoms.mapNotNull { symptom ->
+            symptom.bodyTemperature?.let { symptom.date to it }
+        }
         if (temps.size >= 3) {
             for (i in 0 until temps.size - 2) {
-                if (temps[i + 1] > temps[i] + 0.3 && temps[i + 2] > temps[i] + 0.3) {
-                    return relevantSymptoms[i + 1].date
+                if (temps[i + 1].second > temps[i].second + 0.29f &&
+                    temps[i + 2].second > temps[i].second + 0.29f) {
+                    return temps[i + 1].first
                 }
             }
         }

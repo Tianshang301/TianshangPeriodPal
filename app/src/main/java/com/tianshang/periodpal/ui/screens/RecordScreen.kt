@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.BouncyButton
 import com.tianshang.periodpal.viewmodel.RecordViewModel
 import kotlinx.coroutines.launch
 import java.time.Instant
@@ -193,7 +194,7 @@ fun RecordScreen(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Button(
+            BouncyButton(
                 onClick = { 
                     isPeriodStart = true
                     viewModel.quickStartPeriod(selectedDate)
@@ -205,7 +206,7 @@ fun RecordScreen(
                 Text(stringResource(R.string.start_period))
             }
             
-            Button(
+            BouncyButton(
                 onClick = { 
                     isPeriodEnd = true
                     viewModel.quickEndPeriod(selectedDate)
@@ -386,12 +387,12 @@ fun RecordScreen(
             }
             
             // Save button
-            Button(
+            BouncyButton(
                 onClick = {
                     viewModel.saveRecord(
                         date = selectedDate,
-                        flowLevel = if (flowLevel > 0) flowLevel else null,
-                        painLevel = if (painLevel > 0) painLevel else null,
+                        flowLevel = flowLevel.takeIf { it > 0 },
+                        painLevel = painLevel.takeIf { it > 0 },
                         symptoms = selectedSymptoms.toList(),
                         sexualActivity = hasSexualActivity,
                         ovulationTest = ovulationTest.takeIf { it.isNotEmpty() },

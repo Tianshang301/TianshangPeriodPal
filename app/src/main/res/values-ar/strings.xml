@@ -10,6 +10,8 @@
     <string name="invalid_pin">كلمة المرور غير صالحة</string>
     <string name="calendar_title">التقويم</string>
     <string name="current_cycle_day">اليوم %d من الدورة</string>
+    <string name="days_until_next_period">الدورة القادمة خلال %d يوم</string>
+    <string name="no_period_data">لا توجد بيانات</string>
     <string name="tap_date_to_record">اضغط للتسجيل</string>
     <string name="period">الحيض</string>
     <string name="predicted_period">الحيض المتوقع</string>
@@ -85,6 +87,9 @@
     <string name="saturation">التشبع</string>
     <string name="lightness">السطوع</string>
     <string name="apply_color">تطبيق اللون</string>
+    <string name="custom_color">لون مخصص</string>
+    <string name="color_preview">معاينة اللون</string>
+    <string name="apply">تطبيق</string>
     <string name="preset_colors">ألوان محددة مسبقاً</string>
     
     <!-- Custom Symptoms -->

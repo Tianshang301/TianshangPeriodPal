@@ -18,6 +18,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.model.BmiRecord
+import com.tianshang.periodpal.ui.components.BouncyButton
 import com.tianshang.periodpal.viewmodel.BmiViewModel
 import java.time.format.DateTimeFormatter
 
@@ -100,7 +101,7 @@ fun BmiScreen(navController: NavController) {
             
             Spacer(modifier = Modifier.height(16.dp))
             
-            Button(
+            BouncyButton(
                 onClick = {
                     val h = height.toFloatOrNull()
                     val w = weight.toFloatOrNull()

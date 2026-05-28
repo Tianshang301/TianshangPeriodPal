@@ -13,6 +13,9 @@ interface PeriodRecordDao {
     @Query("SELECT * FROM period_records WHERE isDeleted = 0 AND startDate <= :date AND (endDate IS NULL OR endDate >= :date)")
     suspend fun getRecordForDate(date: LocalDate): PeriodRecord?
     
+    @Query("SELECT * FROM period_records WHERE isDeleted = 0 AND startDate = :date LIMIT 1")
+    suspend fun getRecordByStartDate(date: LocalDate): PeriodRecord?
+
     @Query("SELECT * FROM period_records WHERE isDeleted = 0 ORDER BY startDate DESC LIMIT 1")
     suspend fun getLastRecord(): PeriodRecord?
     

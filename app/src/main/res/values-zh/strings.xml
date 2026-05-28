@@ -19,6 +19,8 @@
     <string name="pin_length_error">密码至少需要 %d 个字符</string>
     <string name="calendar_title">日历</string>
     <string name="current_cycle_day">当前周期第 %d 天</string>
+    <string name="days_until_next_period">距下次经期还有 %d 天</string>
+    <string name="no_period_data">暂无经期数据</string>
     <string name="tap_date_to_record">点击日期快速记录</string>
     <string name="period">经期</string>
     <string name="predicted_period">预测经期</string>
@@ -106,6 +108,9 @@
     <string name="saturation">饱和度</string>
     <string name="lightness">明度</string>
     <string name="apply_color">应用颜色</string>
+    <string name="custom_color">自定义颜色</string>
+    <string name="color_preview">颜色预览</string>
+    <string name="apply">应用</string>
     <string name="preset_colors">预设颜色</string>
     
     <!-- Custom Symptoms -->

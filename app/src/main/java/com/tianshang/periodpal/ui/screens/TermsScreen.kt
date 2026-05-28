@@ -13,6 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.repository.SettingsRepository
+import com.tianshang.periodpal.ui.components.BouncyButton
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -87,7 +88,7 @@ fun TermsScreen(
             )
         }
         
-        Button(
+        BouncyButton(
             onClick = {
                 scope.launch {
                     settingsRepository.acceptTerms()

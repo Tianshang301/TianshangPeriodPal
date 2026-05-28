@@ -97,6 +97,7 @@ fun PeriodPalTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = PeriodPalShapes,
         content = content
     )
 }

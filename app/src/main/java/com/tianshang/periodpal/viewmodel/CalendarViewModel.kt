@@ -40,12 +40,33 @@ class CalendarViewModel(
     }.stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
     
     val currentCycleDay: StateFlow<Int> = records.map { records ->
-        val lastRecord = records.firstOrNull { !it.isDeleted }
-        if (lastRecord != null && lastRecord.endDate == null) {
-            val days = ChronoUnit.DAYS.between(lastRecord.startDate, LocalDate.now()).toInt()
-            if (days >= 0) days + 1 else 0
+        val today = LocalDate.now()
+        val currentRecord = records.firstOrNull { record ->
+            !record.startDate.isAfter(today) &&
+            (record.endDate == null || !today.isAfter(record.endDate))
+        }
+        if (currentRecord != null) {
+            ChronoUnit.DAYS.between(currentRecord.startDate, today).toInt() + 1
         } else {
             0
+        }
+    }.stateIn(viewModelScope, SharingStarted.Lazily, 0)
+    
+    val daysUntilNextPeriod: StateFlow<Int> = combine(records, predictions) { records, predictions ->
+        val today = LocalDate.now()
+        val inPeriod = records.any { record ->
+            !record.startDate.isAfter(today) &&
+            (record.endDate == null || !today.isAfter(record.endDate))
+        }
+        if (inPeriod) {
+            0
+        } else {
+            val nextPrediction = predictions.firstOrNull { it.periodStartDate.isAfter(today) }
+            if (nextPrediction != null) {
+                ChronoUnit.DAYS.between(today, nextPrediction.periodStartDate).toInt()
+            } else {
+                0
+            }
         }
     }.stateIn(viewModelScope, SharingStarted.Lazily, 0)
     

@@ -18,6 +18,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.tianshang.periodpal.PeriodPalApplication
 import com.tianshang.periodpal.R
+import com.tianshang.periodpal.ui.components.BouncyButton
 import com.tianshang.periodpal.utils.DatabaseMigrationManager
 import com.tianshang.periodpal.utils.EncryptionManager
 import com.tianshang.periodpal.viewmodel.SettingsViewModel
@@ -232,7 +233,7 @@ fun SettingsScreen(navController: NavController) {
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
                 
-                Button(
+                BouncyButton(
                     onClick = {
                         isMigrating = true
                         migrationMessage = null

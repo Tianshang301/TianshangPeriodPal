@@ -10,6 +10,8 @@
     <string name="invalid_pin">Mot de passe invalide</string>
     <string name="calendar_title">Calendrier</string>
     <string name="current_cycle_day">Jour %d du cycle</string>
+    <string name="days_until_next_period">Prochaines règles dans %d jours</string>
+    <string name="no_period_data">Aucune donnée</string>
     <string name="tap_date_to_record">Appuyez pour enregistrer</string>
     <string name="period">Règles</string>
     <string name="predicted_period">Règles prévues</string>
@@ -99,6 +101,9 @@
     <string name="saturation">Saturation</string>
     <string name="lightness">Luminosité</string>
     <string name="apply_color">Appliquer la couleur</string>
+    <string name="custom_color">Couleur personnalisée</string>
+    <string name="color_preview">Aperçu de la couleur</string>
+    <string name="apply">Appliquer</string>
     <string name="preset_colors">Couleurs prédéfinies</string>
     
     <!-- Custom Symptoms -->

@@ -27,6 +27,7 @@ import com.commandiron.wheel_picker_compose.WheelTimePicker
 import com.commandiron.wheel_picker_compose.core.TimeFormat
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.model.CustomReminder
+import com.tianshang.periodpal.ui.components.BouncyButton
 import com.tianshang.periodpal.viewmodel.ReminderViewModel
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -490,7 +491,7 @@ fun ReminderCard(
                     
                     Spacer(modifier = Modifier.height(4.dp))
                     
-                    Button(
+                    BouncyButton(
                         onClick = { parseAndApplyTime(timeText) },
                         modifier = Modifier.align(Alignment.End)
                     ) {

@@ -74,15 +74,18 @@ class PeriodPalApplication : Application() {
         
         ReminderScheduler.createNotificationChannels(this)
         
+        // Initialize database synchronously before any Activity accesses it
+        initDatabase()
+        
+        // Schedule reminders asynchronously
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                initDatabase()
                 val records = database.periodRecordDao().getAllRecordsSync()
                 val symptoms = database.dailySymptomDao().getAllSymptoms().first()
                 val settings = SettingsRepository(instance).settings.first()
                 ReminderScheduler.scheduleReminders(instance, records, symptoms, settings)
             } catch (e: Exception) {
-                Log.e(TAG, "Failed to initialize database or schedule reminders", e)
+                Log.e(TAG, "Failed to schedule reminders", e)
                 ReminderScheduler.scheduleDailyCheck(instance)
             }
         }

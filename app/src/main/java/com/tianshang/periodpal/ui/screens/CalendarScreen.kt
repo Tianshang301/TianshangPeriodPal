@@ -21,6 +21,7 @@ import androidx.navigation.NavController
 import com.tianshang.periodpal.R
 import com.tianshang.periodpal.data.model.CyclePrediction
 import com.tianshang.periodpal.data.model.PeriodRecord
+import com.tianshang.periodpal.ui.components.CartoonCalendarDay
 import com.tianshang.periodpal.ui.navigation.Screen
 import com.tianshang.periodpal.ui.theme.*
 import com.tianshang.periodpal.viewmodel.CalendarViewModel
@@ -40,6 +41,7 @@ fun CalendarScreen(navController: NavController) {
     val records by viewModel.records.collectAsState()
     val predictions by viewModel.predictions.collectAsState()
     val currentCycleDay by viewModel.currentCycleDay.collectAsState()
+    val daysUntilNextPeriod by viewModel.daysUntilNextPeriod.collectAsState()
     
     Column(
         modifier = Modifier
@@ -58,10 +60,26 @@ fun CalendarScreen(navController: NavController) {
                 modifier = Modifier.padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    text = stringResource(R.string.current_cycle_day, currentCycleDay),
-                    style = MaterialTheme.typography.headlineMedium
-                )
+                when {
+                    currentCycleDay > 0 -> {
+                        Text(
+                            text = stringResource(R.string.current_cycle_day, currentCycleDay),
+                            style = MaterialTheme.typography.headlineMedium
+                        )
+                    }
+                    daysUntilNextPeriod > 0 -> {
+                        Text(
+                            text = stringResource(R.string.days_until_next_period, daysUntilNextPeriod),
+                            style = MaterialTheme.typography.headlineMedium
+                        )
+                    }
+                    else -> {
+                        Text(
+                            text = stringResource(R.string.no_period_data),
+                            style = MaterialTheme.typography.headlineMedium
+                        )
+                    }
+                }
                 Text(
                     text = stringResource(R.string.tap_date_to_record),
                     style = MaterialTheme.typography.bodySmall,
@@ -159,7 +177,8 @@ fun CalendarScreen(navController: NavController) {
                     navController.navigate(Screen.RecordWithDate.createRoute(date.toString()))
                 } ?: navController.navigate(Screen.Record.route)
             },
-            modifier = Modifier.align(Alignment.End)
+            modifier = Modifier.align(Alignment.End),
+            shape = ExtraLargeShape
         ) {
             Icon(Icons.Default.Add, stringResource(R.string.calendar_add_record))
         }
@@ -196,6 +215,8 @@ fun CalendarGrid(
         weeks.add(currentWeek)
     }
     
+    val today = LocalDate.now()
+    
     Column(modifier = modifier.fillMaxWidth()) {
         weeks.forEach { week ->
             Row(modifier = Modifier.fillMaxWidth()) {
@@ -217,33 +238,18 @@ fun CalendarGrid(
                             !date.isBefore(prediction.fertileWindowStart) &&
                             !date.isAfter(prediction.fertileWindowEnd)
                         }
-                        val backgroundColor = when {
-                            isPeriod -> PeriodRed
-                            isOvulation -> OvulationBlue
-                            isFertile -> OvulationBlueLight
-                            isPredictedPeriod -> PeriodRedLight
-                            else -> Color.Transparent
-                        }
+                        val isToday = date == today
                         
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .aspectRatio(1f)
-                                .padding(2.dp)
-                                .background(
-                                    color = backgroundColor,
-                                    shape = MaterialTheme.shapes.small
-                                )
-                                .clickable { onDateSelected(date) },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = date.dayOfMonth.toString(),
-                                color = if (backgroundColor != Color.Transparent) Color.White
-                                       else MaterialTheme.colorScheme.onSurface,
-                                style = MaterialTheme.typography.bodyMedium
-                            )
-                        }
+                        CartoonCalendarDay(
+                            date = date,
+                            isPeriod = isPeriod,
+                            isPredicted = isPredictedPeriod,
+                            isOvulation = isOvulation,
+                            isFertile = isFertile,
+                            isToday = isToday,
+                            modifier = Modifier.weight(1f),
+                            onClick = { onDateSelected(date) }
+                        )
                     } else {
                         Spacer(modifier = Modifier.weight(1f))
                     }

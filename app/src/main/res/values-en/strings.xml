@@ -11,6 +11,8 @@
     <string name="invalid_pin">Invalid Password</string>
     <string name="calendar_title">Calendar</string>
     <string name="current_cycle_day">Day %d of current cycle</string>
+    <string name="days_until_next_period">Next period in %d days</string>
+    <string name="no_period_data">No period data</string>
     <string name="tap_date_to_record">Tap date to record</string>
     <string name="period">Period</string>
     <string name="predicted_period">Predicted Period</string>
@@ -105,6 +107,9 @@
     <string name="saturation">Saturation</string>
     <string name="lightness">Lightness</string>
     <string name="apply_color">Apply Color</string>
+    <string name="custom_color">Custom Color</string>
+    <string name="color_preview">Color Preview</string>
+    <string name="apply">Apply</string>
     <string name="preset_colors">Preset Colors</string>
     
     <!-- Custom Symptoms -->
