@@ -18,10 +18,11 @@
 **一款完全离线、注重隐私的月经周期跟踪与管理工具**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+[![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg)](https://github.com/Tianshang301/TianshangPeriodPal/releases)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-28%20(Android%209)-green.svg)](https://developer.android.com/about/versions/pie)
-[![Target SDK](https://img.shields.io/badge/Target%20SDK-34%20(Android%2014)-brightgreen.svg)](https://developer.android.com/about/versions/14)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue.svg)](https://kotlinlang.org)
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-2023.10.01-ff69b4.svg)](https://developer.android.com/jetpack/compose)
+[![Target SDK](https://img.shields.io/badge/Target%20SDK-35%20(Android%2015)-brightgreen.svg)](https://developer.android.com/about/versions/15)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-blue.svg)](https://kotlinlang.org)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-BOM%202025.10.00-ff69b4.svg)](https://developer.android.com/jetpack/compose)
 
 </div>
 
@@ -34,16 +35,17 @@
 ### 核心功能
 | 功能 | 描述 |
 |------|------|
-| 📅 **周期记录** | 记录经期起止日期、流量、疼痛程度、10种症状 |
-| 🔮 **智能预测** | 基于统计学算法预测未来6个周期，含排卵期和易孕期 |
+| 📅 **周期记录** | 记录经期起止日期、流量、疼痛程度、10+ 种症状 |
+| 🔮 **智能预测** | 基于自适应统计学算法预测未来6个周期，含排卵期和易孕期 |
 | 📊 **数据分析** | 周期规律性分析、疼痛趋势、症状频率统计 |
-| 🎨 **主题定制** | 5种粉色系主题 + 自定义背景图片（支持透明度调节）|
+| 🎨 **主题定制** | HSL 色彩引擎 + 自定义背景图片（支持透明度调节）|
 | 🌗️ **深色模式** | 支持跟随系统或手动切换 |
-| 🔒 **应用锁** | 指纹/面部识别 + PIN 码，Argon2 哈希加密 |
-| 🌐 **多语言** | 支持 7 种语言（中/英/日/韩/法/西/阿）|
-| 💾 **数据管理** | 数据库备份(ZIP)、CSV 导出、回收站(30天自动清理) |
+| 🔒 **应用锁** | 指纹/面部识别 + PIN 码，Argon2id 哈希加密 |
+| 🌐 **多语言** | 支持 7 种语言（中/英/日/韩/法/西/阿 + RTL 适配）|
+| 💾 **数据管理** | 加密数据库备份(ZIP)、CSV 导出、回收站(30天自动清理) |
 | ⚖️ **BMI 追踪** | 计算 BMI 并追踪历史记录（中国标准）|
-| ⏰ **提醒系统** | 经期/排卵/PMS 三种提醒，可自定义提前天数和时间 |
+| ⏰ **提醒系统** | 经期/排卵/PMS 三种提醒 + 自定义提醒，可配置提前天数和时间 |
+| 🔐 **数据库加密** | SQLCipher AES-256 加密，Android Keystore 密钥管理 |
 
 ---
 
@@ -67,26 +69,26 @@
                      ↓
 ┌────────────────────┴─────────────────────┐
 │              Data Layer                      │
-│    Room DB (SQLite)  +  DataStore        │
+│    Room DB (SQLCipher)  +  DataStore        │
 └─────────────────────────────────────────────┘
 ```
 
 ### 技术栈
 | 类别 | 库/框架 | 版本 |
 |------|----------|------|
-| **语言** | Kotlin | 1.9.20 |
-| **UI 框架** | Jetpack Compose (Material 3) | BOM 2023.10.01 |
+| **语言** | Kotlin | 1.9.24 |
+| **UI 框架** | Jetpack Compose (Material 3) | BOM 2025.10.00 |
 | **导航** | Compose Navigation | 2.7.6 |
 | **架构** | MVVM + Repository | - |
-| **数据库** | Room + SQLite | 2.6.1 |
+| **数据库** | Room + SQLCipher | 2.6.1 / 4.5.4 |
 | **本地存储** | DataStore Preferences | 1.0.0 |
 | **后台任务** | WorkManager | 2.9.0 |
 | **生物识别** | AndroidX Biometric | 1.1.0 |
 | **图片加载** | Coil Compose | 2.5.0 |
-| **数据安全** | Argon2 (Bouncy Castle) | 1.78 |
+| **安全** | Argon2 (Bouncy Castle) + Android Keystore | 1.78 |
 | **数据导出** | Apache Commons CSV | 1.10.0 |
 | **JSON** | Gson | 2.10.1 |
-| **构建工具** | Gradle | 8.2 |
+| **构建工具** | Gradle | 8.9 |
 | **编译** | JDK | 17 |
 
 ---
@@ -117,23 +119,33 @@
 
 ## 🔒 隐私与安全
 
-### 当前限制
-> ⚠️ **数据库加密**：项目曾考虑使用 SQLCipher 进行数据库加密，但为确保在各设备上的最大兼容性与稳定性，最终未实施。您的数据存储在设备的受保护应用目录中（其他应用无法访问），但数据库文件本身未加密。这意味着如果攻击者通过 root 权限或取证工具获取了设备的物理访问权限，原始数据文件可能被读取。我们建议设置设备屏幕锁并启用应用内应用锁。
+### 数据库加密 (v2.0.0)
+> ✅ **SQLCipher AES-256 加密**：数据库使用 SQLCipher 的 AES-256-CBC 加密。加密密钥由 Android Keystore（硬件支持）管理。新安装默认启用加密数据库；现有用户可通过 设置 → 数据安全 手动迁移。
 
 ### 数据保护机制
-- ✅ **完全离线** — 零网络请求，无需任何权限
-- ✅ **Android 沙盒隔离** — 数据与其他应用隔离，除非设备被 root
-- ✅ **仅本地存储** — 数据不会离开您的设备
+- ✅ **完全离线** — 零网络请求，无 INTERNET 权限
+- ✅ **数据库加密** — SQLCipher AES-256 + Android Keystore 密钥管理
+- ✅ **加密备份** — AES-256-GCM 加密 ZIP + 完整性哈希校验
 - ✅ **应用锁** — 指纹/面部识别 + PIN 码（Argon2id 哈希，最短 6 位）
 - ✅ **暴力破解防护** — 连续输错 PIN 后自动锁定，逐步延长等待时间
-- ✅ **截图防护** — 已启用 FLAG_SECURE 禁止截图
+- ✅ **截图防护** — 已启用 FLAG_SECURE 禁止截图（用户可控）
 - ✅ **无硬编码密钥** — 构建凭据通过 local.properties 管理（已加入 .gitignore）
+- ✅ **后台锁定** — 应用退到后台立即锁定（可配置延时）
+
+### 安全架构
+```
+用户密码 → Argon2id 哈希 → EncryptedSharedPreferences
+                                        ↓
+Android Keystore → 主密钥 → 加密 passphrase
+                                        ↓
+Passphrase → SupportFactory → SQLCipher AES-256 → 加密数据库
+```
 
 ### 安全最佳实践
 1. 设置强设备屏幕锁 — 您的第一道防线
 2. 启用应用内应用锁 — 防止他人随意访问
 3. 保持系统和安全补丁更新 — 修补已知的 root 漏洞
-4. 如需传输数据，请使用 CSV 导出并在传输后立即删除文件
+4. 如需传输数据，请使用加密备份功能
 
 ---
 
@@ -141,8 +153,8 @@
 
 ### 前置要求
 - JDK 17（推荐 Eclipse Adoptium JDK 17）
-- Gradle 8.2（项目自带 Gradle Wrapper）
-- Android SDK 34
+- Gradle 8.9（项目自带 Gradle Wrapper）
+- Android SDK 35
 
 ### 构建命令
 
@@ -185,17 +197,19 @@ signingConfigs {
 - [x] 2. Room 数据库与本地存储
 - [x] 3. 用户协议与应用锁
 - [x] 4. 周期记录功能
-- [x] 5. 预测引擎（统计学算法）
+- [x] 5. 预测引擎（自适应统计学算法）
 - [x] 6. 数据分析与统计
 - [x] 7. 提醒系统（WorkManager）
-- [x] 8. 多语言支持（7种语言）
-- [x] 9. 主题定制与深色模式
-- [x] 10. 回收站、备份与 CSV 导出
+- [x] 8. 多语言支持（7种语言 + RTL）
+- [x] 9. 主题定制（HSL 色彩引擎）与深色模式
+- [x] 10. 回收站、加密备份与 CSV 导出
 - [x] 11. BMI 计算与追踪
-- [x] 12. 测试与 Bug 修复
-- [ ] 13. 经期症状图表可视化（MPAndroidChart）
-- [ ] 14. 小组件（Home Screen Widget）
-- [ ] 15. 同名开源项目整合研究
+- [x] 12. SQLCipher AES-256 数据库加密
+- [x] 13. 预测算法优化（黄体期学习、指数衰减加权）
+- [x] 14. 安全审计与漏洞修复
+- [ ] 15. 经期症状图表可视化（MPAndroidChart）
+- [ ] 16. 小组件（Home Screen Widget）
+- [ ] 17. 同名开源项目整合研究
 
 ---
 
