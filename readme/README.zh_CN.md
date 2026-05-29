@@ -19,9 +19,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-28%20(Android%209)-green.svg)](https://developer.android.com/about/versions/pie)
-[![Target SDK](https://img.shields.io/badge/Target%20SDK-34%20(Android%2014)-brightgreen.svg)](https://developer.android.com/about/versions/14)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue.svg)](https://kotlinlang.org)
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-2023.10.01-ff69b4.svg)](https://developer.android.com/jetpack/compose)
+[![Target SDK](https://img.shields.io/badge/Target%20SDK-35%20(Android%2015)-brightgreen.svg)](https://developer.android.com/about/versions/15)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-blue.svg)](https://kotlinlang.org)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-BOM%202025.10.00-ff69b4.svg)](https://developer.android.com/jetpack/compose)
 
 </div>
 
@@ -44,6 +44,7 @@
 | 💾 **数据管理** | 数据库备份(ZIP)、CSV 导出、回收站(30天自动清理) |
 | ⚖️ **BMI 追踪** | 计算 BMI 并追踪历史记录（中国标准）|
 | ⏰ **提醒系统** | 经期/排卵/PMS 三种提醒，可自定义提前天数和时间 |
+| 🎀 **可爱 UI 组件** | BouncyButton、CartoonCalendarDay、ColorPickerDialog、EmptyStateCharacter |
 
 ---
 
@@ -74,8 +75,8 @@
 ### 技术栈
 | 类别 | 库/框架 | 版本 |
 |------|----------|------|
-| **语言** | Kotlin | 1.9.20 |
-| **UI 框架** | Jetpack Compose (Material 3) | BOM 2023.10.01 |
+| **语言** | Kotlin | 1.9.24 |
+| **UI 框架** | Jetpack Compose (Material 3) | BOM 2025.10.00 |
 | **导航** | Compose Navigation | 2.7.6 |
 | **架构** | MVVM + Repository | - |
 | **数据库** | Room + SQLite | 2.6.1 |
@@ -86,7 +87,7 @@
 | **数据安全** | Argon2 (Bouncy Castle) | 1.78 |
 | **数据导出** | Apache Commons CSV | 1.10.0 |
 | **JSON** | Gson | 2.10.1 |
-| **构建工具** | Gradle | 8.2 |
+| **构建工具** | Gradle | 8.9 |
 | **编译** | JDK | 17 |
 
 ---
@@ -141,8 +142,8 @@
 
 ### 前置要求
 - JDK 17（推荐 Eclipse Adoptium JDK 17）
-- Gradle 8.2（项目自带 Gradle Wrapper）
-- Android SDK 34
+- Gradle 8.9（项目自带 Gradle Wrapper）
+- Android SDK 35
 
 ### 构建命令
 
@@ -208,6 +209,7 @@ TianshangPeriodPal/
 │   │   ├── java/com/tianshang/periodpal/
 │   │   │   ├── ui/
 │   │   │   │   ├── screens/      # 12个界面
+│   │   │   │   ├── components/   # 可复用 UI 组件（BouncyButton、CartoonCalendarDay 等）
 │   │   │   │   ├── theme/        # Material3 主题
 │   │   │   │   └── navigation/   # NavHost 导航图
 │   │   │   ├── viewmodel/     # 9个 ViewModel

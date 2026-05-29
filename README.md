@@ -20,7 +20,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](https://github.com/Tianshang301/TianshangPeriodPal/releases)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-28%20(Android%209)-green.svg)](https://developer.android.com/about/versions/pie)
-[![Target SDK](https://img.shields.io/badge/Target%20SDK-34%20(Android%2014)-brightgreen.svg)](https://developer.android.com/about/versions/14)
+[![Target SDK](https://img.shields.io/badge/Target%20SDK-35%20(Android%2015)-brightgreen.svg)](https://developer.android.com/about/versions/15)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-blue.svg)](https://kotlinlang.org)
 [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-BOM%202025.10.00-ff69b4.svg)](https://developer.android.com/jetpack/compose)
 
@@ -45,6 +45,7 @@
 | 💾 **Data Management** | Database backup (ZIP), CSV export, recycle bin (auto-cleanup after 30 days) |
 | ⚖️ **BMI Tracking** | Calculate BMI and track history (Chinese standards) |
 | ⏰ **Reminder System** | 3 reminder types (period/ovulation/PMS), customizable days in advance and time |
+| 🎀 **Cute UI Components** | BouncyButton, CartoonCalendarDay, ColorPickerDialog, EmptyStateCharacter |
 
 ---
 
@@ -211,6 +212,7 @@ TianshangPeriodPal/
 │   │   ├── java/com/tianshang/periodpal/
 │   │   │   ├── ui/
 │   │   │   │   ├── screens/      # 12 screens
+│   │   │   │   ├── components/   # Reusable UI components (BouncyButton, CartoonCalendarDay, etc.)
 │   │   │   │   ├── theme/        # Material3 theme
 │   │   │   │   └── navigation/   # NavHost
 │   │   │   ├── viewmodel/     # 9 ViewModels

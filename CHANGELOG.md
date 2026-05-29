@@ -9,8 +9,15 @@ All notable changes to TianshangPeriodPal (天殇·月记) will be documented in
 ### Version Fork
 
 - Forked from master@1.4.0 as stable maintenance branch.
-- No new features; security fixes cherry-picked from v2.0.0 only.
 - Plain SQLite database (no encryption migration).
+
+### UI Redesign
+
+- New cute-style UI components: BouncyButton, CartoonCalendarDay, ColorPickerDialog, EmptyStateCharacter
+- Added Shape.kt for rounded corner theme support
+- Enhanced ThemeScreen with improved color picker and background customization
+- Updated AnalysisScreen, CalendarScreen, RecycleBinScreen with new component integration
+- Updated multi-language strings for all 7 languages (zh/en/ja/ko/fr/es/ar)
 
 ---
 
