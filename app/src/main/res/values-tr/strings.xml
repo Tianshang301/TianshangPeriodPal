@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Hizmet Şartları &amp; Gizlilik Politikası</string>
+    <string name="terms_content">1. Hizmet Beyanı\nBu uygulama纯粹 olarak yerel bir adet takip aracıdır. Tüm işlevler cihazda ağ etkileşimi olmadan yerel olarak çalışır. Kişisel verilerinizi toplamaz, yüklemeyiz veya paylaşmayız.\n\n2. Kullanıcı Sorumluluğu\nGirilen fizyolojik verilerin doğruluğundan siz sorumlusunuz. Adet tahminleri, ovülasyon hesaplamaları ve ağrı analizleri yalnızca referans amaçlıdır ve tıbbi teşhis oluşturmaz. Sağlık endişeleriniz varsa lütfen bir doktora danışın.</string>
+    <string name="privacy_title">Gizlilik Politikası</string>
+    <string name="privacy_content">1. Temel İlk: Veri Yerelleştirme\nTüm adet, semptom ve sıcaklık verileriniz yalnızca telefonunuzdaki şifreli veritabanında saklanır. Uygulamanın ağ izinleri yoktur, bu da veri sızıntısını temel olarak önler.\n\n2. Toplanan Bilgiler\nYalnızca manuel olarak yerel girdiğiniz bilgileri işleriz.</string>
+    <string name="accept_terms">Okudum ve kabul ediyorum</string>
+    <string name="app_lock_title">Uygulama Kilidi</string>
+    <string name="enter_pin">Şifre Girin</string>
+    <string name="unlock">Kilidi Aç</string>
+    <string name="invalid_pin">Geçersiz Şifre</string>
+    <string name="calendar_title">Takvim</string>
+    <string name="current_cycle_day">Mevcut döngünün %d. günü</string>
+    <string name="days_until_next_period">Sonraki adet %d gün sonra</string>
+    <string name="no_period_data">Adet verisi yok</string>
+    <string name="tap_date_to_record">Kaydetmek için tarihe dokunun</string>
+    <string name="period">Adet</string>
+    <string name="predicted_period">Tahmini Adet</string>
+    <string name="ovulation">Ovülasyon</string>
+    <string name="fertile_window">Verimli Pencere</string>
+    <string name="record_title">Kaydet</string>
+    <string name="start_period">Adeti Başlat</string>
+    <string name="end_period">Adeti Bitir</string>
+    <string name="flow_level">Akıntı</string>
+    <string name="pain_level">Ağrı</string>
+    <string name="symptoms">Semptomlar</string>
+    <string name="sexual_activity">Cinsel Aktivite</string>
+    <string name="ovulation_test">Ovülasyon Testi</string>
+    <string name="cervical_mucus">Servikal Mukus</string>
+    <string name="body_temperature">Vücut Sıcaklığı</string>
+    <string name="notes">Notlar</string>
+    <string name="save">Kaydet</string>
+    <string name="analysis_title">Analiz</string>
+    <string name="cycle_statistics">Döngü İstatistikleri</string>
+    <string name="avg_cycle_length">Ortalama Döngü Süresi</string>
+    <string name="avg_period_length">Ortalama Adet Süresi</string>
+    <string name="cycle_regularity">Döngü Düzenliliği</string>
+    <string name="total_cycles">Toplam Döngü</string>
+    <string name="pain_trend">Ağrı Trendi</string>
+    <string name="symptom_frequency">Semptom Sıklığı</string>
+    <string name="predictions">Tahminler</string>
+    <string name="reminder_title">Hatırlatıcılar</string>
+    <string name="period_reminder">Adet Hatırlatıcısı</string>
+    <string name="ovulation_reminder">Ovülasyon Hatırlatıcısı</string>
+    <string name="pms_reminder">PMS Hatırlatıcısı</string>
+    <string name="profile_title">Profil</string>
+    <string name="theme_customization">Tema</string>
+    <string name="app_lock">Uygulama Kilidi</string>
+    <string name="language">Dil</string>
+    <string name="recycle_bin">Geri Dönüşüm Kutusu</string>
+    <string name="backup_restore">Yedekleme &amp; Geri Yükleme</string>
+    <string name="about">Hakkında</string>
+    <string name="recycle_bin_title">Geri Dönüşüm Kutusu</string>
+    <string name="no_deleted_records">Silinmiş kayıt yok</string>
+    <string name="backup_restore_title">Yedekleme &amp; Geri Yükleme</string>
+    <string name="export_backup">Yedeklemeyi Dışa Aktar</string>
+    <string name="import_backup">Yedeklemeyi İçe Aktar</string>
+    <string name="export_csv">CSV Dışa Aktar</string>
+    <string name="settings_title">Ayarlar</string>
+    <string name="theme_color">Tema Rengi</string>
+    <string name="bmi_title">VKİ Kaydı</string>
+    <string name="add_bmi_record">Kayıt Ekle</string>
+    <string name="height_cm">Boy(cm)</string>
+    <string name="weight_kg">Kilo(kg)</string>
+    <string name="latest_bmi">Güncel VKİ</string>
+    <string name="bmi_history">Geçmiş</string>
+    <string name="dark_mode">Karanlık Mod</string>
+    <string name="dark_mode_description">Karanlık/aydınlık temayı değiştir</string>
+    <string name="record_date">Kayıt Tarihi</string>
+    <string name="select_date">Tarih Seç</string>
+    <string name="confirm">Onayla</string>
+    <string name="cancel">İptal</string>
+    <string name="background_customization">Arka Plan</string>
+    <string name="select_background_image">Arka Plan Resmi Seç</string>
+    <string name="background_transparency">Arka Plan Saydamlığı</string>
+    <string name="remove_background">Arka Planı Kaldır</string>
+    <string name="prevent_screenshot">Ekran Görüntüsünü Önle</string>
+    <string name="prevent_screenshot_description">Ekran görüntülerini ve ekran kaydını devre dışı bırak</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Veri Güvenliği</string>
+    <string name="database_encryption">Veritabanı Şifreleme</string>
+    <string name="encrypted">Şifreli (AES-256)</string>
+    <string name="unencrypted">Şifresiz</string>
+    <string name="migrate_to_encrypted">Şifreli Veritabanına Geç</string>
+    <string name="migration_description">Mevcut verileri AES-256 şifreli veritabanına taşıyın. Bu işlem atomiktir ve başarısızlık durumunda otomatik olarak geri alınır.</string>
+    <string name="migration_success">Geçiş başarılı! Veritabanı artık şifreli.</string>
+    <string name="migration_failed">Geçiş başarısız: %s. Verileriniz orijinal durumuna geri yüklendi.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Arka plan sonrası kilitle</string>
+    <string name="lock_immediately">Hemen</string>
+    <string name="lock_after_seconds">%d saniye</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Özel Hatırlatıcılar</string>
+    <string name="add_custom_reminder">Özel Hatırlatıcı Ekle</string>
+    <string name="no_custom_reminders">Henüz özel hatırlatıcı yok</string>
+    <string name="reminder_title_label">Hatırlatıcı başlığı</string>
+    <string name="reminder_title_required">Başlık gereklidir</string>
+    <string name="reminder_message_label">Mesaj (isteğe bağlı)</string>
+    <string name="reminder_date">Hatırlatıcı tarihi</string>
+    <string name="select_time">Saat seç</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Renk Tonu</string>
+    <string name="saturation">Doygunluk</string>
+    <string name="lightness">Parlaklık</string>
+    <string name="apply_color">Rengi Uygula</string>
+    <string name="custom_color">Özel Renk</string>
+    <string name="color_preview">Renk Önizleme</string>
+    <string name="apply">Uygula</string>
+    <string name="preset_colors">Önceden Tanımlı Renkler</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Semptom Ekle</string>
+    <string name="symptom_name">Semptom adı</string>
+    <string name="symptom_name_required">Semptom adı gereklidir</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Son %1$d döngüye dayalı adaptif tahmin (ortalama %2$s gün/döngü, %3$s gün/adet)</string>
+    
+    <string name="delete">Sil</string>
+    <string name="delete_record">Kaydı Sil</string>
+    <string name="delete_record_confirm">Bu tarihe ait kaydı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Paz</string>
+    <string name="week_mon">Pzt</string>
+    <string name="week_tue">Sal</string>
+    <string name="week_wed">Çar</string>
+    <string name="week_thu">Per</string>
+    <string name="week_fri">Cum</string>
+    <string name="week_sat">Cmt</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Önceki ay</string>
+    <string name="calendar_next_month">Sonraki ay</string>
+    <string name="calendar_add_record">Kayıt ekle</string>
+    <string name="calendar_today">Bugün</string>
+    <string name="back">Geri</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Baş ağrısı</string>
+    <string name="symptom_bloating">Şişkinlik</string>
+    <string name="symptom_breast_tenderness">Göğüs hassasiyeti</string>
+    <string name="symptom_backache">Bel ağrısı</string>
+    <string name="symptom_fatigue">Yorgunluk</string>
+    <string name="symptom_mood_swings">Ruh hali değişimleri</string>
+    <string name="symptom_acne">Akne</string>
+    <string name="symptom_increased_appetite">İştah artışı</string>
+    <string name="symptom_insomnia">Uykusuzluk</string>
+    <string name="symptom_nausea">Bulantı</string>
+    <string name="flow_light">Hafif</string>
+    <string name="flow_medium">Orta</string>
+    <string name="flow_heavy">Şiddetli</string>
+    <string name="pain_none">Yok</string>
+    <string name="pain_mild">Hafif</string>
+    <string name="pain_moderate">Orta</string>
+    <string name="pain_severe">Şiddetli</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">gün</string>
+    <string name="predicted_period_label">Tahmini adet: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Ovülasyon: %s</string>
+    <string name="confidence_label">Güven: %1$s (%2$d döngüye dayalı)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Önceki günler</string>
+    <string name="reminder_time">Hatırlatıcı saati</string>
+    <string name="time_picker_mode_wheel">Tekerlek seçici</string>
+    <string name="time_picker_mode_keyboard">Klavye girişi</string>
+    <string name="time_format_error">Geçersiz format, SS:DD kullanın</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Etkin</string>
+    <string name="disabled">Devre dışı</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Pembe</string>
+    <string name="color_dark_pink">Koyu pembe</string>
+    <string name="color_peach">Şeftali</string>
+    <string name="color_light_purple">Açık mor</string>
+    <string name="color_medium_purple">Orta mor</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Zayıf</string>
+    <string name="bmi_category_normal">Normal</string>
+    <string name="bmi_category_overweight">Fazla kilolu</string>
+    <string name="bmi_category_obese">Obez</string>
+    <string name="bmi_standard_note">Çin VKİ standardına dayalı</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Yedekleme başarılı</string>
+    <string name="backup_fail">Yedekleme başarısız</string>
+    <string name="restore_success">Geri yükleme başarılı</string>
+    <string name="restore_fail">Geri yükleme başarısız</string>
+    <string name="export_success">Dışa aktarma başarılı</string>
+    <string name="export_fail">Dışa aktarma başarısız</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Veritabanını AES-256 şifreli ZIP yedek dosyası olarak dışa aktar</string>
+    <string name="backup_import_desc">Yedek dosyasından verileri geri yükle (şifreli ve eski formatları destekler)</string>
+    <string name="backup_csv_desc">Kayıtları CSV电子表格 olarak dışa aktar</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Silindi: %s</string>
+    <string name="in_progress">Devam ediyor</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Lütfen %d saniye bekleyin</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Kimlik doğrulama başarısız: %s</string>
+    <string name="auth_failed_generic">Kimlik doğrulama başarısız</string>
+    <string name="biometric_init_failed">Biyometrik başlatma başarısız</string>
+    <string name="lockout_message">Çok fazla deneme. Lütfen %d saniye bekleyin.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Döngü Süresi Trendi</string>
+    <string name="chart_title_pain_trend">Ağrı Trendi</string>
+    <string name="chart_title_symptom_distribution">Semptom Dağılımı</string>
+    <string name="chart_cycle_label">Döngü %d</string>
+    <string name="chart_cycle_length_label">Döngü Süresi</string>
+    <string name="chart_pain_level_label">Ağrı Seviyesi</string>
+    
+    <string name="regularity_regular">Düzenli</string>
+    <string name="regularity_somewhat_regular">Biraz düzenli</string>
+    <string name="regularity_irregular">Düzensiz</string>
+    <string name="regularity_insufficient_data">Yetersiz veri</string>
+    <string name="confidence_high">Yüksek</string>
+    <string name="confidence_medium">Orta</string>
+    <string name="confidence_low">Düşük</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Henüz veri yok</string>
+    <string name="analysis_no_data_hint">Analiz ve tahminleri görmek için adet kaydetmeye başlayın</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d gün</item>
+        <item quantity="other">%d gün</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Adet Hatırlatıcısı</string>
+    <string name="channel_ovulation_reminder">Ovülasyon Hatırlatıcısı</string>
+    <string name="channel_pms_reminder">PMS Hatırlatıcısı</string>
+    <string name="channel_custom_reminder">Özel Hatırlatıcı</string>
+    <string name="notif_period_title">Adet Hatırlatıcısı</string>
+    <string name="notif_period_message">Adetinizin %d gün sonra başlaması bekleniyor</string>
+    <string name="notif_ovulation_title">Ovülasyon Hatırlatıcısı</string>
+    <string name="notif_ovulation_message">Ovülasyon %d gün sonra bekleniyor</string>
+    <string name="notif_pms_title">PMS Hatırlatıcısı</string>
+    <string name="notif_pms_message">PMS semptomları %d gün sonra başlayabilir</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Görünüm</string>
+    <string name="section_data">Veri</string>
+    <string name="section_other">Diğer</string>
+</resources>

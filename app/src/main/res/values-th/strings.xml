@@ -1,0 +1,260 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">ข้อกำหนดการใช้งาน &amp; นโยบายความเป็นส่วนตัว</string>
+    <string name="terms_content">1. คำชี้แจงบริการ\nแอปนี้เป็นเครื่องมือติดตามประจำเดือนที่ทำงานบนเครื่องเท่านั้น ฟังก์ชันทั้งหมดทำงานบนอุปกรณ์โดยไม่มีการโต้ตอบเครือข่าย เราไม่รวบรวม อัปโหลด หรือแบ่งปันข้อมูลส่วนบุคคลของคุณ\n\n2. ความรับผิดชอบของผู้ใช้\nคุณรับผิดชอบต่อความถูกต้องของข้อมูลทางสรีรวิทยาที่ป้อน การคาดการณ์ประจำเดือน การคำนวณการตกไข่ และการวิเคราะห์ความเจ็บปวดมีไว้เพื่ออ้างอิงเท่านั้นและไม่ถือเป็นการวินิจฉัยทางการแพทย์ หากมีข้อกังวลเรื่องสุขภาพ โปรดปรึกษาแพทย์</string>
+    <string name="privacy_title">นโยบายความเป็นส่วนตัว</string>
+    <string name="privacy_content">1. หลักการหลัก: การจัดเก็บข้อมูลบนเครื่อง\nข้อมูลประจำเดือน อาการ และอุณหภูมิทั้งหมดของคุณจะถูกเก็บไว้ในฐานข้อมูลที่เข้ารหัสบนโทรศัพท์ของคุณเท่านั้น แอปไม่มีสิทธิ์เครือข่าย ซึ่งป้องกันการรั่วไหลของข้อมูลโดยพื้นฐาน\n\n2. ข้อมูลที่รวบรวม\nเราประมวลผลเฉพาะข้อมูลที่คุณป้อนด้วยตนเองบนเครื่องเท่านั้น</string>
+    <string name="accept_terms">ฉันได้อ่านและยอมรับ</string>
+    <string name="app_lock_title">ล็อกแอป</string>
+    <string name="enter_pin">ป้อนรหัสผ่าน</string>
+    <string name="unlock">ปลดล็อก</string>
+    <string name="invalid_pin">รหัสผ่านไม่ถูกต้อง</string>
+    <string name="calendar_title">ปฏิทิน</string>
+    <string name="current_cycle_day">วันที่ %d ของรอบเดือนปัจจุบัน</string>
+    <string name="days_until_next_period">ประจำเดือนถัดไปในอีก %d วัน</string>
+    <string name="no_period_data">ไม่มีข้อมูลประจำเดือน</string>
+    <string name="tap_date_to_record">แตะวันที่เพื่อบันทึก</string>
+    <string name="period">ประจำเดือน</string>
+    <string name="predicted_period">ประจำเดือนที่คาดการณ์</string>
+    <string name="ovulation">การตกไข่</string>
+    <string name="fertile_window">ช่วงเจริญพันธุ์</string>
+    <string name="record_title">บันทึก</string>
+    <string name="start_period">เริ่มประจำเดือน</string>
+    <string name="end_period">สิ้นสุดประจำเดือน</string>
+    <string name="flow_level">ปริมาณเลือด</string>
+    <string name="pain_level">ความเจ็บปวด</string>
+    <string name="symptoms">อาการ</string>
+    <string name="sexual_activity">กิจกรรมทางเพศ</string>
+    <string name="ovulation_test">ทดสอบการตกไข่</string>
+    <string name="cervical_mucus">มูกปากมดลูก</string>
+    <string name="body_temperature">อุณหภูมิร่างกาย</string>
+    <string name="notes">บันทึกย่อ</string>
+    <string name="save">บันทึก</string>
+    <string name="analysis_title">การวิเคราะห์</string>
+    <string name="cycle_statistics">สถิติรอบเดือน</string>
+    <string name="avg_cycle_length">ความยาวรอบเดือนเฉลี่ย</string>
+    <string name="avg_period_length">ความยาวประจำเดือนเฉลี่ย</string>
+    <string name="cycle_regularity">ความสม่ำเสมอของรอบเดือน</string>
+    <string name="total_cycles">รอบเดือนทั้งหมด</string>
+    <string name="pain_trend">แนวโน้มความเจ็บปวด</string>
+    <string name="symptom_frequency">ความถี่ของอาการ</string>
+    <string name="predictions">การคาดการณ์</string>
+    <string name="reminder_title">การเตือน</string>
+    <string name="period_reminder">เตือนประจำเดือน</string>
+    <string name="ovulation_reminder">เตือนการตกไข่</string>
+    <string name="pms_reminder">เตือน PMS</string>
+    <string name="profile_title">โปรไฟล์</string>
+    <string name="theme_customization">ธีม</string>
+    <string name="app_lock">ล็อกแอป</string>
+    <string name="language">ภาษา</string>
+    <string name="recycle_bin">ถังขยะ</string>
+    <string name="backup_restore">สำรอง &amp; กู้คืน</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="recycle_bin_title">ถังขยะ</string>
+    <string name="no_deleted_records">ไม่มีบันทึกที่ถูกลบ</string>
+    <string name="backup_restore_title">สำรอง &amp; กู้คืน</string>
+    <string name="export_backup">ส่งออกข้อมูลสำรอง</string>
+    <string name="import_backup">นำเข้าข้อมูลสำรอง</string>
+    <string name="export_csv">ส่งออก CSV</string>
+    <string name="settings_title">การตั้งค่า</string>
+    <string name="theme_color">สีธีม</string>
+    <string name="bmi_title">บันทึก BMI</string>
+    <string name="add_bmi_record">เพิ่มบันทึก</string>
+    <string name="height_cm">ส่วนสูง(ซม.)</string>
+    <string name="weight_kg">น้ำหนัก(กก.)</string>
+    <string name="latest_bmi">BMI ปัจจุบัน</string>
+    <string name="bmi_history">ประวัติ</string>
+    <string name="dark_mode">โหมดมืด</string>
+    <string name="dark_mode_description">เปลี่ยนธีมมืด/สว่าง</string>
+    <string name="record_date">วันที่บันทึก</string>
+    <string name="select_date">เลือกวันที่</string>
+    <string name="confirm">ยืนยัน</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="background_customization">พื้นหลัง</string>
+    <string name="select_background_image">เลือกรูปภาพพื้นหลัง</string>
+    <string name="background_transparency">ความโปร่งใสพื้นหลัง</string>
+    <string name="remove_background">ลบพื้นหลัง</string>
+    <string name="prevent_screenshot">ป้องกันภาพหน้าจอ</string>
+    <string name="prevent_screenshot_description">ปิดใช้งานภาพหน้าจอและการบันทึกหน้าจอ</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">ความปลอดภัยข้อมูล</string>
+    <string name="database_encryption">การเข้ารหัสฐานข้อมูล</string>
+    <string name="encrypted">เข้ารหัสแล้ว (AES-256)</string>
+    <string name="unencrypted">ไม่ได้เข้ารหัส</string>
+    <string name="migrate_to_encrypted">ย้ายไปยังฐานข้อมูลที่เข้ารหัส</string>
+    <string name="migration_description">ย้ายข้อมูลที่มีอยู่ไปยังฐานข้อมูลที่เข้ารหัส AES-256 การดำเนินการนี้เป็นอะตอมมิกและจะย้อนกลับโดยอัตโนมัติหากล้มเหลว</string>
+    <string name="migration_success">การย้ายสำเร็จ! ฐานข้อมูลถูกเข้ารหัสแล้ว</string>
+    <string name="migration_failed">การย้ายล้มเหลว: %s ข้อมูลของคุณถูกกู้คืนสู่สถานะเดิม</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">ล็อกหลังเข้าพื้นหลัง</string>
+    <string name="lock_immediately">ทันที</string>
+    <string name="lock_after_seconds">%d วินาที</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">การเตือนที่กำหนดเอง</string>
+    <string name="add_custom_reminder">เพิ่มการเตือนที่กำหนดเอง</string>
+    <string name="no_custom_reminders">ยังไม่มีการเตือนที่กำหนดเอง</string>
+    <string name="reminder_title_label">หัวข้อการเตือน</string>
+    <string name="reminder_title_required">จำเป็นต้องมีหัวข้อ</string>
+    <string name="reminder_message_label">ข้อความ (ไม่บังคับ)</string>
+    <string name="reminder_date">วันที่เตือน</string>
+    <string name="select_time">เลือกเวลา</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">สี</string>
+    <string name="saturation">ความอิ่มตัว</string>
+    <string name="lightness">ความสว่าง</string>
+    <string name="apply_color">ใช้สี</string>
+    <string name="custom_color">สีที่กำหนดเอง</string>
+    <string name="color_preview">ตัวอย่างสี</string>
+    <string name="apply">ใช้</string>
+    <string name="preset_colors">สีที่ตั้งไว้</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">เพิ่มอาการ</string>
+    <string name="symptom_name">ชื่ออาการ</string>
+    <string name="symptom_name_required">จำเป็นต้องมีชื่ออาการ</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">คาดการณ์แบบปรับตาม %1$d รอบเดือนล่าสุด (เฉลี่ย %2$s วัน/รอบ, %3$s วัน/ประจำเดือน)</string>
+    
+    <string name="delete">ลบ</string>
+    <string name="delete_record">ลบบันทึก</string>
+    <string name="delete_record_confirm">คุณแน่ใจหรือไม่ว่าต้องการลบบันทึกสำหรับวันที่นี้? การดำเนินการนี้ไม่สามารถย้อนกลับได้</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">อา.</string>
+    <string name="week_mon">จ.</string>
+    <string name="week_tue">อ.</string>
+    <string name="week_wed">พ.</string>
+    <string name="week_thu">พฤ.</string>
+    <string name="week_fri">ศ.</string>
+    <string name="week_sat">ส.</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">เดือนก่อนหน้า</string>
+    <string name="calendar_next_month">เดือนถัดไป</string>
+    <string name="calendar_add_record">เพิ่มบันทึก</string>
+    <string name="calendar_today">วันนี้</string>
+    <string name="back">กลับ</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">ปวดหัว</string>
+    <string name="symptom_bloating">ท้องอืด</string>
+    <string name="symptom_breast_tenderness">เจ็บเต้านม</string>
+    <string name="symptom_backache">ปวดหลัง</string>
+    <string name="symptom_fatigue">เหนื่อยล้า</string>
+    <string name="symptom_mood_swings">อารมณ์แปรปรวน</string>
+    <string name="symptom_acne">สิว</string>
+    <string name="symptom_increased_appetite">อยากอาหารเพิ่มขึ้น</string>
+    <string name="symptom_insomnia">นอนไม่หลับ</string>
+    <string name="symptom_nausea">คลื่นไส้</string>
+    <string name="flow_light">น้อย</string>
+    <string name="flow_medium">ปานกลาง</string>
+    <string name="flow_heavy">มาก</string>
+    <string name="pain_none">ไม่มี</string>
+    <string name="pain_mild">เล็กน้อย</string>
+    <string name="pain_moderate">ปานกลาง</string>
+    <string name="pain_severe">รุนแรง</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">วัน</string>
+    <string name="predicted_period_label">ประจำเดือนที่คาดการณ์: %1$s - %2$s</string>
+    <string name="ovulation_date_label">การตกไข่: %s</string>
+    <string name="confidence_label">ความมั่นใจ: %1$s (อิงจาก %2$d รอบเดือน)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">วันก่อนหน้า</string>
+    <string name="reminder_time">เวลาเตือน</string>
+    <string name="time_picker_mode_wheel">ตัวเลือกล้อ</string>
+    <string name="time_picker_mode_keyboard">ป้อนคีย์บอร์ด</string>
+    <string name="time_format_error">รูปแบบไม่ถูกต้อง ใช้ HH:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">เปิดใช้งาน</string>
+    <string name="disabled">ปิดใช้งาน</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">ชมพู</string>
+    <string name="color_dark_pink">ชมพูเข้ม</string>
+    <string name="color_peach">พีช</string>
+    <string name="color_light_purple">ม่วงอ่อน</string>
+    <string name="color_medium_purple">ม่วงกลาง</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">ซม.</string>
+    <string name="unit_kg">กก.</string>
+    <string name="bmi_category_underweight">น้ำหนักต่ำ</string>
+    <string name="bmi_category_normal">ปกติ</string>
+    <string name="bmi_category_overweight">น้ำหนักเกิน</string>
+    <string name="bmi_category_obese">อ้วน</string>
+    <string name="bmi_standard_note">อิงตามมาตรฐาน BMI ของจีน</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">สำรองข้อมูลสำเร็จ</string>
+    <string name="backup_fail">สำรองข้อมูลล้มเหลว</string>
+    <string name="restore_success">กู้คืนสำเร็จ</string>
+    <string name="restore_fail">กู้คืนล้มเหลว</string>
+    <string name="export_success">ส่งออกสำเร็จ</string>
+    <string name="export_fail">ส่งออกล้มเหลว</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">ส่งออกฐานข้อมูลเป็นไฟล์ ZIP ที่เข้ารหัส AES-256</string>
+    <string name="backup_import_desc">กู้คืนข้อมูลจากไฟล์สำรอง (รองรับรูปแบบที่เข้ารหัสและรูปแบบเก่า)</string>
+    <string name="backup_csv_desc">ส่งออกบันทึกเป็นสเปรดชีต CSV</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">ลบแล้ว: %s</string>
+    <string name="in_progress">กำลังดำเนินการ</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">กรุณารอ %d วินาที</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">การยืนยันตัวตนล้มเหลว: %s</string>
+    <string name="auth_failed_generic">การยืนยันตัวตนล้มเหลว</string>
+    <string name="biometric_init_failed">การเริ่มต้นไบโอเมตริกล้มเหลว</string>
+    <string name="lockout_message">พยายามหลายครั้งเกินไป กรุณารอ %d วินาที</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">แนวโน้มความยาวรอบเดือน</string>
+    <string name="chart_title_pain_trend">แนวโน้มความเจ็บปวด</string>
+    <string name="chart_title_symptom_distribution">การแจกแจงอาการ</string>
+    <string name="chart_cycle_label">รอบเดือน %d</string>
+    <string name="chart_cycle_length_label">ความยาวรอบเดือน</string>
+    <string name="chart_pain_level_label">ระดับความเจ็บปวด</string>
+    
+    <string name="regularity_regular">สม่ำเสมอ</string>
+    <string name="regularity_somewhat_regular">ค่อนข้างสม่ำเสมอ</string>
+    <string name="regularity_irregular">ไม่สม่ำเสมอ</string>
+    <string name="regularity_insufficient_data">ข้อมูลไม่เพียงพอ</string>
+    <string name="confidence_high">สูง</string>
+    <string name="confidence_medium">ปานกลาง</string>
+    <string name="confidence_low">ต่ำ</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">ยังไม่มีข้อมูล</string>
+    <string name="analysis_no_data_hint">เริ่มบันทึกประจำเดือนเพื่อดูการวิเคราะห์และการคาดการณ์ที่นี่</string>
+    
+    <plurals name="days_count">
+        <item quantity="other">%d วัน</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">เตือนประจำเดือน</string>
+    <string name="channel_ovulation_reminder">เตือนการตกไข่</string>
+    <string name="channel_pms_reminder">เตือน PMS</string>
+    <string name="channel_custom_reminder">เตือนที่กำหนดเอง</string>
+    <string name="notif_period_title">เตือนประจำเดือน</string>
+    <string name="notif_period_message">ประจำเดือนของคุณคาดว่าจะเริ่มในอีก %d วัน</string>
+    <string name="notif_ovulation_title">เตือนการตกไข่</string>
+    <string name="notif_ovulation_message">การตกไข่คาดว่าจะเกิดขึ้นในอีก %d วัน</string>
+    <string name="notif_pms_title">เตือน PMS</string>
+    <string name="notif_pms_message">อาการ PMS อาจเริ่มในอีก %d วัน</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">ลักษณะที่ปรากฏ</string>
+    <string name="section_data">ข้อมูล</string>
+    <string name="section_other">อื่นๆ</string>
+</resources>

@@ -1,0 +1,263 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Умови Послуги &amp; Політика Конфіденційності</string>
+    <string name="terms_content">1. Заява про Послугу\nЦя програма є повністю локальним інструментом відстеження менструацій. Усі функції працюють локально на пристрої без мережевої взаємодії. Ми не збираємо, завантажуємо чи не ділимось вашими особистими даними.\n\n2. Відповідальність Користувача\nВи несете відповідальність за точність введених фізіологічних даних. Прогнози менструацій, розрахунки овуляції та аналіз болю надаються лише для довідки і не є медичним діагнозом. За проблем зі здоров\'ям зверніться до лікаря.</string>
+    <string name="privacy_title">Політика Конфіденційності</string>
+    <string name="privacy_content">1. Основний Принцип: Локалізація Даних\nУсі ваші дані про менструації, симптоми та температуру зберігаються лише в зашифрованій базі даних на вашому телефоні. Програма не має мережевих дозволів, що fundamentally запобігає витоку даних.\n\n2. Зібрана Інформація\nМи обробляємо лише інформацію, яку ви вводите вручну локально.</string>
+    <string name="accept_terms">Я прочитав і згоден</string>
+    <string name="app_lock_title">Блокування Програми</string>
+    <string name="enter_pin">Введіть Пароль</string>
+    <string name="unlock">Розблокувати</string>
+    <string name="invalid_pin">Невірний Пароль</string>
+    <string name="calendar_title">Календар</string>
+    <string name="current_cycle_day">День %d поточного циклу</string>
+    <string name="days_until_next_period">Наступна менструація через %d днів</string>
+    <string name="no_period_data">Немає даних про менструацію</string>
+    <string name="tap_date_to_record">Натисніть на дату для запису</string>
+    <string name="period">Менструація</string>
+    <string name="predicted_period">Прогнозована Менструація</string>
+    <string name="ovulation">Овуляція</string>
+    <string name="fertile_window">Фертильне Вікно</string>
+    <string name="record_title">Запис</string>
+    <string name="start_period">Почати Менструацію</string>
+    <string name="end_period">Закінчити Менструацію</string>
+    <string name="flow_level">Обільность</string>
+    <string name="pain_level">Біль</string>
+    <string name="symptoms">Симптоми</string>
+    <string name="sexual_activity">Сексуальна Активність</string>
+    <string name="ovulation_test">Тест на Овуляцію</string>
+    <string name="cervical_mucus">Цервікальний Слиз</string>
+    <string name="body_temperature">Температура Тіла</string>
+    <string name="notes">Нотатки</string>
+    <string name="save">Зберегти</string>
+    <string name="analysis_title">Аналіз</string>
+    <string name="cycle_statistics">Статистика Циклу</string>
+    <string name="avg_cycle_length">Середня Тривалість Циклу</string>
+    <string name="avg_period_length">Середня Тривалість Менструації</string>
+    <string name="cycle_regularity">Регулярність Циклу</string>
+    <string name="total_cycles">Загальна Кількість Циклів</string>
+    <string name="pain_trend">Тренд Болю</string>
+    <string name="symptom_frequency">Частота Симптомів</string>
+    <string name="predictions">Прогнози</string>
+    <string name="reminder_title">Нагадування</string>
+    <string name="period_reminder">Нагадування про Менструацію</string>
+    <string name="ovulation_reminder">Нагадування про Овуляцію</string>
+    <string name="pms_reminder">Нагадування про ПМС</string>
+    <string name="profile_title">Профіль</string>
+    <string name="theme_customization">Тема</string>
+    <string name="app_lock">Блокування Програми</string>
+    <string name="language">Мова</string>
+    <string name="recycle_bin">Кошик</string>
+    <string name="backup_restore">Резервне Копіювання &amp; Відновлення</string>
+    <string name="about">Про програму</string>
+    <string name="recycle_bin_title">Кошик</string>
+    <string name="no_deleted_records">Немає видалених записів</string>
+    <string name="backup_restore_title">Резервне Копіювання &amp; Відновлення</string>
+    <string name="export_backup">Експорт Резервної Копії</string>
+    <string name="import_backup">Імпорт Резервної Копії</string>
+    <string name="export_csv">Експорт CSV</string>
+    <string name="settings_title">Налаштування</string>
+    <string name="theme_color">Колір Теми</string>
+    <string name="bmi_title">Запис ІМТ</string>
+    <string name="add_bmi_record">Додати Запис</string>
+    <string name="height_cm">Зріст(см)</string>
+    <string name="weight_kg">Вага(кг)</string>
+    <string name="latest_bmi">Поточний ІМТ</string>
+    <string name="bmi_history">Історія</string>
+    <string name="dark_mode">Темний Режим</string>
+    <string name="dark_mode_description">Перемкнути темну/світлу тему</string>
+    <string name="record_date">Дата Запису</string>
+    <string name="select_date">Обрати Дату</string>
+    <string name="confirm">Підтвердити</string>
+    <string name="cancel">Скасувати</string>
+    <string name="background_customization">Фон</string>
+    <string name="select_background_image">Обрати Фонове Зображення</string>
+    <string name="background_transparency">Прозорість Фону</string>
+    <string name="remove_background">Видалити Фон</string>
+    <string name="prevent_screenshot">Блокувати Скриншоти</string>
+    <string name="prevent_screenshot_description">Вимкнути скриншоти та запис екрану</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Безпека Даних</string>
+    <string name="database_encryption">Шифрування Бази Даних</string>
+    <string name="encrypted">Зашифровано (AES-256)</string>
+    <string name="unencrypted">Не Зашифровано</string>
+    <string name="migrate_to_encrypted">Мігрувати до Зашифрованої Бази Даних</string>
+    <string name="migration_description">Міграція існуючих даних до зашифрованої бази даних AES-256. Операція є атомарною і автоматично відкотиться у разі невдачі.</string>
+    <string name="migration_success">Міграція успішна! База даних тепер зашифрована.</string>
+    <string name="migration_failed">Помилка міграції: %s. Ваші дані були відновлені до початкового стану.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Блокувати після згортання</string>
+    <string name="lock_immediately">Негайно</string>
+    <string name="lock_after_seconds">%d секунд</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Користувацькі Нагадування</string>
+    <string name="add_custom_reminder">Додати Користувацьке Нагадування</string>
+    <string name="no_custom_reminders">Ще немає користувацьких нагадувань</string>
+    <string name="reminder_title_label">Заголовок нагадування</string>
+    <string name="reminder_title_required">Заголовок обов\'язковий</string>
+    <string name="reminder_message_label">Повідомлення (необов\'язково)</string>
+    <string name="reminder_date">Дата нагадування</string>
+    <string name="select_time">Обрати час</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Відтінок</string>
+    <string name="saturation">Насиченість</string>
+    <string name="lightness">Яскравість</string>
+    <string name="apply_color">Застосувати Колір</string>
+    <string name="custom_color">Користувацький Колір</string>
+    <string name="color_preview">Попередній Перегляд Кольору</string>
+    <string name="apply">Застосувати</string>
+    <string name="preset_colors">Попередньо Встановлені Кольори</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Додати Симптом</string>
+    <string name="symptom_name">Назва симптому</string>
+    <string name="symptom_name_required">Назва симптому обов\'язкова</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Адаптивний прогноз на основі останніх %1$d циклів (в середньому %2$s днів/цикл, %3$s днів/менструація)</string>
+    
+    <string name="delete">Видалити</string>
+    <string name="delete_record">Видалити Запис</string>
+    <string name="delete_record_confirm">Ви впевнені, що хочете видалити запис для цієї дати? Цю дію неможливо скасувати.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Нд</string>
+    <string name="week_mon">Пн</string>
+    <string name="week_tue">Вт</string>
+    <string name="week_wed">Ср</string>
+    <string name="week_thu">Чт</string>
+    <string name="week_fri">Пт</string>
+    <string name="week_sat">Сб</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Попередній місяць</string>
+    <string name="calendar_next_month">Наступний місяць</string>
+    <string name="calendar_add_record">Додати запис</string>
+    <string name="calendar_today">Сьогодні</string>
+    <string name="back">Назад</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Головний біль</string>
+    <string name="symptom_bloating">Здуття</string>
+    <string name="symptom_breast_tenderness">Хворобливість грудей</string>
+    <string name="symptom_backache">Біль у спині</string>
+    <string name="symptom_fatigue">Втома</string>
+    <string name="symptom_mood_swings">Перепади настрою</string>
+    <string name="symptom_acne">Акне</string>
+    <string name="symptom_increased_appetite">Підвищений апетит</string>
+    <string name="symptom_insomnia">Безсоння</string>
+    <string name="symptom_nausea">Нудота</string>
+    <string name="flow_light">Мізерні</string>
+    <string name="flow_medium">Помірні</string>
+    <string name="flow_heavy">Рясні</string>
+    <string name="pain_none">Немає</string>
+    <string name="pain_mild">Легкий</string>
+    <string name="pain_moderate">Помірний</string>
+    <string name="pain_severe">Сильний</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">днів</string>
+    <string name="predicted_period_label">Прогнозована менструація: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Овуляція: %s</string>
+    <string name="confidence_label">Впевненість: %1$s (на основі %2$d циклів)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Днів до</string>
+    <string name="reminder_time">Час нагадування</string>
+    <string name="time_picker_mode_wheel">Колесо вибору</string>
+    <string name="time_picker_mode_keyboard">Введення з клавіатури</string>
+    <string name="time_format_error">Невірний формат, використовуйте ГГ:ХХ</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Увімкнено</string>
+    <string name="disabled">Вимкнено</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Рожевий</string>
+    <string name="color_dark_pink">Темно-рожевий</string>
+    <string name="color_peach">Персиковий</string>
+    <string name="color_light_purple">Світло-фіолетовий</string>
+    <string name="color_medium_purple">Середньо-фіолетовий</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">см</string>
+    <string name="unit_kg">кг</string>
+    <string name="bmi_category_underweight">Недостатня вага</string>
+    <string name="bmi_category_normal">Нормальний</string>
+    <string name="bmi_category_overweight">Надмірна вага</string>
+    <string name="bmi_category_obese">Ожиріння</string>
+    <string name="bmi_standard_note">На основі китайського стандарту ІМТ</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Резервне копіювання успішне</string>
+    <string name="backup_fail">Помилка резервного копіювання</string>
+    <string name="restore_success">Відновлення успішне</string>
+    <string name="restore_fail">Помилка відновлення</string>
+    <string name="export_success">Експорт успішний</string>
+    <string name="export_fail">Помилка експорту</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Експорт бази даних як зашифрований ZIP-файл AES-256</string>
+    <string name="backup_import_desc">Відновлення даних з файлу резервної копії (підтримує зашифровані та застарілі формати)</string>
+    <string name="backup_csv_desc">Експорт записів як CSV-таблицю</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Видалено: %s</string>
+    <string name="in_progress">В процесі</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Будь ласка, зачекайте %d секунд</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Помилка автентифікації: %s</string>
+    <string name="auth_failed_generic">Помилка автентифікації</string>
+    <string name="biometric_init_failed">Помилка ініціалізації біометрії</string>
+    <string name="lockout_message">Забагато спроб. Будь ласка, зачекайте %d секунд.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Тренд Тривалості Циклу</string>
+    <string name="chart_title_pain_trend">Тренд Болю</string>
+    <string name="chart_title_symptom_distribution">Розподіл Симптомів</string>
+    <string name="chart_cycle_label">Цикл %d</string>
+    <string name="chart_cycle_length_label">Тривалість Циклу</string>
+    <string name="chart_pain_level_label">Рівень Болю</string>
+    
+    <string name="regularity_regular">Регулярний</string>
+    <string name="regularity_somewhat_regular">Досить регулярний</string>
+    <string name="regularity_irregular">Нерегулярний</string>
+    <string name="regularity_insufficient_data">Недостатньо даних</string>
+    <string name="confidence_high">Високий</string>
+    <string name="confidence_medium">Середній</string>
+    <string name="confidence_low">Низький</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Ще немає даних</string>
+    <string name="analysis_no_data_hint">Почніть записувати менструацію, щоб побачити аналітику та прогнози тут</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дні</item>
+        <item quantity="many">%d днів</item>
+        <item quantity="other">%d днів</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Нагадування про Менструацію</string>
+    <string name="channel_ovulation_reminder">Нагадування про Овуляцію</string>
+    <string name="channel_pms_reminder">Нагадування про ПМС</string>
+    <string name="channel_custom_reminder">Користувацьке Нагадування</string>
+    <string name="notif_period_title">Нагадування про Менструацію</string>
+    <string name="notif_period_message">Ваша менструація має розпочатися через %d днів</string>
+    <string name="notif_ovulation_title">Нагадування про Овуляцію</string>
+    <string name="notif_ovulation_message">Овуляція очікується через %d днів</string>
+    <string name="notif_pms_title">Нагадування про ПМС</string>
+    <string name="notif_pms_message">Симптоми ПМС можуть розпочатися через %d днів</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Зовнішній Вигляд</string>
+    <string name="section_data">Дані</string>
+    <string name="section_other">Інше</string>
+</resources>

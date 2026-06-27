@@ -1,0 +1,260 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Điều khoản Dịch vụ &amp; Chính sách Bảo mật</string>
+    <string name="terms_content">1. Tuyên bố Dịch vụ\nỨng dụng này là công cụ theo dõi kinh nguyệt hoàn toàn cục bộ. Tất cả các chức năng chạy cục bộ trên thiết bị mà không có tương tác mạng. Chúng tôi không thu thập, tải lên hoặc chia sẻ bất kỳ dữ liệu cá nhân nào của bạn.\n\n2. Trách nhiệm của Người dùng\nBạn chịu trách nhiệm về độ chính xác của dữ liệu sinh lý được nhập. Các dự đoán kinh nguyệt, tính toán rụng trứng và phân tích đau chỉ mang tính tham khảo và không cấu thành chẩn đoán y tế. Nếu có lo ngại về sức khỏe, hãy tham khảo ý kiến bác sĩ.</string>
+    <string name="privacy_title">Chính sách Bảo mật</string>
+    <string name="privacy_content">1. Nguyên tắc cốt lõi: Lưu trữ dữ liệu cục bộ\nTất cả dữ liệu kinh nguyệt, triệu chứng và nhiệt độ của bạn chỉ được lưu trữ trong cơ sở dữ liệu được mã hóa trên điện thoại của bạn. Ứng dụng không có quyền mạng, ngăn chặn cơ bản việc rò rỉ dữ liệu.\n\n2. Thông tin được Thu thập\nChúng tôi chỉ xử lý thông tin bạn nhập thủ công cục bộ.</string>
+    <string name="accept_terms">Tôi đã đọc và đồng ý</string>
+    <string name="app_lock_title">Khóa Ứng dụng</string>
+    <string name="enter_pin">Nhập Mật khẩu</string>
+    <string name="unlock">Mở khóa</string>
+    <string name="invalid_pin">Mật khẩu Không hợp lệ</string>
+    <string name="calendar_title">Lịch</string>
+    <string name="current_cycle_day">Ngày %d của chu kỳ hiện tại</string>
+    <string name="days_until_next_period">Kinh nguyệt tiếp theo sau %d ngày</string>
+    <string name="no_period_data">Không có dữ liệu kinh nguyệt</string>
+    <string name="tap_date_to_record">Chạm vào ngày để ghi lại</string>
+    <string name="period">Kinh nguyệt</string>
+    <string name="predicted_period">Kinh nguyệt Dự đoán</string>
+    <string name="ovulation">Rụng trứng</string>
+    <string name="fertile_window">Cửa sổ Sinh sản</string>
+    <string name="record_title">Ghi lại</string>
+    <string name="start_period">Bắt đầu Kinh nguyệt</string>
+    <string name="end_period">Kết thúc Kinh nguyệt</string>
+    <string name="flow_level">Lượng máu</string>
+    <string name="pain_level">Đau</string>
+    <string name="symptoms">Triệu chứng</string>
+    <string name="sexual_activity">Hoạt động Tình dục</string>
+    <string name="ovulation_test">Xét nghiệm Rụng trứng</string>
+    <string name="cervical_mucus">Dịch nhầy Cổ tử cung</string>
+    <string name="body_temperature">Nhiệt độ Cơ thể</string>
+    <string name="notes">Ghi chú</string>
+    <string name="save">Lưu</string>
+    <string name="analysis_title">Phân tích</string>
+    <string name="cycle_statistics">Thống kê Chu kỳ</string>
+    <string name="avg_cycle_length">Độ dài Chu kỳ Trung bình</string>
+    <string name="avg_period_length">Độ dài Kinh nguyệt Trung bình</string>
+    <string name="cycle_regularity">Tính đều đặn Chu kỳ</string>
+    <string name="total_cycles">Tổng số Chu kỳ</string>
+    <string name="pain_trend">Xu hướng Đau</string>
+    <string name="symptom_frequency">Tần suất Triệu chứng</string>
+    <string name="predictions">Dự đoán</string>
+    <string name="reminder_title">Nhắc nhở</string>
+    <string name="period_reminder">Nhắc nhở Kinh nguyệt</string>
+    <string name="ovulation_reminder">Nhắc nhở Rụng trứng</string>
+    <string name="pms_reminder">Nhắc nhở PMS</string>
+    <string name="profile_title">Hồ sơ</string>
+    <string name="theme_customization">Giao diện</string>
+    <string name="app_lock">Khóa Ứng dụng</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="recycle_bin">Thùng rác</string>
+    <string name="backup_restore">Sao lưu &amp; Khôi phục</string>
+    <string name="about">Giới thiệu</string>
+    <string name="recycle_bin_title">Thùng rác</string>
+    <string name="no_deleted_records">Không có bản ghi đã xóa</string>
+    <string name="backup_restore_title">Sao lưu &amp; Khôi phục</string>
+    <string name="export_backup">Xuất Sao lưu</string>
+    <string name="import_backup">Nhập Sao lưu</string>
+    <string name="export_csv">Xuất CSV</string>
+    <string name="settings_title">Cài đặt</string>
+    <string name="theme_color">Màu Giao diện</string>
+    <string name="bmi_title">Ghi chú BMI</string>
+    <string name="add_bmi_record">Thêm Ghi chú</string>
+    <string name="height_cm">Chiều cao(cm)</string>
+    <string name="weight_kg">Cân nặng(kg)</string>
+    <string name="latest_bmi">BMI Hiện tại</string>
+    <string name="bmi_history">Lịch sử</string>
+    <string name="dark_mode">Chế độ Tối</string>
+    <string name="dark_mode_description">Chuyển đổi giao diện tối/sáng</string>
+    <string name="record_date">Ngày Ghi chú</string>
+    <string name="select_date">Chọn Ngày</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="cancel">Hủy</string>
+    <string name="background_customization">Nền</string>
+    <string name="select_background_image">Chọn Ảnh Nền</string>
+    <string name="background_transparency">Độ trong suốt Nền</string>
+    <string name="remove_background">Xóa Nền</string>
+    <string name="prevent_screenshot">Chụp ảnh Màn hình</string>
+    <string name="prevent_screenshot_description">Vô hiệu hóa chụp ảnh và quay màn hình</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Bảo mật Dữ liệu</string>
+    <string name="database_encryption">Mã hóa Cơ sở Dữ liệu</string>
+    <string name="encrypted">Đã mã hóa (AES-256)</string>
+    <string name="unencrypted">Chưa mã hóa</string>
+    <string name="migrate_to_encrypted">Chuyển sang Cơ sở Dữ liệu Mã hóa</string>
+    <string name="migration_description">Chuyển dữ liệu hiện có sang cơ sở dữ liệu được mã hóa AES-256. Thao tác này là nguyên tử và sẽ tự động hoàn tác nếu thất bại.</string>
+    <string name="migration_success">Di chuyển thành công! Cơ sở dữ liệu đã được mã hóa.</string>
+    <string name="migration_failed">Di chuyển thất bại: %s. Dữ liệu của bạn đã được khôi phục về trạng thái ban đầu.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Khóa sau khi vào nền</string>
+    <string name="lock_immediately">Ngay lập tức</string>
+    <string name="lock_after_seconds">%d giây</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Nhắc nhở Tùy chỉnh</string>
+    <string name="add_custom_reminder">Thêm Nhắc nhở Tùy chỉnh</string>
+    <string name="no_custom_reminders">Chưa có nhắc nhở tùy chỉnh</string>
+    <string name="reminder_title_label">Tiêu đề nhắc nhở</string>
+    <string name="reminder_title_required">Tiêu đề là bắt buộc</string>
+    <string name="reminder_message_label">Tin nhắn (tùy chọn)</string>
+    <string name="reminder_date">Ngày nhắc nhở</string>
+    <string name="select_time">Chọn thời gian</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Sắc độ</string>
+    <string name="saturation">Độ bão hòa</string>
+    <string name="lightness">Độ sáng</string>
+    <string name="apply_color">Áp dụng Màu</string>
+    <string name="custom_color">Màu Tùy chỉnh</string>
+    <string name="color_preview">Xem trước Màu</string>
+    <string name="apply">Áp dụng</string>
+    <string name="preset_colors">Màu Có sẵn</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Thêm Triệu chứng</string>
+    <string name="symptom_name">Tên triệu chứng</string>
+    <string name="symptom_name_required">Tên triệu chứng là bắt buộc</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Dự đoán thích ứng dựa trên %1$d chu kỳ gần nhất (trung bình %2$s ngày/chu kỳ, %3$s ngày/kinh nguyệt)</string>
+    
+    <string name="delete">Xóa</string>
+    <string name="delete_record">Xóa Bản ghi</string>
+    <string name="delete_record_confirm">Bạn có chắc chắn muốn xóa bản ghi cho ngày này không? Hành động này không thể hoàn tác.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">CN</string>
+    <string name="week_mon">T2</string>
+    <string name="week_tue">T3</string>
+    <string name="week_wed">T4</string>
+    <string name="week_thu">T5</string>
+    <string name="week_fri">T6</string>
+    <string name="week_sat">T7</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Tháng trước</string>
+    <string name="calendar_next_month">Tháng sau</string>
+    <string name="calendar_add_record">Thêm bản ghi</string>
+    <string name="calendar_today">Hôm nay</string>
+    <string name="back">Quay lại</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Đau đầu</string>
+    <string name="symptom_bloating">Đầy hơi</string>
+    <string name="symptom_breast_tenderness">Cương ngực</string>
+    <string name="symptom_backache">Đau lưng</string>
+    <string name="symptom_fatigue">Mệt mỏi</string>
+    <string name="symptom_mood_swings">Thay đổi tâm trạng</string>
+    <string name="symptom_acne">Mụn</string>
+    <string name="symptom_increased_appetite">Tăng cảm giác thèm ăn</string>
+    <string name="symptom_insomnia">Mất ngủ</string>
+    <string name="symptom_nausea">Buồn nôn</string>
+    <string name="flow_light">Ít</string>
+    <string name="flow_medium">Trung bình</string>
+    <string name="flow_heavy">Nhiều</string>
+    <string name="pain_none">Không</string>
+    <string name="pain_mild">Nhẹ</string>
+    <string name="pain_moderate">Trung bình</string>
+    <string name="pain_severe">Nặng</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">ngày</string>
+    <string name="predicted_period_label">Kinh nguyệt dự đoán: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Rụng trứng: %s</string>
+    <string name="confidence_label">Độ tin cậy: %1$s (dựa trên %2$d chu kỳ)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Ngày trước</string>
+    <string name="reminder_time">Thời gian nhắc nhở</string>
+    <string name="time_picker_mode_wheel">Chọn bằng bánh xe</string>
+    <string name="time_picker_mode_keyboard">Nhập bằng bàn phím</string>
+    <string name="time_format_error">Định dạng không hợp lệ, sử dụng HH:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Bật</string>
+    <string name="disabled">Tắt</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Hồng</string>
+    <string name="color_dark_pink">Hồng đậm</string>
+    <string name="color_peach">Đào</string>
+    <string name="color_light_purple">Tím nhạt</string>
+    <string name="color_medium_purple">Tím trung bình</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Thiếu cân</string>
+    <string name="bmi_category_normal">Bình thường</string>
+    <string name="bmi_category_overweight">Thừa cân</string>
+    <string name="bmi_category_obese">Béo phì</string>
+    <string name="bmi_standard_note">Dựa trên tiêu chuẩn BMI của Trung Quốc</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Sao lưu thành công</string>
+    <string name="backup_fail">Sao lưu thất bại</string>
+    <string name="restore_success">Khôi phục thành công</string>
+    <string name="restore_fail">Khôi phục thất bại</string>
+    <string name="export_success">Xuất thành công</string>
+    <string name="export_fail">Xuất thất bại</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Xuất cơ sở dữ liệu dưới dạng tệp ZIP được mã hóa AES-256</string>
+    <string name="backup_import_desc">Khôi phục dữ liệu từ tệp sao lưu (hỗ trợ định dạng được mã hóa và cũ)</string>
+    <string name="backup_csv_desc">Xuất bản ghi dưới dạng bảng CSV</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Đã xóa: %s</string>
+    <string name="in_progress">Đang xử lý</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Vui lòng đợi %d giây</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Xác thực thất bại: %s</string>
+    <string name="auth_failed_generic">Xác thực thất bại</string>
+    <string name="biometric_init_failed">Khởi tạo sinh trắc học thất bại</string>
+    <string name="lockout_message">Quá nhiều lần thử. Vui lòng đợi %d giây.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Xu hướng Độ dài Chu kỳ</string>
+    <string name="chart_title_pain_trend">Xu hướng Đau</string>
+    <string name="chart_title_symptom_distribution">Phân bố Triệu chứng</string>
+    <string name="chart_cycle_label">Chu kỳ %d</string>
+    <string name="chart_cycle_length_label">Độ dài Chu kỳ</string>
+    <string name="chart_pain_level_label">Mức độ Đau</string>
+    
+    <string name="regularity_regular">Đều đặn</string>
+    <string name="regularity_somewhat_regular">Khá đều đặn</string>
+    <string name="regularity_irregular">Không đều đặn</string>
+    <string name="regularity_insufficient_data">Dữ liệu không đủ</string>
+    <string name="confidence_high">Cao</string>
+    <string name="confidence_medium">Trung bình</string>
+    <string name="confidence_low">Thấp</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Chưa có dữ liệu</string>
+    <string name="analysis_no_data_hint">Bắt đầu ghi lại kinh nguyệt để xem phân tích và dự đoán tại đây</string>
+    
+    <plurals name="days_count">
+        <item quantity="other">%d ngày</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Nhắc nhở Kinh nguyệt</string>
+    <string name="channel_ovulation_reminder">Nhắc nhở Rụng trứng</string>
+    <string name="channel_pms_reminder">Nhắc nhở PMS</string>
+    <string name="channel_custom_reminder">Nhắc nhở Tùy chỉnh</string>
+    <string name="notif_period_title">Nhắc nhở Kinh nguyệt</string>
+    <string name="notif_period_message">Kinh nguyệt của bạn dự kiến bắt đầu sau %d ngày</string>
+    <string name="notif_ovulation_title">Nhắc nhở Rụng trứng</string>
+    <string name="notif_ovulation_message">Rụng trứng dự kiến sau %d ngày</string>
+    <string name="notif_pms_title">Nhắc nhở PMS</string>
+    <string name="notif_pms_message">Triệu chứng PMS có thể bắt đầu sau %d ngày</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Giao diện</string>
+    <string name="section_data">Dữ liệu</string>
+    <string name="section_other">Khác</string>
+</resources>

@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Termini di Servizio &amp; Informativa sulla Privacy</string>
+    <string name="terms_content">1. Dichiarazione sul Servizio\nQuesta app è uno strumento di tracciamento mestruale puramente locale. Tutte le funzioni vengono eseguite localmente sul dispositivo senza interazione di rete. Non raccogliamo, carichiamo o condividiamo alcun dato personale.\n\n2. Responsabilità dell\'Utente\nSei responsabile dell\'accuratezza dei dati fisiologici inseriti. Le previsioni mestruali, i calcoli dell\'ovulazione e l\'analisi del dolore sono solo a scopo di riferimento e non costituiscono diagnosi medica. Per problemi di salute, consulta un medico.</string>
+    <string name="privacy_title">Informativa sulla Privacy</string>
+    <string name="privacy_content">1. Principio Fondamentale: Localizzazione dei Dati\nTutti i tuoi dati mestruali, sui sintomi e sulla temperatura sono memorizzati solo nel database crittografato sul tuo telefono. L\'app non ha autorizzazioni di rete, prevenendo fondamentalmente la perdita di dati.\n\n2. Informazioni Raccolte\nElaboriamo solo le informazioni che inserisci manualmente in locale.</string>
+    <string name="accept_terms">Ho letto e accetto</string>
+    <string name="app_lock_title">Blocco App</string>
+    <string name="enter_pin">Inserisci Password</string>
+    <string name="unlock">Sblocca</string>
+    <string name="invalid_pin">Password Non Valida</string>
+    <string name="calendar_title">Calendario</string>
+    <string name="current_cycle_day">Giorno %d del ciclo attuale</string>
+    <string name="days_until_next_period">Prossimo ciclo tra %d giorni</string>
+    <string name="no_period_data">Nessun dato mestruale</string>
+    <string name="tap_date_to_record">Tocca la data per registrare</string>
+    <string name="period">Ciclo Mestruale</string>
+    <string name="predicted_period">Ciclo Previsto</string>
+    <string name="ovulation">Ovulazione</string>
+    <string name="fertile_window">Finestra Fertile</string>
+    <string name="record_title">Registra</string>
+    <string name="start_period">Inizia Ciclo</string>
+    <string name="end_period">Termina Ciclo</string>
+    <string name="flow_level">Flusso</string>
+    <string name="pain_level">Dolore</string>
+    <string name="symptoms">Sintomi</string>
+    <string name="sexual_activity">Attività Sessuale</string>
+    <string name="ovulation_test">Test di Ovulazione</string>
+    <string name="cervical_mucus">Muco Cervicale</string>
+    <string name="body_temperature">Temperatura Corporea</string>
+    <string name="notes">Note</string>
+    <string name="save">Salva</string>
+    <string name="analysis_title">Analisi</string>
+    <string name="cycle_statistics">Statistiche del Ciclo</string>
+    <string name="avg_cycle_length">Durata Media del Ciclo</string>
+    <string name="avg_period_length">Durata Media del Periodo</string>
+    <string name="cycle_regularity">Regolarità del Ciclo</string>
+    <string name="total_cycles">Cicli Totali</string>
+    <string name="pain_trend">Tendenza del Dolore</string>
+    <string name="symptom_frequency">Frequenza dei Sintomi</string>
+    <string name="predictions">Previsioni</string>
+    <string name="reminder_title">Promemoria</string>
+    <string name="period_reminder">Promemoria Ciclo</string>
+    <string name="ovulation_reminder">Promemoria Ovulazione</string>
+    <string name="pms_reminder">Promemoria SPM</string>
+    <string name="profile_title">Profilo</string>
+    <string name="theme_customization">Tema</string>
+    <string name="app_lock">Blocco App</string>
+    <string name="language">Lingua</string>
+    <string name="recycle_bin">Cestino</string>
+    <string name="backup_restore">Backup &amp; Ripristino</string>
+    <string name="about">Informazioni</string>
+    <string name="recycle_bin_title">Cestino</string>
+    <string name="no_deleted_records">Nessun record eliminato</string>
+    <string name="backup_restore_title">Backup &amp; Ripristino</string>
+    <string name="export_backup">Esporta Backup</string>
+    <string name="import_backup">Importa Backup</string>
+    <string name="export_csv">Esporta CSV</string>
+    <string name="settings_title">Impostazioni</string>
+    <string name="theme_color">Colore del Tema</string>
+    <string name="bmi_title">Registro BMI</string>
+    <string name="add_bmi_record">Aggiungi Registro</string>
+    <string name="height_cm">Altezza(cm)</string>
+    <string name="weight_kg">Peso(kg)</string>
+    <string name="latest_bmi">BMI Attuale</string>
+    <string name="bmi_history">Cronologia</string>
+    <string name="dark_mode">Modalità Scura</string>
+    <string name="dark_mode_description">Cambia tema scuro/chiaro</string>
+    <string name="record_date">Data del Registro</string>
+    <string name="select_date">Seleziona Data</string>
+    <string name="confirm">Conferma</string>
+    <string name="cancel">Annulla</string>
+    <string name="background_customization">Sfondo</string>
+    <string name="select_background_image">Seleziona Immagine di Sfondo</string>
+    <string name="background_transparency">Trasparenza dello Sfondo</string>
+    <string name="remove_background">Rimuovi Sfondo</string>
+    <string name="prevent_screenshot">Prevenisci Screenshot</string>
+    <string name="prevent_screenshot_description">Disabilita screenshot e registrazioni dello schermo</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Sicurezza dei Dati</string>
+    <string name="database_encryption">Crittografia del Database</string>
+    <string name="encrypted">Crittografato (AES-256)</string>
+    <string name="unencrypted">Non Crittografato</string>
+    <string name="migrate_to_encrypted">Migra a Database Crittografato</string>
+    <string name="migration_description">Migra i dati esistenti in un database crittografato AES-256. L\'operazione è atomica e tornerà automaticamente indietro in caso di fallimento.</string>
+    <string name="migration_success">Migrazione riuscita! Il database è ora crittografato.</string>
+    <string name="migration_failed">Migrazione fallita: %s. I tuoi dati sono stati ripristinati allo stato originale.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Blocca dopo background</string>
+    <string name="lock_immediately">Immediatamente</string>
+    <string name="lock_after_seconds">%d secondi</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Promemoria Personalizzati</string>
+    <string name="add_custom_reminder">Aggiungi Promemoria Personalizzato</string>
+    <string name="no_custom_reminders">Nessun promemoria personalizzato ancora</string>
+    <string name="reminder_title_label">Titolo del promemoria</string>
+    <string name="reminder_title_required">Il titolo è obbligatorio</string>
+    <string name="reminder_message_label">Messaggio (opzionale)</string>
+    <string name="reminder_date">Data del promemoria</string>
+    <string name="select_time">Seleziona ora</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Tonalità</string>
+    <string name="saturation">Saturazione</string>
+    <string name="lightness">Luminosità</string>
+    <string name="apply_color">Applica Colore</string>
+    <string name="custom_color">Colore Personalizzato</string>
+    <string name="color_preview">Anteprima Colore</string>
+    <string name="apply">Applica</string>
+    <string name="preset_colors">Colori Predefiniti</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Aggiungi Sintomo</string>
+    <string name="symptom_name">Nome del sintomo</string>
+    <string name="symptom_name_required">Il nome del sintomo è obbligatorio</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Previsto adattivamente in base agli ultimi %1$d cicli (media di %2$s giorni/ciclo, %3$s giorni/periodo)</string>
+    
+    <string name="delete">Elimina</string>
+    <string name="delete_record">Elimina Registro</string>
+    <string name="delete_record_confirm">Sei sicuro di voler eliminare il registro per questa data? Questa azione non può essere annullata.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Dom</string>
+    <string name="week_mon">Lun</string>
+    <string name="week_tue">Mar</string>
+    <string name="week_wed">Mer</string>
+    <string name="week_thu">Gio</string>
+    <string name="week_fri">Ven</string>
+    <string name="week_sat">Sab</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Mese precedente</string>
+    <string name="calendar_next_month">Mese successivo</string>
+    <string name="calendar_add_record">Aggiungi registro</string>
+    <string name="calendar_today">Oggi</string>
+    <string name="back">Indietro</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Mal di testa</string>
+    <string name="symptom_bloating">Gonfiore</string>
+    <string name="symptom_breast_tenderness">Sensibilità al seno</string>
+    <string name="symptom_backache">Mal di schiena</string>
+    <string name="symptom_fatigue">Affaticamento</string>
+    <string name="symptom_mood_swings">Sbalzi d\'umore</string>
+    <string name="symptom_acne">Acne</string>
+    <string name="symptom_increased_appetite">Aumento dell\'appetito</string>
+    <string name="symptom_insomnia">Insonnia</string>
+    <string name="symptom_nausea">Nausea</string>
+    <string name="flow_light">Leggero</string>
+    <string name="flow_medium">Medio</string>
+    <string name="flow_heavy">Pesante</string>
+    <string name="pain_none">Nessuno</string>
+    <string name="pain_mild">Lieve</string>
+    <string name="pain_moderate">Moderato</string>
+    <string name="pain_severe">Severo</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">giorni</string>
+    <string name="predicted_period_label">Periodo previsto: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Ovulazione: %s</string>
+    <string name="confidence_label">Affidabilità: %1$s (basato su %2$d cicli)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Giorni prima</string>
+    <string name="reminder_time">Ora del promemoria</string>
+    <string name="time_picker_mode_wheel">Selettore rotella</string>
+    <string name="time_picker_mode_keyboard">Input tastiera</string>
+    <string name="time_format_error">Formato non valido, usa HH:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Abilitato</string>
+    <string name="disabled">Disabilitato</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Rosa</string>
+    <string name="color_dark_pink">Rosa scuro</string>
+    <string name="color_peach">Pesca</string>
+    <string name="color_light_purple">Viola chiaro</string>
+    <string name="color_medium_purple">Viola medio</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Sottopeso</string>
+    <string name="bmi_category_normal">Normale</string>
+    <string name="bmi_category_overweight">Sovrappeso</string>
+    <string name="bmi_category_obese">Obeso</string>
+    <string name="bmi_standard_note">Basato sullo standard BMI cinese</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Backup riuscito</string>
+    <string name="backup_fail">Backup fallito</string>
+    <string name="restore_success">Ripristino riuscito</string>
+    <string name="restore_fail">Ripristino fallito</string>
+    <string name="export_success">Esportazione riuscita</string>
+    <string name="export_fail">Esportazione fallita</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Esporta database come file ZIP crittografato AES-256</string>
+    <string name="backup_import_desc">Ripristina dati da un file di backup (supporta formati crittografati e legacy)</string>
+    <string name="backup_csv_desc">Esporta registrazioni come foglio CSV</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Eliminato: %s</string>
+    <string name="in_progress">In corso</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Attendi %d secondi</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Autenticazione fallita: %s</string>
+    <string name="auth_failed_generic">Autenticazione fallita</string>
+    <string name="biometric_init_failed">Inizializzazione biometrica fallita</string>
+    <string name="lockout_message">Troppi tentativi. Attendi %d secondi.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Tendenza Durata Ciclo</string>
+    <string name="chart_title_pain_trend">Tendenza Dolore</string>
+    <string name="chart_title_symptom_distribution">Distribuzione Sintomi</string>
+    <string name="chart_cycle_label">Ciclo %d</string>
+    <string name="chart_cycle_length_label">Durata Ciclo</string>
+    <string name="chart_pain_level_label">Livello di Dolore</string>
+    
+    <string name="regularity_regular">Regolare</string>
+    <string name="regularity_somewhat_regular">Abbastanza regolare</string>
+    <string name="regularity_irregular">Irregolare</string>
+    <string name="regularity_insufficient_data">Dati insufficienti</string>
+    <string name="confidence_high">Alta</string>
+    <string name="confidence_medium">Media</string>
+    <string name="confidence_low">Bassa</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Nessun dato ancora</string>
+    <string name="analysis_no_data_hint">Inizia a registrare il tuo ciclo per vedere analisi e previsioni qui</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d giorno</item>
+        <item quantity="other">%d giorni</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Promemoria Ciclo</string>
+    <string name="channel_ovulation_reminder">Promemoria Ovulazione</string>
+    <string name="channel_pms_reminder">Promemoria SPM</string>
+    <string name="channel_custom_reminder">Promemoria Personalizzato</string>
+    <string name="notif_period_title">Promemoria Ciclo</string>
+    <string name="notif_period_message">Il tuo ciclo dovrebbe iniziare tra %d giorni</string>
+    <string name="notif_ovulation_title">Promemoria Ovulazione</string>
+    <string name="notif_ovulation_message">L\'ovulazione è prevista tra %d giorni</string>
+    <string name="notif_pms_title">Promemoria SPM</string>
+    <string name="notif_pms_message">I sintomi del SPM potrebbero iniziare tra %d giorni</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Aspetto</string>
+    <string name="section_data">Dati</string>
+    <string name="section_other">Altro</string>
+</resources>

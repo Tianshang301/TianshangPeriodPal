@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Servicevoorwaarden &amp; Privacybeleid</string>
+    <string name="terms_content">1. Serviceverklaring\nDeze app is een volledig lokaal menstruatievolghulpmiddel. Alle functies werken lokaal op het apparaat zonder netwerkinteractie. We verzamelen, uploaden of delen geen persoonlijke gegevens.\n\n2. Verantwoordelijkheid van de Gebruiker\nU bent verantwoordelijk voor de nauwkeurigheid van de ingevoerde fysiologische gegevens. Menstruatievoorspellingen, ovulatieberekeningen en pijnanalyses zijn alleen ter referentie en vormen geen medische diagnose. Bij gezondheidsproblemen raadpleegt u een arts.</string>
+    <string name="privacy_title">Privacybeleid</string>
+    <string name="privacy_content">1. Kernprincipe: Data Lokalisatie\nAl je menstruatie-, symptoom- en temperatuurgegevens worden alleen opgeslagen in de versleutelde database op je telefoon. De app heeft geen netwerkrechten, wat gegevenslekken fundamenteel voorkomt.\n\n2. Verzamelde Informatie\nWe verwerken alleen informatie die je handmatig lokaal invoert.</string>
+    <string name="accept_terms">Ik heb gelezen en ga akkoord</string>
+    <string name="app_lock_title">App Vergrendeling</string>
+    <string name="enter_pin">Voer Wachtwoord in</string>
+    <string name="unlock">Ontgrendel</string>
+    <string name="invalid_pin">Ongeldig Wachtwoord</string>
+    <string name="calendar_title">Kalender</string>
+    <string name="current_cycle_day">Dag %d van huidige cyclus</string>
+    <string name="days_until_next_period">Volgende menstruatie over %d dagen</string>
+    <string name="no_period_data">Geen menstruatiegegevens</string>
+    <string name="tap_date_to_record">Tik op datum om op te nemen</string>
+    <string name="period">Menstruatie</string>
+    <string name="predicted_period">Voorspelde Menstruatie</string>
+    <string name="ovulation">Ovulatie</string>
+    <string name="fertile_window">Vruchtbaar Raam</string>
+    <string name="record_title">Opnemen</string>
+    <string name="start_period">Start Menstruatie</string>
+    <string name="end_period">Einde Menstruatie</string>
+    <string name="flow_level">Vloeiing</string>
+    <string name="pain_level">Pijn</string>
+    <string name="symptoms">Symptomen</string>
+    <string name="sexual_activity">Seksuele Activiteit</string>
+    <string name="ovulation_test">Ovulatietest</string>
+    <string name="cervical_mucus">Cervicaal Slijm</string>
+    <string name="body_temperature">Lichaamstemperatuur</string>
+    <string name="notes">Notities</string>
+    <string name="save">Opslaan</string>
+    <string name="analysis_title">Analyse</string>
+    <string name="cycle_statistics">Cyclus Statistieken</string>
+    <string name="avg_cycle_length">Gemiddelde Cyclus Lengte</string>
+    <string name="avg_period_length">Gemiddelde Menstruatie Lengte</string>
+    <string name="cycle_regularity">Cyclus Regelmaat</string>
+    <string name="total_cycles">Totaal Cycli</string>
+    <string name="pain_trend">Pijn Trend</string>
+    <string name="symptom_frequency">Symptoom Frequentie</string>
+    <string name="predictions">Voorspellingen</string>
+    <string name="reminder_title">Herinneringen</string>
+    <string name="period_reminder">Menstruatie Herinnering</string>
+    <string name="ovulation_reminder">Ovulatie Herinnering</string>
+    <string name="pms_reminder">PMS Herinnering</string>
+    <string name="profile_title">Profiel</string>
+    <string name="theme_customization">Thema</string>
+    <string name="app_lock">App Vergrendeling</string>
+    <string name="language">Taal</string>
+    <string name="recycle_bin">Prullenbak</string>
+    <string name="backup_restore">Back-up &amp; Herstel</string>
+    <string name="about">Over</string>
+    <string name="recycle_bin_title">Prullenbak</string>
+    <string name="no_deleted_records">Geen verwijderde records</string>
+    <string name="backup_restore_title">Back-up &amp; Herstel</string>
+    <string name="export_backup">Back-up Exporteren</string>
+    <string name="import_backup">Back-up Importeren</string>
+    <string name="export_csv">CSV Exporteren</string>
+    <string name="settings_title">Instellingen</string>
+    <string name="theme_color">Thema Kleur</string>
+    <string name="bmi_title">BMI Registratie</string>
+    <string name="add_bmi_record">Registratie Toevoegen</string>
+    <string name="height_cm">Lengte(cm)</string>
+    <string name="weight_kg">Gewicht(kg)</string>
+    <string name="latest_bmi">Huidige BMI</string>
+    <string name="bmi_history">Geschiedenis</string>
+    <string name="dark_mode">Donkere Modus</string>
+    <string name="dark_mode_description">Schakel donker/licht thema</string>
+    <string name="record_date">Registratie Datum</string>
+    <string name="select_date">Selecteer Datum</string>
+    <string name="confirm">Bevestig</string>
+    <string name="cancel">Annuleren</string>
+    <string name="background_customization">Achtergrond</string>
+    <string name="select_background_image">Selecteer Achtergrondafbeelding</string>
+    <string name="background_transparency">Achtergrond Transparantie</string>
+    <string name="remove_background">Achtergrond Verwijderen</string>
+    <string name="prevent_screenshot">Screenshot Voorkomen</string>
+    <string name="prevent_screenshot_description">Schakel screenshots en schermopname uit</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Gegevensbeveiliging</string>
+    <string name="database_encryption">Database Versleuteling</string>
+    <string name="encrypted">Versleuteld (AES-256)</string>
+    <string name="unencrypted">Niet Versleuteld</string>
+    <string name="migrate_to_encrypted">Migreer naar Versleutelde Database</string>
+    <string name="migration_description">Migreer bestaande gegevens naar een AES-256 versleutelde database. Deze operatie is atomair en wordt automatisch teruggedraaid bij falen.</string>
+    <string name="migration_success">Migratie geslaagd! Database is nu versleuteld.</string>
+    <string name="migration_failed">Migratie mislukt: %s. Uw gegevens zijn hersteld naar de oorspronkelijke staat.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Vergrendel na achtergrond</string>
+    <string name="lock_immediately">Onmiddellijk</string>
+    <string name="lock_after_seconds">%d seconden</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Aangepaste Herinneringen</string>
+    <string name="add_custom_reminder">Aangepaste Herinnering Toevoegen</string>
+    <string name="no_custom_reminders">Nog geen aangepaste herinneringen</string>
+    <string name="reminder_title_label">Herinnering titel</string>
+    <string name="reminder_title_required">Titel is verplicht</string>
+    <string name="reminder_message_label">Bericht (optioneel)</string>
+    <string name="reminder_date">Herinnering datum</string>
+    <string name="select_time">Selecteer tijd</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Tint</string>
+    <string name="saturation">Verzadiging</string>
+    <string name="lightness">Helderheid</string>
+    <string name="apply_color">Kleur Toepassen</string>
+    <string name="custom_color">Aangepaste Kleur</string>
+    <string name="color_preview">Kleur Voorbeeld</string>
+    <string name="apply">Toepassen</string>
+    <string name="preset_colors">Standaard Kleuren</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Symptoom Toevoegen</string>
+    <string name="symptom_name">Symptoom naam</string>
+    <string name="symptom_name_required">Symptoom naam is verplicht</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Adaptief voorspeld op basis van de laatste %1$d cycli (gemiddeld %2$s dagen/cyclus, %3$s dagen/menstruatie)</string>
+    
+    <string name="delete">Verwijderen</string>
+    <string name="delete_record">Record Verwijderen</string>
+    <string name="delete_record_confirm">Weet u zeker dat u het record voor deze datum wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Zo</string>
+    <string name="week_mon">Ma</string>
+    <string name="week_tue">Di</string>
+    <string name="week_wed">Wo</string>
+    <string name="week_thu">Do</string>
+    <string name="week_fri">Vr</string>
+    <string name="week_sat">Za</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Vorige maand</string>
+    <string name="calendar_next_month">Volgende maand</string>
+    <string name="calendar_add_record">Record toevoegen</string>
+    <string name="calendar_today">Vandaag</string>
+    <string name="back">Terug</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Hoofdpijn</string>
+    <string name="symptom_bloating">Opgeblazen gevoel</string>
+    <string name="symptom_breast_tenderness">Borsten gevoeligheid</string>
+    <string name="symptom_backache">Rugpijn</string>
+    <string name="symptom_fatigue">Vermoeidheid</string>
+    <string name="symptom_mood_swings">Stemmingsschommelingen</string>
+    <string name="symptom_acne">Acne</string>
+    <string name="symptom_increased_appetite">Verhoogde eetlust</string>
+    <string name="symptom_insomnia">Slapeloosheid</string>
+    <string name="symptom_nausea">Misselijkheid</string>
+    <string name="flow_light">Licht</string>
+    <string name="flow_medium">Gemiddeld</string>
+    <string name="flow_heavy">Zwaar</string>
+    <string name="pain_none">Geen</string>
+    <string name="pain_mild">Licht</string>
+    <string name="pain_moderate">Matig</string>
+    <string name="pain_severe">Ernstig</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">dagen</string>
+    <string name="predicted_period_label">Voorspelde menstruatie: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Ovulatie: %s</string>
+    <string name="confidence_label">Vertrouwen: %1$s (gebaseerd op %2$d cycli)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Dagen ervoor</string>
+    <string name="reminder_time">Herinnering tijd</string>
+    <string name="time_picker_mode_wheel">Wielkiezer</string>
+    <string name="time_picker_mode_keyboard">Toetsenbordinvoer</string>
+    <string name="time_format_error">Ongeldig formaat, gebruik UU:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Ingeschakeld</string>
+    <string name="disabled">Uitgeschakeld</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Roze</string>
+    <string name="color_dark_pink">Donkerroze</string>
+    <string name="color_peach">Perzik</string>
+    <string name="color_light_purple">Lichtpaars</string>
+    <string name="color_medium_purple">Middelpaars</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Ondergewicht</string>
+    <string name="bmi_category_normal">Normaal</string>
+    <string name="bmi_category_overweight">Overgewicht</string>
+    <string name="bmi_category_obese">Obesitas</string>
+    <string name="bmi_standard_note">Gebaseerd op Chinese BMI standaard</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Back-up geslaagd</string>
+    <string name="backup_fail">Back-up mislukt</string>
+    <string name="restore_success">Herstel geslaagd</string>
+    <string name="restore_fail">Herstel mislukt</string>
+    <string name="export_success">Export geslaagd</string>
+    <string name="export_fail">Export mislukt</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Exporteer database als AES-256 versleuteld ZIP back-up bestand</string>
+    <string name="backup_import_desc">Herstel gegevens vanuit een back-up bestand (ondersteunt versleutelde en verouderde formaten)</string>
+    <string name="backup_csv_desc">Exporteer records als CSV spreadsheet</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Verwijderd: %s</string>
+    <string name="in_progress">Bezig</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Wacht %d seconden</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Authenticatie mislukt: %s</string>
+    <string name="auth_failed_generic">Authenticatie mislukt</string>
+    <string name="biometric_init_failed">Biometrische initialisatie mislukt</string>
+    <string name="lockout_message">Te veel pogingen. Wacht %d seconden.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Cyclus Lengte Trend</string>
+    <string name="chart_title_pain_trend">Pijn Trend</string>
+    <string name="chart_title_symptom_distribution">Symptoom Verdeling</string>
+    <string name="chart_cycle_label">Cyclus %d</string>
+    <string name="chart_cycle_length_label">Cyclus Lengte</string>
+    <string name="chart_pain_level_label">Pijn Niveau</string>
+    
+    <string name="regularity_regular">Regelmatig</string>
+    <string name="regularity_somewhat_regular">Redelijk regelmatig</string>
+    <string name="regularity_irregular">Onregelmatig</string>
+    <string name="regularity_insufficient_data">Onvoldoende gegevens</string>
+    <string name="confidence_high">Hoog</string>
+    <string name="confidence_medium">Gemiddeld</string>
+    <string name="confidence_low">Laag</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Nog geen gegevens</string>
+    <string name="analysis_no_data_hint">Begin met het opnemen van je menstruatie om analyses en voorspellingen hier te zien</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d dag</item>
+        <item quantity="other">%d dagen</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Menstruatie Herinnering</string>
+    <string name="channel_ovulation_reminder">Ovulatie Herinnering</string>
+    <string name="channel_pms_reminder">PMS Herinnering</string>
+    <string name="channel_custom_reminder">Aangepaste Herinnering</string>
+    <string name="notif_period_title">Menstruatie Herinnering</string>
+    <string name="notif_period_message">Je menstruatie begint naar verwachting over %d dagen</string>
+    <string name="notif_ovulation_title">Ovulatie Herinnering</string>
+    <string name="notif_ovulation_message">Ovulatie wordt verwacht over %d dagen</string>
+    <string name="notif_pms_title">PMS Herinnering</string>
+    <string name="notif_pms_message">PMS symptomen kunnen over %d dagen beginnen</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Uiterlijk</string>
+    <string name="section_data">Gegevens</string>
+    <string name="section_other">Overig</string>
+</resources>

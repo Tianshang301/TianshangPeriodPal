@@ -1,0 +1,260 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Syarat Perkhidmatan &amp; Dasar Privasi</string>
+    <string name="terms_content">1. Kenyataan Perkhidmatan\nAplikasi ini adalah alat penjejakan haid yang sepenuhnya tempatan. Semua fungsi berjalan secara tempatan pada peranti tanpa interaksi rangkaian. Kami tidak mengumpul, memuat naik, atau berkongsi data peribadi anda.\n\n2. Tanggungjawab Pengguna\nAnda bertanggungjawab atas ketepatan data fisiologi yang dimasukkan. Ramalan haid, pengiraan ovulasi, dan analisis kesakitan adalah untuk rujukan sahaja dan bukan diagnosis perubatan. Jika ada kebimbangan kesihatan, sila berunding dengan doktor.</string>
+    <string name="privacy_title">Dasar Privasi</string>
+    <string name="privacy_content">1. Prinsip Teras: Penyetempatan Data\nSemua data haid, gejala, dan suhu anda hanya disimpan dalam pangkalan data yang disulitkan pada telefon anda. Aplikasi ini tidak mempunyai kebenaran rangkaian, yang secara asasnya menghalang kebocoran data.\n\n2. Maklumat yang Dikumpul\nKami hanya memproses maklumat yang anda masukkan secara manual secara tempatan.</string>
+    <string name="accept_terms">Saya telah membaca dan bersetuju</string>
+    <string name="app_lock_title">Kunci Aplikasi</string>
+    <string name="enter_pin">Masukkan Kata Laluan</string>
+    <string name="unlock">Buka Kunci</string>
+    <string name="invalid_pin">Kata Laluan Tidak Sah</string>
+    <string name="calendar_title">Kalendar</string>
+    <string name="current_cycle_day">Hari %d kitaran semasa</string>
+    <string name="days_until_next_period">Haid seterusnya dalam %d hari</string>
+    <string name="no_period_data">Tiada data haid</string>
+    <string name="tap_date_to_record">Ketik tarikh untuk merekod</string>
+    <string name="period">Haid</string>
+    <string name="predicted_period">Haid Ramalan</string>
+    <string name="ovulation">Ovulasi</string>
+    <string name="fertile_window">Tetingkap Subur</string>
+    <string name="record_title">Rekod</string>
+    <string name="start_period">Mula Haid</string>
+    <string name="end_period">Tamat Haid</string>
+    <string name="flow_level">Aliran</string>
+    <string name="pain_level">Kesakitan</string>
+    <string name="symptoms">Gejala</string>
+    <string name="sexual_activity">Aktiviti Seksual</string>
+    <string name="ovulation_test">Ujian Ovulasi</string>
+    <string name="cervical_mucus">Lendir Serviks</string>
+    <string name="body_temperature">Suhu Badan</string>
+    <string name="notes">Nota</string>
+    <string name="save">Simpan</string>
+    <string name="analysis_title">Analisis</string>
+    <string name="cycle_statistics">Statistik Kitaran</string>
+    <string name="avg_cycle_length">Purata Panjang Kitaran</string>
+    <string name="avg_period_length">Purata Panjang Haid</string>
+    <string name="cycle_regularity">Keteraturan Kitaran</string>
+    <string name="total_cycles">Jumlah Kitaran</string>
+    <string name="pain_trend">Trend Kesakitan</string>
+    <string name="symptom_frequency">Kekerapan Gejala</string>
+    <string name="predictions">Ramalan</string>
+    <string name="reminder_title">Peringatan</string>
+    <string name="period_reminder">Peringatan Haid</string>
+    <string name="ovulation_reminder">Peringatan Ovulasi</string>
+    <string name="pms_reminder">Peringatan PMS</string>
+    <string name="profile_title">Profil</string>
+    <string name="theme_customization">Tema</string>
+    <string name="app_lock">Kunci Aplikasi</string>
+    <string name="language">Bahasa</string>
+    <string name="recycle_bin">Tong Kitar Semula</string>
+    <string name="backup_restore">Sandaran &amp; Pulihkan</string>
+    <string name="about">Tentang</string>
+    <string name="recycle_bin_title">Tong Kitar Semula</string>
+    <string name="no_deleted_records">Tiada rekod dipadam</string>
+    <string name="backup_restore_title">Sandaran &amp; Pulihkan</string>
+    <string name="export_backup">Eksport Sandaran</string>
+    <string name="import_backup">Import Sandaran</string>
+    <string name="export_csv">Eksport CSV</string>
+    <string name="settings_title">Tetapan</string>
+    <string name="theme_color">Warna Tema</string>
+    <string name="bmi_title">Rekod BMI</string>
+    <string name="add_bmi_record">Tambah Rekod</string>
+    <string name="height_cm">Tinggi(cm)</string>
+    <string name="weight_kg">Berat(kg)</string>
+    <string name="latest_bmi">BMI Semasa</string>
+    <string name="bmi_history">Sejarah</string>
+    <string name="dark_mode">Mod Gelap</string>
+    <string name="dark_mode_description">Tukar tema gelap/terang</string>
+    <string name="record_date">Tarikh Rekod</string>
+    <string name="select_date">Pilih Tarikh</string>
+    <string name="confirm">Sahkan</string>
+    <string name="cancel">Batal</string>
+    <string name="background_customization">Latar Belakang</string>
+    <string name="select_background_image">Pilih Imej Latar</string>
+    <string name="background_transparency">Ketelusan Latar</string>
+    <string name="remove_background">Buang Latar</string>
+    <string name="prevent_screenshot">Halang Tangkapan Skrin</string>
+    <string name="prevent_screenshot_description">Lumpuhkan tangkapan skrin dan rakaman skrin</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Keselamatan Data</string>
+    <string name="database_encryption">Penyulitan Pangkalan Data</string>
+    <string name="encrypted">Disulitkan (AES-256)</string>
+    <string name="unencrypted">Tidak Disulitkan</string>
+    <string name="migrate_to_encrypted">Beralih ke Pangkalan Data Disulitkan</string>
+    <string name="migration_description">Migrasi data sedia ada ke pangkalan data yang disulitkan AES-256. Operasi ini adalah atomik dan akan secara automatik dikembalikan jika gagal.</string>
+    <string name="migration_success">Migrasi berjaya! Pangkalan data kini disulitkan.</string>
+    <string name="migration_failed">Migrasi gagal: %s. Data anda telah dipulihkan ke keadaan asal.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Kunci selepas latar belakang</string>
+    <string name="lock_immediately">Segera</string>
+    <string name="lock_after_seconds">%d saat</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Peringatan Tersuai</string>
+    <string name="add_custom_reminder">Tambah Peringatan Tersuai</string>
+    <string name="no_custom_reminders">Belum ada peringatan tersuai</string>
+    <string name="reminder_title_label">Tajuk peringatan</string>
+    <string name="reminder_title_required">Tajuk diperlukan</string>
+    <string name="reminder_message_label">Mesej (pilihan)</string>
+    <string name="reminder_date">Tarikh peringatan</string>
+    <string name="select_time">Pilih masa</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Rona</string>
+    <string name="saturation">Ketepuan</string>
+    <string name="lightness">Kecerahan</string>
+    <string name="apply_color">Gunakan Warna</string>
+    <string name="custom_color">Warna Tersuai</string>
+    <string name="color_preview">Pratonton Warna</string>
+    <string name="apply">Gunakan</string>
+    <string name="preset_colors">Warna Tersedia</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Tambah Gejala</string>
+    <string name="symptom_name">Nama gejala</string>
+    <string name="symptom_name_required">Nama gejala diperlukan</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Ramalan adaptif berdasarkan %1$d kitaran terakhir (purata %2$s hari/kitaran, %3$s hari/haid)</string>
+    
+    <string name="delete">Padam</string>
+    <string name="delete_record">Padam Rekod</string>
+    <string name="delete_record_confirm">Adakah anda pasti mahu memadam rekod untuk tarikh ini? Tindakan ini tidak boleh dibatalkan.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Ahd</string>
+    <string name="week_mon">Isn</string>
+    <string name="week_tue">Sel</string>
+    <string name="week_wed">Rab</string>
+    <string name="week_thu">Kha</string>
+    <string name="week_fri">Jum</string>
+    <string name="week_sat">Sab</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Bulan sebelumnya</string>
+    <string name="calendar_next_month">Bulan seterusnya</string>
+    <string name="calendar_add_record">Tambah rekod</string>
+    <string name="calendar_today">Hari ini</string>
+    <string name="back">Kembali</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Sakit kepala</string>
+    <string name="symptom_bloating">Kembung</string>
+    <string name="symptom_breast_tenderness">Sakit payudara</string>
+    <string name="symptom_backache">Sakit belakang</string>
+    <string name="symptom_fatigue">Keletihan</string>
+    <string name="symptom_mood_swings">Perubahan emosi</string>
+    <string name="symptom_acne">Jerawat</string>
+    <string name="symptom_increased_appetite">Selera meningkat</string>
+    <string name="symptom_insomnia">Insomnia</string>
+    <string name="symptom_nausea">Loya</string>
+    <string name="flow_light">Sedikit</string>
+    <string name="flow_medium">Sederhana</string>
+    <string name="flow_heavy">Banyak</string>
+    <string name="pain_none">Tiada</string>
+    <string name="pain_mild">Ringan</string>
+    <string name="pain_moderate">Sederhana</string>
+    <string name="pain_severe">Teruk</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">hari</string>
+    <string name="predicted_period_label">Haid ramalan: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Ovulasi: %s</string>
+    <string name="confidence_label">Keyakinan: %1$s (berdasarkan %2$d kitaran)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Hari sebelumnya</string>
+    <string name="reminder_time">Masa peringatan</string>
+    <string name="time_picker_mode_wheel">Pemilih roda</string>
+    <string name="time_picker_mode_keyboard">Input papan kekunci</string>
+    <string name="time_format_error">Format tidak sah, gunakan HH:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Diaktifkan</string>
+    <string name="disabled">Dinyahaktifkan</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Merah jambu</string>
+    <string name="color_dark_pink">Merah jambu gelap</string>
+    <string name="color_peach">Pic</string>
+    <string name="color_light_purple">Ungu muda</string>
+    <string name="color_medium_purple">Ungu sederhana</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Kurang berat badan</string>
+    <string name="bmi_category_normal">Normal</string>
+    <string name="bmi_category_overweight">Lebih berat badan</string>
+    <string name="bmi_category_obese">Obesiti</string>
+    <string name="bmi_standard_note">Berdasarkan standard BMI China</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Sandaran berjaya</string>
+    <string name="backup_fail">Sandaran gagal</string>
+    <string name="restore_success">Pemulihan berjaya</string>
+    <string name="restore_fail">Pemulihan gagal</string>
+    <string name="export_success">Eksport berjaya</string>
+    <string name="export_fail">Eksport gagal</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Eksport pangkalan data sebagai fail ZIP yang disulitkan AES-256</string>
+    <string name="backup_import_desc">Pulihkan data dari fail sandaran (menyokong format disulitkan dan lama)</string>
+    <string name="backup_csv_desc">Eksport rekod sebagai hamparan CSV</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Dipadam: %s</string>
+    <string name="in_progress">Sedang diproses</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Sila tunggu %d saat</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Pengesahan gagal: %s</string>
+    <string name="auth_failed_generic">Pengesahan gagal</string>
+    <string name="biometric_init_failed">Permulaan biometrik gagal</string>
+    <string name="lockout_message">Terlalu banyak percubaan. Sila tunggu %d saat.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Trend Panjang Kitaran</string>
+    <string name="chart_title_pain_trend">Trend Kesakitan</string>
+    <string name="chart_title_symptom_distribution">Taburan Gejala</string>
+    <string name="chart_cycle_label">Kitaran %d</string>
+    <string name="chart_cycle_length_label">Panjang Kitaran</string>
+    <string name="chart_pain_level_label">Tahap Kesakitan</string>
+    
+    <string name="regularity_regular">Teratur</string>
+    <string name="regularity_somewhat_regular">Agak teratur</string>
+    <string name="regularity_irregular">Tidak teratur</string>
+    <string name="regularity_insufficient_data">Data tidak mencukupi</string>
+    <string name="confidence_high">Tinggi</string>
+    <string name="confidence_medium">Sederhana</string>
+    <string name="confidence_low">Rendah</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Belum ada data</string>
+    <string name="analysis_no_data_hint">Mula merekod haid anda untuk melihat analisis dan ramalan di sini</string>
+    
+    <plurals name="days_count">
+        <item quantity="other">%d hari</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Peringatan Haid</string>
+    <string name="channel_ovulation_reminder">Peringatan Ovulasi</string>
+    <string name="channel_pms_reminder">Peringatan PMS</string>
+    <string name="channel_custom_reminder">Peringatan Tersuai</string>
+    <string name="notif_period_title">Peringatan Haid</string>
+    <string name="notif_period_message">Haid anda dijangka bermula dalam %d hari</string>
+    <string name="notif_ovulation_title">Peringatan Ovulasi</string>
+    <string name="notif_ovulation_message">Ovulasi dijangka dalam %d hari</string>
+    <string name="notif_pms_title">Peringatan PMS</string>
+    <string name="notif_pms_message">Gejala PMS mungkin bermula dalam %d hari</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Penampilan</string>
+    <string name="section_data">Data</string>
+    <string name="section_other">Lain-lain</string>
+</resources>

@@ -1,0 +1,261 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Användarvillkor &amp; Integritetspolicy</string>
+    <string name="terms_content">1. Tjänsteförklaring\nDenna app är ett helt lokalt menstruationsspårningsverktyg. Alla funktioner körs lokalt på enheten utan nätverksinteraktion. Vi samlar inte in, laddar upp eller delar någon personlig data.\n\n2. Användarens Ansvar\nDu är ansvarig för noggrannheten hos de fysiologiska data som anges. Menstruationsförutsägelser, äggberäkningar och smärtanalys är endast för referens och utgör inte medicinsk diagnostik. Vid hälsoproblem, rådfråga en läkare.</string>
+    <string name="privacy_title">Integritetspolicy</string>
+    <string name="privacy_content">1. Kärnprincip: Data Lokalisering\nAll din menstruations-, symptom- och temperaturdata lagras bara i den krypterade databasen på din telefon. Appen har inga nätverksbehörigheter, vilket fundamentalt förhindrar dataläckage.\n\n2. Insamlad Information\nVi bearbetar bara information som du manuellt anger lokalt.</string>
+    <string name="accept_terms">Jag har läst och godkänner</string>
+    <string name="app_lock_title">App Lås</string>
+    <string name="enter_pin">Ange Lösenord</string>
+    <string name="unlock">Lås Upp</string>
+    <string name="invalid_pin">Ogiltigt Lösenord</string>
+    <string name="calendar_title">Kalender</string>
+    <string name="current_cycle_day">Dag %d av nuvarande cykel</string>
+    <string name="days_until_next_period">Nästa menstruation om %d dagar</string>
+    <string name="no_period_data">Ingen menstruationsdata</string>
+    <string name="tap_date_to_record">Tryck på datum för att spela in</string>
+    <string name="period">Menstruation</string>
+    <string name="predicted_period">Förutsedd Menstruation</string>
+    <string name="ovulation">Ägglossning</string>
+    <string name="fertile_window">Fertilt Fönster</string>
+    <string name="record_title">Spela In</string>
+    <string name="start_period">Starta Menstruation</string>
+    <string name="end_period">Avsluta Menstruation</string>
+    <string name="flow_level">Flöde</string>
+    <string name="pain_level">Smärta</string>
+    <string name="symptoms">Symtom</string>
+    <string name="sexual_activity">Sexuell Aktivitet</string>
+    <string name="ovulation_test">Ägglosningstest</string>
+    <string name="cervical_mucus">Cervicalslem</string>
+    <string name="body_temperature">Kroppstemperatur</string>
+    <string name="notes">Anteckningar</string>
+    <string name="save">Spara</string>
+    <string name="analysis_title">Analys</string>
+    <string name="cycle_statistics">Cykelstatistik</string>
+    <string name="avg_cycle_length">Genomsnittlig Cykellängd</string>
+    <string name="avg_period_length">Genomsnittlig Menstruationslängd</string>
+    <string name="cycle_regularity">Cykelregelbundenhet</string>
+    <string name="total_cycles">Totalt Antal Cykler</string>
+    <string name="pain_trend">Smärttrend</string>
+    <string name="symptom_frequency">Symtomfrekvens</string>
+    <string name="predictions">Förutsägelser</string>
+    <string name="reminder_title">Påminnelser</string>
+    <string name="period_reminder">Menstruationspåminnelse</string>
+    <string name="ovulation_reminder">Ägglossningspåminnelse</string>
+    <string name="pms_reminder">PMS-påminnelse</string>
+    <string name="profile_title">Profil</string>
+    <string name="theme_customization">Tema</string>
+    <string name="app_lock">App Lås</string>
+    <string name="language">Språk</string>
+    <string name="recycle_bin">Papperskorg</string>
+    <string name="backup_restore">Säkerhetskopiering &amp; Återställning</string>
+    <string name="about">Om</string>
+    <string name="recycle_bin_title">Papperskorg</string>
+    <string name="no_deleted_records">Inga borttagna poster</string>
+    <string name="backup_restore_title">Säkerhetskopiering &amp; Återställning</string>
+    <string name="export_backup">Exportera Säkerhetskopia</string>
+    <string name="import_backup">Importera Säkerhetskopia</string>
+    <string name="export_csv">Exportera CSV</string>
+    <string name="settings_title">Inställningar</string>
+    <string name="theme_color">Temafärg</string>
+    <string name="bmi_title">BMI-register</string>
+    <string name="add_bmi_record">Lägg till Post</string>
+    <string name="height_cm">Längd(cm)</string>
+    <string name="weight_kg">Vikt(kg)</string>
+    <string name="latest_bmi">Aktuell BMI</string>
+    <string name="bmi_history">Historik</string>
+    <string name="dark_mode">Mörkt Läge</string>
+    <string name="dark_mode_description">Växla mörkt/ljust tema</string>
+    <string name="record_data">Registreringsdatum</string>
+    <string name="select_date">Välj Datum</string>
+    <string name="confirm">Bekräfta</string>
+    <string name="cancel">Avbryt</string>
+    <string name="background_customization">Bakgrund</string>
+    <string name="select_background_image">Välj Bakgrundsbild</string>
+    <string name="background_transparency">Bakgrundsgenomskinlighet</string>
+    <string name="remove_background">Ta Bort Bakgrund</string>
+    <string name="prevent_screenshot">Förhindra Skärmdump</string>
+    <string name="prevent_screenshot_description">Inaktivera skärmdumpar och skärminspelning</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Datasäkerhet</string>
+    <string name="database_encryption">Databas Kryptering</string>
+    <string name="encrypted">Krypterad (AES-256)</string>
+    <string name="unencrypted">Okrypterad</string>
+    <string name="migrate_to_encrypted">Migrera till Krypterad Databas</string>
+    <string name="migration_description">Migrera befintlig data till en AES-256 krypterad databas. Denna operation är atomär och rullas automatiskt tillbaka vid fel.</string>
+    <string name="migration_success">Migrering lyckades! Databasen är nu krypterad.</string>
+    <string name="migration_failed">Migrering misslyckades: %s. Din data har återställts till ursprungligt tillstånd.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Lås efter bakgrund</string>
+    <string name="lock_immediately">Omedelbart</string>
+    <string name="lock_after_seconds">%d sekunder</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Anpassade Påminnelser</string>
+    <string name="add_custom_reminder">Lägg till Anpassad Påminnelse</string>
+    <string name="no_custom_reminders">Inga anpassade påminnelser än</string>
+    <string name="reminder_title_label">Påminnelsetitel</string>
+    <string name="reminder_title_required">Titel krävs</string>
+    <string name="reminder_message_label">Meddelande (valfritt)</string>
+    <string name="reminder_date">Påminnelsedatum</string>
+    <string name="select_time">Välj tid</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Nyans</string>
+    <string name="saturation">Mättnad</string>
+    <string name="lightness">Ljusstyrka</string>
+    <string name="apply_color">Applicera Färg</string>
+    <string name="custom_color">Anpassad Färg</string>
+    <string name="color_preview">Färgförhandsvisning</string>
+    <string name="apply">Applicera</string>
+    <string name="preset_colors">Förinställda Färger</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Lägg till Symtom</string>
+    <string name="symptom_name">Symtomnamn</string>
+    <string name="symptom_name_required">Symtomnamn krävs</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Adaptivt förutsedd baserat på de senaste %1$d cyklerna (genomsnitt %2$s dagar/cykel, %3$s dagar/menstruation)</string>
+    
+    <string name="delete">Ta Bort</string>
+    <string name="delete_record">Ta Bort Post</string>
+    <string name="delete_record_confirm">Är du säker på att du vill ta bort posten för detta datum? Denna åtgärd kan inte ångras.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Sön</string>
+    <string name="week_mon">Mån</string>
+    <string name="week_tue">Tis</string>
+    <string name="week_wed">Ons</string>
+    <string name="week_thu">Tor</string>
+    <string name="week_fri">Fre</string>
+    <string name="week_sat">Lör</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Föregående månad</string>
+    <string name="calendar_next_month">Nästa månad</string>
+    <string name="calendar_add_record">Lägg till post</string>
+    <string name="calendar_today">Idag</string>
+    <string name="back">Tillbaka</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Huvudvärk</string>
+    <string name="symptom_bloating">Uppsvälldhet</string>
+    <string name="symptom_breast_tenderness">Bröstömhet</string>
+    <string name="symptom_backache">Ryggont</string>
+    <string name="symptom_fatigue">Trötthet</string>
+    <string name="symptom_mood_swings">Humörsvängningar</string>
+    <string name="symptom_acne">Akne</string>
+    <string name="symptom_increased_appetite">Ökad aptit</string>
+    <string name="symptom_insomnia">Sömnlöshet</string>
+    <string name="symptom_nausea">Illamående</string>
+    <string name="flow_light">Lätt</string>
+    <string name="flow_medium">Medel</string>
+    <string name="flow_heavy">Kraftig</string>
+    <string name="pain_none">Ingen</string>
+    <string name="pain_mild">Lindrig</string>
+    <string name="pain_moderate">Måttlig</string>
+    <string name="pain_severe">Svår</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">dagar</string>
+    <string name="predicted_period_label">Förutsedd menstruation: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Ägglossning: %s</string>
+    <string name="confidence_label">Förtroende: %1$s (baserat på %2$d cykler)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Dagar innan</string>
+    <string name="reminder_time">Påminnelsetid</string>
+    <string name="time_picker_mode_wheel">Hjulväljare</string>
+    <string name="time_picker_mode_keyboard">Tangentbordsinmatning</string>
+    <string name="time_format_error">Ogiltigt format, använd HH:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Aktiverad</string>
+    <string name="disabled">Inaktiverad</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Rosa</string>
+    <string name="color_dark_pink">Mörkrosa</string>
+    <string name="color_peach">Persika</string>
+    <string name="color_light_purple">Ljuslila</string>
+    <string name="color_medium_purple">Mediumlila</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Undervikt</string>
+    <string name="bmi_category_normal">Normal</string>
+    <string name="bmi_category_overweight">Övervikt</string>
+    <string name="bmi_category_obese">Fetma</string>
+    <string name="bmi_standard_note">Baserat på kinesisk BMI-standard</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Säkerhetskopiering lyckades</string>
+    <string name="backup_fail">Säkerhetskopiering misslyckades</string>
+    <string name="restore_success">Återställning lyckades</string>
+    <string name="restore_fail">Återställning misslyckades</string>
+    <string name="export_success">Export lyckades</string>
+    <string name="export_fail">Export misslyckades</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Exportera databas som AES-256 krypterad ZIP-säkerhetskopia</string>
+    <string name="backup_import_desc">Återställ data från en säkerhetskopia (stöder krypterade och äldre format)</string>
+    <string name="backup_csv_desc">Exportera poster som CSV-kalkylark</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Borttagen: %s</string>
+    <string name="in_progress">Pågår</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Vänligen vänta %d sekunder</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Autentisering misslyckades: %s</string>
+    <string name="auth_failed_generic">Autentisering misslyckades</string>
+    <string name="biometric_init_failed">Biometrisk initiering misslyckades</string>
+    <string name="lockout_message">För många försök. Vänligen vänta %d sekunder.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Cykellängdstrend</string>
+    <string name="chart_title_pain_trend">Smärttrend</string>
+    <string name="chart_title_symptom_distribution">Symtomfördelning</string>
+    <string name="chart_cycle_label">Cykel %d</string>
+    <string name="chart_cycle_length_label">Cykellängd</string>
+    <string name="chart_pain_level_label">Smärtnivå</string>
+    
+    <string name="regularity_regular">Regelbunden</string>
+    <string name="regularity_somewhat_regular">Någorlunda regelbunden</string>
+    <string name="regularity_irregular">Oregelbunden</string>
+    <string name="regularity_insufficient_data">Otillräcklig data</string>
+    <string name="confidence_high">Hög</string>
+    <string name="confidence_medium">Medium</string>
+    <string name="confidence_low">Låg</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Ingen data än</string>
+    <string name="analysis_no_data_hint">Börja spela in din menstruation för att se analyser och förutsägelser här</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d dag</item>
+        <item quantity="other">%d dagar</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Menstruationspåminnelse</string>
+    <string name="channel_ovulation_reminder">Ägglossningspåminnelse</string>
+    <string name="channel_pms_reminder">PMS-påminnelse</string>
+    <string name="channel_custom_reminder">Anpassad Påminnelse</string>
+    <string name="notif_period_title">Menstruationspåminnelse</string>
+    <string name="notif_period_message">Din menstruation förväntas börja om %d dagar</string>
+    <string name="notif_ovulation_title">Ägglossningspåminnelse</string>
+    <string name="notif_ovulation_message">Ägglossning förväntas om %d dagar</string>
+    <string name="notif_pms_title">PMS-påminnelse</string>
+    <string name="notif_pms_message">PMS-symtom kan börja om %d dagar</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Utseende</string>
+    <string name="section_data">Data</string>
+    <string name="section_other">Övrigt</string>
+</resources>

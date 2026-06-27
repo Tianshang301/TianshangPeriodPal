@@ -245,6 +245,17 @@
         <item quantity="other">%d days</item>
     </plurals>
 
+    <!-- Missing strings for translations -->
+    <string name="days_until_next_period">Next period in %d days</string>
+    <string name="no_period_data">No period data</string>
+    <string name="record_data">Record Date</string>
+    <string name="custom_color">Custom Color</string>
+    <string name="color_preview">Color Preview</string>
+    <string name="apply">Apply</string>
+    <string name="section_appearance">Appearance</string>
+    <string name="section_data">Data</string>
+    <string name="section_other">Other</string>
+
     <!-- Notification -->
     <string name="channel_period_reminder">Period Reminder</string>
     <string name="channel_ovulation_reminder">Ovulation Reminder</string>

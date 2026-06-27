@@ -1,0 +1,263 @@
+<resources>
+    <string name="app_name">TianshangPeriodPal</string>
+    <string name="terms_title">Warunki Usługi &amp; Polityka Prywatności</string>
+    <string name="terms_content">1. Oświadczenie o Usłudze\nTa aplikacja jest完全是 lokalnym narzędziem do śledzenia miesiączki. Wszystkie funkcje działają lokalnie na urządzeniu bez interakcji sieciowej. Nie zbieramy, przesyłamy ani nie udostępniamy żadnych danych osobowych.\n\n2. Odpowiedzialność Użytkownika\nJesteś odpowiedzialny za dokładność wprowadzonych danych fizjologicznych. Przewidywania miesiączki, obliczenia owulacji i analiza bólu służą wyłącznie jako odniesienie i nie stanowią diagnozy medycznej. W przypadku problemów zdrowotnych skonsultuj się z lekarzem.</string>
+    <string name="privacy_title">Polityka Prywatności</string>
+    <string name="privacy_content">1. Zasada Główna: Lokalizacja Danych\nWszystkie dane o miesiączce, objawach i temperaturze są przechowywane tylko w zaszyfrowanej bazie danych na Twoim telefonie. Aplikacja nie ma uprawnień sieciowych, co从根本上 zapobiega wyciekom danych.\n\n2. Gromadzone Informacje\nPrzetwarzamy tylko informacje, które ręcznie wprowadzasz lokalnie.</string>
+    <string name="accept_terms">Przeczytałem i zgadzam się</string>
+    <string name="app_lock_title">Blokada Aplikacji</string>
+    <string name="enter_pin">Wprowadź Hasło</string>
+    <string name="unlock">Odblokuj</string>
+    <string name="invalid_pin">Nieprawidłowe Hasło</string>
+    <string name="calendar_title">Kalendarz</string>
+    <string name="current_cycle_day">Dzień %d bieżącego cyklu</string>
+    <string name="days_until_next_period">Następna miesiączka za %d dni</string>
+    <string name="no_period_data">Brak danych o miesiączce</string>
+    <string name="tap_date_to_record">Stuknij datę, aby nagrać</string>
+    <string name="period">Miesiączka</string>
+    <string name="predicted_period">Przewidywana Miesiączka</string>
+    <string name="ovulation">Owulacja</string>
+    <string name="fertile_window">Okno Płodności</string>
+    <string name="record_title">Nagraj</string>
+    <string name="start_period">Rozpocznij Miesiączkę</string>
+    <string name="end_period">Zakończ Miesiączkę</string>
+    <string name="flow_level">Przepływ</string>
+    <string name="pain_level">Ból</string>
+    <string name="symptoms">Objawy</string>
+    <string name="sexual_activity">Aktywność Seksualna</string>
+    <string name="ovulation_test">Test Owulacji</string>
+    <string name="cervical_mucus">Śluz Szyjkowy</string>
+    <string name="body_temperature">Temperatura Ciała</string>
+    <string name="notes">Notatki</string>
+    <string name="save">Zapisz</string>
+    <string name="analysis_title">Analiza</string>
+    <string name="cycle_statistics">Statystyki Cyklu</string>
+    <string name="avg_cycle_length">Średnia Długość Cyklu</string>
+    <string name="avg_period_length">Średnia Długość Miesiączki</string>
+    <string name="cycle_regularity">Regularność Cyklu</string>
+    <string name="total_cycles">Łączna Liczba Cykli</string>
+    <string name="pain_trend">Trend Bólu</string>
+    <string name="symptom_frequency">Częstotliwość Objawów</string>
+    <string name="predictions">Przewidywania</string>
+    <string name="reminder_title">Przypomnienia</string>
+    <string name="period_reminder">Przypomnienie o Miesiączce</string>
+    <string name="ovulation_reminder">Przypomnienie o Owulacji</string>
+    <string name="pms_reminder">Przypomnienie o PMS</string>
+    <string name="profile_title">Profil</string>
+    <string name="theme_customization">Motyw</string>
+    <string name="app_lock">Blokada Aplikacji</string>
+    <string name="language">Język</string>
+    <string name="recycle_bin">Kosz</string>
+    <string name="backup_restore">Kopia Zapasowa &amp; Przywracanie</string>
+    <string name="about">O aplikacji</string>
+    <string name="recycle_bin_title">Kosz</string>
+    <string name="no_deleted_records">Brak usuniętych rekordów</string>
+    <string name="backup_restore_title">Kopia Zapasowa &amp; Przywracanie</string>
+    <string name="export_backup">Eksportuj Kopię Zapasową</string>
+    <string name="import_backup">Importuj Kopię Zapasową</string>
+    <string name="export_csv">Eksportuj CSV</string>
+    <string name="settings_title">Ustawienia</string>
+    <string name="theme_color">Kolor Motywu</string>
+    <string name="bmi_title">Rekord BMI</string>
+    <string name="add_bmi_record">Dodaj Rekord</string>
+    <string name="height_cm">Wzrost(cm)</string>
+    <string name="weight_kg">Waga(kg)</string>
+    <string name="latest_bmi">Aktualne BMI</string>
+    <string name="bmi_history">Historia</string>
+    <string name="dark_mode">Tryb Ciemny</string>
+    <string name="dark_mode_description">Przełącz motyw ciemny/jasny</string>
+    <string name="record_date">Data Rekordu</string>
+    <string name="select_date">Wybierz Datę</string>
+    <string name="confirm">Potwierdź</string>
+    <string name="cancel">Anuluj</string>
+    <string name="background_customization">Tło</string>
+    <string name="select_background_image">Wybierz Obraz Tła</string>
+    <string name="background_transparency">Przezroczystość Tła</string>
+    <string name="remove_background">Usuń Tło</string>
+    <string name="prevent_screenshot">Blokuj Zrzuty Ekranu</string>
+    <string name="prevent_screenshot_description">Wyłącz zrzuty ekranu i nagrywanie ekranu</string>
+    
+    <!-- Database Encryption -->
+    <string name="data_security">Bezpieczeństwo Danych</string>
+    <string name="database_encryption">Szyfrowanie Bazy Danych</string>
+    <string name="encrypted">Zaszyfrowane (AES-256)</string>
+    <string name="unencrypted">Niezaszyfrowane</string>
+    <string name="migrate_to_encrypted">Migruj do Zaszyfrowanej Bazy Danych</string>
+    <string name="migration_description">Migruj istniejące dane do zaszyfrowanej bazy danych AES-256. Operacja jest atomowa i automatycznie się cofnie w przypadku niepowodzenia.</string>
+    <string name="migration_success">Migracja zakończona sukcesem! Baza danych jest teraz zaszyfrowana.</string>
+    <string name="migration_failed">Migracja nie powiodła się: %s. Twoje dane zostały przywrócone do pierwotnego stanu.</string>
+    
+    <!-- Background Lock Delay -->
+    <string name="background_lock_delay">Blokuj po przejściu w tło</string>
+    <string name="lock_immediately">Natychmiast</string>
+    <string name="lock_after_seconds">%d sekund</string>
+    
+    <!-- Custom Reminders -->
+    <string name="custom_reminders">Niestandardowe Przypomnienia</string>
+    <string name="add_custom_reminder">Dodaj Niestandardowe Przypomnienie</string>
+    <string name="no_custom_reminders">Brak niestandardowych przypomnień</string>
+    <string name="reminder_title_label">Tytuł przypomnienia</string>
+    <string name="reminder_title_required">Tytuł jest wymagany</string>
+    <string name="reminder_message_label">Wiadomość (opcjonalnie)</string>
+    <string name="reminder_date">Data przypomnienia</string>
+    <string name="select_time">Wybierz godzinę</string>
+    
+    <!-- HSL Color Engine -->
+    <string name="hue">Odcień</string>
+    <string name="saturation">Nasycenie</string>
+    <string name="lightness">Jasność</string>
+    <string name="apply_color">Zastosuj Kolor</string>
+    <string name="custom_color">Niestandardowy Kolor</string>
+    <string name="color_preview">Podgląd Koloru</string>
+    <string name="apply">Zastosuj</string>
+    <string name="preset_colors">Predefiniowane Kolory</string>
+    
+    <!-- Custom Symptoms -->
+    <string name="add_symptom">Dodaj Objaw</string>
+    <string name="symptom_name">Nazwa objawu</string>
+    <string name="symptom_name_required">Nazwa objawu jest wymagana</string>
+    
+    <!-- Prediction Explanation -->
+    <string name="prediction_explanation">Adaptacyjne przewidywanie na podstawie ostatnich %1$d cykli (średnio %2$s dni/cykl, %3$s dni/miesiączka)</string>
+    
+    <string name="delete">Usuń</string>
+    <string name="delete_record">Usuń Rekord</string>
+    <string name="delete_record_confirm">Czy na pewno chcesz usunąć rekord dla tej daty? Tej operacji nie można cofnąć.</string>
+
+    <!-- CalendarScreen -->
+    <string name="week_sun">Ndz</string>
+    <string name="week_mon">Pon</string>
+    <string name="week_tue">Wt</string>
+    <string name="week_wed">Śr</string>
+    <string name="week_thu">Czw</string>
+    <string name="week_fri">Pt</string>
+    <string name="week_sat">Sob</string>
+    <string name="calendar_date_format">MMM yyyy</string>
+    <string name="calendar_previous_month">Poprzedni miesiąc</string>
+    <string name="calendar_next_month">Następny miesiąc</string>
+    <string name="calendar_add_record">Dodaj rekord</string>
+    <string name="calendar_today">Dziś</string>
+    <string name="back">Wstecz</string>
+
+    <!-- RecordScreen -->
+    <string name="symptom_headache">Ból głowy</string>
+    <string name="symptom_bloating">Wzdęcia</string>
+    <string name="symptom_breast_tenderness">Bolesność piersi</string>
+    <string name="symptom_backache">Ból pleców</string>
+    <string name="symptom_fatigue">Zmęczenie</string>
+    <string name="symptom_mood_swings">Zmiany nastroju</string>
+    <string name="symptom_acne">Trądzik</string>
+    <string name="symptom_increased_appetite">Zwiększony apetyt</string>
+    <string name="symptom_insomnia">Bezsenność</string>
+    <string name="symptom_nausea">Nudności</string>
+    <string name="flow_light">Lekki</string>
+    <string name="flow_medium">Średni</string>
+    <string name="flow_heavy">Obfity</string>
+    <string name="pain_none">Brak</string>
+    <string name="pain_mild">Łagodny</string>
+    <string name="pain_moderate">Umiarkowany</string>
+    <string name="pain_severe">Silny</string>
+
+    <!-- AnalysisScreen -->
+    <string name="unit_days">dni</string>
+    <string name="predicted_period_label">Przewidywana miesiączka: %1$s - %2$s</string>
+    <string name="ovulation_date_label">Owulacja: %s</string>
+    <string name="confidence_label">Pewność: %1$s (na podstawie %2$d cykli)</string>
+
+    <!-- ReminderScreen -->
+    <string name="reminder_days_before">Dni wcześniej</string>
+    <string name="reminder_time">Godzina przypomnienia</string>
+    <string name="time_picker_mode_wheel">Wybierak kołowy</string>
+    <string name="time_picker_mode_keyboard">Wprowadzanie klawiaturą</string>
+    <string name="time_format_error">Nieprawidłowy format, użyj HH:MM</string>
+
+    <!-- SettingsScreen -->
+    <string name="enabled">Włączone</string>
+    <string name="disabled">Wyłączone</string>
+
+    <!-- ThemeScreen -->
+    <string name="color_pink">Różowy</string>
+    <string name="color_dark_pink">Ciemny różowy</string>
+    <string name="color_peach">Brzoskwiniowy</string>
+    <string name="color_light_purple">Jasny fioletowy</string>
+    <string name="color_medium_purple">Średni fioletowy</string>
+
+    <!-- BmiScreen -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="bmi_category_underweight">Niedowaga</string>
+    <string name="bmi_category_normal">Normalny</string>
+    <string name="bmi_category_overweight">Nadwaga</string>
+    <string name="bmi_category_obese">Otyłość</string>
+    <string name="bmi_standard_note">Na podstawie chińskiego standardu BMI</string>
+
+    <!-- BackupScreen -->
+    <string name="backup_success">Kopia zapasowa wykonana</string>
+    <string name="backup_fail">Błąd kopii zapasowej</string>
+    <string name="restore_success">Przywracanie zakończone</string>
+    <string name="restore_fail">Błąd przywracania</string>
+    <string name="export_success">Eksport zakończony</string>
+    <string name="export_fail">Błąd eksportu</string>
+    
+    <!-- BackupScreen -->
+    <string name="backup_export_desc">Eksportuj bazę danych jako zaszyfrowany plik ZIP AES-256</string>
+    <string name="backup_import_desc">Przywróć dane z pliku kopii zapasowej (obsługuje zaszyfrowane i starsze formaty)</string>
+    <string name="backup_csv_desc">Eksportuj rekody jako arkusz CSV</string>
+
+    <!-- RecycleBinScreen -->
+    <string name="deleted_time">Usunięto: %s</string>
+    <string name="in_progress">W toku</string>
+
+    <!-- TermsScreen -->
+    <string name="terms_countdown">Proszę czekać %d sekund</string>
+
+    <!-- AppLockScreen -->
+    <string name="auth_failed">Uwierzytelnianie nie powiodło się: %s</string>
+    <string name="auth_failed_generic">Uwierzytelnianie nie powiodło się</string>
+    <string name="biometric_init_failed">Inicjalizacja biometrii nie powiodła się</string>
+    <string name="lockout_message">Zbyt wiele prób. Proszę czekać %d sekund.</string>
+
+    <!-- ChartComponents -->
+    <string name="chart_title_cycle_length_trend">Trend Długości Cyklu</string>
+    <string name="chart_title_pain_trend">Trend Bólu</string>
+    <string name="chart_title_symptom_distribution">Rozkład Objawów</string>
+    <string name="chart_cycle_label">Cykl %d</string>
+    <string name="chart_cycle_length_label">Długość Cyklu</string>
+    <string name="chart_pain_level_label">Poziom Bólu</string>
+    
+    <string name="regularity_regular">Regularny</string>
+    <string name="regularity_somewhat_regular">Dość regularny</string>
+    <string name="regularity_irregular">Nieregularny</string>
+    <string name="regularity_insufficient_data">Niewystarczające dane</string>
+    <string name="confidence_high">Wysoki</string>
+    <string name="confidence_medium">Średni</string>
+    <string name="confidence_low">Niski</string>
+    
+    <!-- AnalysisScreen -->
+    <string name="analysis_no_data_title">Brak danych</string>
+    <string name="analysis_no_data_hint">Rozpocznij nagrywanie miesiączki, aby zobaczyć analizy i przewidywania</string>
+    
+    <plurals name="days_count">
+        <item quantity="one">%d dzień</item>
+        <item quantity="few">%d dni</item>
+        <item quantity="many">%d dni</item>
+        <item quantity="other">%d dni</item>
+    </plurals>
+
+    <!-- Notification -->
+    <string name="channel_period_reminder">Przypomnienie o Miesiączce</string>
+    <string name="channel_ovulation_reminder">Przypomnienie o Owulacji</string>
+    <string name="channel_pms_reminder">Przypomnienie o PMS</string>
+    <string name="channel_custom_reminder">Niestandardowe Przypomnienie</string>
+    <string name="notif_period_title">Przypomnienie o Miesiączce</string>
+    <string name="notif_period_message">Twoja miesiączka ma się rozpocząć za %d dni</string>
+    <string name="notif_ovulation_title">Przypomnienie o Owulacji</string>
+    <string name="notif_ovulation_message">Owulacja jest przewidywana za %d dni</string>
+    <string name="notif_pms_title">Przypomnienie o PMS</string>
+    <string name="notif_pms_message">Objawy PMS mogą rozpocząć się za %d dni</string>
+    
+    <!-- ProfileScreen section headers -->
+    <string name="section_appearance">Wygląd</string>
+    <string name="section_data">Dane</string>
+    <string name="section_other">Inne</string>
+</resources>
